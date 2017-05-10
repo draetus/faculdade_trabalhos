@@ -1,0 +1,4 @@
+Clock 
+
+É o relógio do sistema que permite a sincronia das operações matemáticas do computador.
+Quanto mais clock mais rápido é a máquina.

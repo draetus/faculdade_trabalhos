@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1494823135 source:c:\users\maurício\desktop\m2_ex4\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

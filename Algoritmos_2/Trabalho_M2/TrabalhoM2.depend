@@ -1,0 +1,100 @@
+# depslib dependency file v1.0
+1495243088 source:c:\users\6322875\desktop\trabalhom2\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Estoque.h"
+
+1495310594 "
+
+1495242953 source:c:\users\6322875\desktop\trabalhom2\produto.cpp
+	"Produto.h"
+	<stdio.h>
+
+1495310489 
+
+1495242041 c:\users\6322875\desktop\trabalhom2\produto.h
+	<iostream>
+	<fstream>
+
+1495243180 source:c:\users\6322875\desktop\trabalhom2\estoque.cpp
+	"Estoque.h"
+	<string>
+
+1495238893 c:\users\6322875\desktop\trabalhom2\estoque.h
+	"Produto.h"
+	<vector>
+
+1495310489 source:c:\users\gustavo\desktop\trabalhom2 (1)\trabalhom2\estoque.cpp
+	"Estoque.h"
+	<string>
+	<stdlib.h>
+
+1495308800 c:\users\gustavo\desktop\trabalhom2 (1)\trabalhom2\estoque.h
+	"Produto.h"
+	<vector>
+
+1495307641 c:\users\gustavo\desktop\trabalhom2 (1)\trabalhom2\produto.h
+	<iostream>
+	<fstream>
+
+1495310594 source:c:\users\gustavo\desktop\trabalhom2 (1)\trabalhom2\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Estoque.h"
+
+1495311526 source:c:\users\gustavo\desktop\trabalhom2 (1)\trabalhom2\produto.cpp
+	"Produto.h"
+	<stdio.h>
+
+1495403126 source:/home/draetus/Desktop/TrabalhoM2 (1)/TrabalhoM2/Estoque.cpp
+	"Estoque.h"
+	<string>
+	<stdlib.h>
+
+1495401130 /home/draetus/Desktop/TrabalhoM2 (1)/TrabalhoM2/Estoque.h
+	"Produto.h"
+	<vector>
+
+1495404026 /home/draetus/Desktop/TrabalhoM2 (1)/TrabalhoM2/Produto.h
+	<iostream>
+	<fstream>
+
+1495399149 source:/home/draetus/Desktop/TrabalhoM2 (1)/TrabalhoM2/main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Estoque.h"
+
+1495403981 source:/home/draetus/Desktop/TrabalhoM2 (1)/TrabalhoM2/Produto.cpp
+	"Produto.h"
+	<stdio.h>
+
+1495404975 source:c:\users\gustavo\desktop\trabalhom2\trabalhom2\estoque.cpp
+	"Estoque.h"
+	<string>
+	<stdlib.h>
+
+1495401130 c:\users\gustavo\desktop\trabalhom2\trabalhom2\estoque.h
+	"Produto.h"
+	<vector>
+
+1495404334 c:\users\gustavo\desktop\trabalhom2\trabalhom2\produto.h
+	<iostream>
+	<fstream>
+
+1495404959 source:c:\users\gustavo\desktop\trabalhom2\trabalhom2\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Estoque.h"
+
+1495404334 source:c:\users\gustavo\desktop\trabalhom2\trabalhom2\produto.cpp
+	"Produto.h"
+	<stdio.h>
+

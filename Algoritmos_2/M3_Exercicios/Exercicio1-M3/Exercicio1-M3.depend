@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1497050803 source:c:\users\6311130\desktop\exercicio1-m3\main.cpp
+	<iostream>
+	"Familia.h"
+
+1497050654 source:c:\users\6311130\desktop\exercicio1-m3\pessoa.cpp
+	"Pessoa.h"
+
+1497050654 c:\users\6311130\desktop\exercicio1-m3\pessoa.h
+	<iostream>
+
+1497050871 source:c:\users\6311130\desktop\exercicio1-m3\familia.cpp
+	"Familia.h"
+
+1497050871 c:\users\6311130\desktop\exercicio1-m3\familia.h
+	"Pessoa.h"
+	<vector>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1476812358 source:/home/draetus/Desktop/git/codorna/Lista_M2_Algoritmos/LM2ex5/main.cpp
+	<iostream>
+	<math.h>
+

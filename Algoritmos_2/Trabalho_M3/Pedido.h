@@ -16,8 +16,8 @@ private:
     std::vector<ItemPedido*> itens;
 public:
     Pedido(Cliente&,int = 0,char* = "");
-    void setnumero(int);
-    void setdata(char*);
+    void setnumero();
+    void setdata();
     void additem(ItemPedido*);
     int getnumero();
     char* getdata();

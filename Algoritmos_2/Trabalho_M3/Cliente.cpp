@@ -2,41 +2,60 @@
 #include <cstring>
 #include "Cliente.h"
 
-Cliente::Cliente(int codigo, char *telefone, char *email, char *nome)
-{
+Cliente::Cliente(int codigo, char *telefone, char *email, char *nome){
     this->codigo = codigo;
     std::strcpy(this->telefone,telefone);
     std::strcpy(this->email,email);
     std::strcpy(this->nome,nome);
 }
 
-void Cliente::setcodigo(int codigo){this->codigo = codigo;}
-void Cliente::settelefone(char *telefone){std::strcpy(this->telefone,telefone);}
-void Cliente::setemail(char *email){std::strcpy(this->email,email);}
-void Cliente::setnome(char *nome){std::strcpy(this->nome,nome);}
-void Cliente::addpedido(Pedido* pedido){this->pedidos.push_back(pedido);}
+void Cliente::setcodigo(){
+    std::cout << "Codigo do Cliente: " << std::endl;
+    std::cin >> codigo;
+}
+void Cliente::settelefone(){
+    std::cout << "Telefone do Cliente: " << std::endl;
+    gets(telefone);
+}
+void Cliente::setemail(){
+    std::cout << "Email do Cliente: " << std::endl;
+    gets(email);
+}
+void Cliente::setnome(){
+    std::cout << "Nome do Cliente: " << std::endl;
+    gets(nome);
+}
+void Cliente::addpedido(Pedido* pedido){
+    this->pedidos.push_back(pedido);
+}
 
-int Cliente::getcodigo(){return this->codigo;}
-char* Cliente::gettelefone(){return this->telefone;}
-char* Cliente::getemail(){return this->email;}
-char* Cliente::getnome(){return this->nome;}
+int Cliente::getcodigo(){
+    return codigo;
+}
+char* Cliente::gettelefone(){
+    return telefone;
+}
+char* Cliente::getemail(){
+    return email;
+}
+char* Cliente::getnome(){
+    return nome;
+}
 
-void Cliente::mostra()
-{
-    std::cout << "Nome: " << this->nome << std::endl;
-    std::cout << "Codigo: " << this->codigo << std::endl;
-    std::cout << "Email: " << this->email << std::endl;
-    std::cout << "Telefone: " << this->telefone << std::endl << std::endl << std::endl;
-    for (int i=0;i<this->pedidos.size();i++)
+void Cliente::mostra(){
+    std::cout << "Nome: " << nome << std::endl;
+    std::cout << "Codigo: " << codigo << std::endl;
+    std::cout << "Email: " << email << std::endl;
+    std::cout << "Telefone: " << telefone << std::endl << std::endl << std::endl;
+    for (int i=0;i<pedidos.size();i++)
     {
         std::cout << "------Pedido " << i+1 << "------" << std::endl << std::endl;
-        this->pedidos[i]->mostra();
+        pedidos[i]->mostra();
     }
     std::cout << "*____________________________________*" << std::endl;
 }
 
-void Cliente::grava(std::ofstream &outfile)
-{
+void Cliente::grava(std::ofstream &outfile){
     int totalsize=pedidos.size();
     outfile.write((char *)&codigo, sizeof(codigo));
     outfile.write((char *)&nome, sizeof(nome));
@@ -49,8 +68,7 @@ void Cliente::grava(std::ofstream &outfile)
     }*/
 }
 
-void Cliente::recupera(std::ifstream &infile)
-{
+void Cliente::recupera(std::ifstream &infile){
     int totalsize;
     Pedido* aux;
     infile.read((char *)&codigo, sizeof(codigo));

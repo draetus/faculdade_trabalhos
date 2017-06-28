@@ -7,18 +7,17 @@
 
 class Pedido;
 
-class Cliente
-{
+class Cliente{
 private:
     int codigo;
     char nome[100],telefone[100],email[100];
     std::vector<Pedido*> pedidos;
 public:
     Cliente(int = 0,char* = "", char* = "", char* = "");
-    void setcodigo(int);
-    void settelefone(char*);
-    void setemail(char*);
-    void setnome(char*);
+    void setcodigo();
+    void settelefone();
+    void setemail();
+    void setnome();
     void addpedido(Pedido*);
     int getcodigo();
     char* gettelefone();

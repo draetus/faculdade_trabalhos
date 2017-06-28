@@ -13,10 +13,10 @@ private:
     ItemPedido* itempedido;
 public:
     Livro(char* = "",char* = "",char* = "",float = 0);
-    void setISBN(char*);
-    void settitulo(char*);
-    void setautor(char*);
-    void setpreco(float);
+    void setISBN();
+    void settitulo();
+    void setautor();
+    void setpreco();
     void setitempedido(ItemPedido*);
     char* getISBN();
     char* gettitulo();

@@ -7,6 +7,7 @@ Livro::Livro(char* ISBN, char* titulo, char* autor, float preco){
     std::strcpy(this->titulo,titulo);
     std::strcpy(this->autor,autor);
     this->preco = preco;
+    this->disponivel = true;
 }
 
 void Livro::setISBN(){
@@ -24,9 +25,11 @@ void Livro::setautor(){
 void Livro::setpreco(){
     std::cout << "Preco do Livro: " << std::endl;
     std::cin >> preco;
+    std::cin.ignore();
 }
 void Livro::setitempedido(ItemPedido *itempedido){
     this->itempedido = itempedido;
+    this->disponivel = false;
 }
 
 char* Livro::getISBN(){
@@ -40,6 +43,10 @@ char* Livro::getautor(){
 }
 float Livro::getpreco(){
     return preco;
+}
+
+bool Livro::getdisponivel(){
+    return disponivel;
 }
 
 void Livro::mostra()
@@ -58,4 +65,5 @@ void Livro::grava(std::ofstream &outfile)
 void Livro::recupera(std::ifstream &infile)
 {
     infile.read((char *)this, sizeof(Livro));
+    this->disponivel = true;
 }

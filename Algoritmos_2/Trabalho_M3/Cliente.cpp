@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <stdio.h>
 #include "Cliente.h"
 
 Cliente::Cliente(int codigo, char *telefone, char *email, char *nome){
@@ -12,6 +13,7 @@ Cliente::Cliente(int codigo, char *telefone, char *email, char *nome){
 void Cliente::setcodigo(){
     std::cout << "Codigo do Cliente: " << std::endl;
     std::cin >> codigo;
+    std::cin.ignore();
 }
 void Cliente::settelefone(){
     std::cout << "Telefone do Cliente: " << std::endl;
@@ -61,11 +63,6 @@ void Cliente::grava(std::ofstream &outfile){
     outfile.write((char *)&nome, sizeof(nome));
     outfile.write((char *)&telefone, sizeof(telefone));
     outfile.write((char *)&email, sizeof(email));
-    /*outfile.write((char *)&totalsize, sizeof(totalsize));
-    for (int i=0;i<totalsize;i++)
-    {
-        outfile.write((char *)&pedidos[i], sizeof(pedidos[i]));
-    }*/
 }
 
 void Cliente::recupera(std::ifstream &infile){
@@ -75,11 +72,5 @@ void Cliente::recupera(std::ifstream &infile){
     infile.read((char *)&nome, sizeof(nome));
     infile.read((char *)&telefone, sizeof(telefone));
     infile.read((char *)&email, sizeof(email));
-    /*infile.read((char *)&totalsize, sizeof(totalsize));
-    for (int i=0;i<totalsize;i++)
-    {
-        infile.read((char *)&aux, sizeof(aux));
-        this->addpedido(aux);
-    }*/
     pedidos.clear();
 }

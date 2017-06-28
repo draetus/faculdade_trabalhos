@@ -12,6 +12,7 @@ Pedido::Pedido(Cliente &cliente, int numero, char *data){
 void Pedido::setnumero(){
     std::cout << "Numero: " << std::endl;
     std::cin >> numero;
+    std::cin.ignore();
 }
 void Pedido::setdata(){
     std::cout << "Data: " << std::endl;

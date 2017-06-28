@@ -11,6 +11,7 @@ private:
     char ISBN[100],titulo[100],autor[100];
     float preco;
     ItemPedido* itempedido;
+    bool disponivel;
 public:
     Livro(char* = "",char* = "",char* = "",float = 0);
     void setISBN();
@@ -22,6 +23,7 @@ public:
     char* gettitulo();
     char* getautor();
     float getpreco();
+    bool getdisponivel();
     void mostra();
     void grava(std::ofstream &);
     void recupera(std::ifstream &);

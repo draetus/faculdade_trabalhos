@@ -1,0 +1,139 @@
+# depslib dependency file v1.0
+1498587275 source:c:\users\mauricio\desktop\trabalho_final\main.cpp
+	<iostream>
+	<fstream>
+	"Cliente.h"
+	"Pedido.h"
+	"Livro.h"
+	"ItemPedido.h"
+
+1498427252 o.h"
+
+1498546122 source:c:\users\mauricio\desktop\trabalho_final\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1498426589 "
+
+1498543875 c:\users\mauricio\desktop\trabalho_final\cliente.h
+	<vector>
+	<fstream>
+	"Pedido.h"
+
+1498427691 
+
+1498427252 c:\users\mauricio\desktop\trabalho_final\pedido.h
+	"Cliente.h"
+	"ItemPedido.h"
+
+1498543593 source:c:\users\mauricio\desktop\trabalho_final\pedido.cpp
+	"Pedido.h"
+	<iostream>
+	<cstring>
+
+1498505086 source:c:\users\mauricio\desktop\trabalho_final\itempedido.cpp
+	"ItemPedido.h"
+	<iostream>
+
+1498506524 source:c:\users\mauricio\desktop\trabalho_final\livro.cpp
+	<iostream>
+	<cstring>
+	"Livro.h"
+
+1498506474 c:\users\mauricio\desktop\trabalho_final\livro.h
+	"ItemPedido.h"
+
+1498504710 c:\users\mauricio\desktop\trabalho_final\itempedido.h
+	<vector>
+	"Pedido.h"
+	"Livro.h"
+
+1498506473 source:/home/draetus/Desktop/Trabalho_Final/Cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1498506017 /home/draetus/Desktop/Trabalho_Final/Cliente.h
+	<vector>
+	<fstream>
+	"Pedido.h"
+
+1498427252 /home/draetus/Desktop/Trabalho_Final/Pedido.h
+	"Cliente.h"
+	"ItemPedido.h"
+
+1498504709 /home/draetus/Desktop/Trabalho_Final/ItemPedido.h
+	<vector>
+	"Pedido.h"
+	"Livro.h"
+
+1498506474 /home/draetus/Desktop/Trabalho_Final/Livro.h
+	"ItemPedido.h"
+
+1498505085 source:/home/draetus/Desktop/Trabalho_Final/ItemPedido.cpp
+	"ItemPedido.h"
+	<iostream>
+
+1498506524 source:/home/draetus/Desktop/Trabalho_Final/Livro.cpp
+	<iostream>
+	<cstring>
+	"Livro.h"
+
+1498506606 source:/home/draetus/Desktop/Trabalho_Final/main.cpp
+	<iostream>
+	<fstream>
+	"Cliente.h"
+	"Pedido.h"
+	"Livro.h"
+	"ItemPedido.h"
+
+1498428249 source:/home/draetus/Desktop/Trabalho_Final/Pedido.cpp
+	"Pedido.h"
+	<iostream>
+	<cstring>
+
+1498546122 source:c:\users\6311130\desktop\trabalho_final\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1498543875 c:\users\6311130\desktop\trabalho_final\cliente.h
+	<vector>
+	<fstream>
+	"Pedido.h"
+
+1498427252 c:\users\6311130\desktop\trabalho_final\pedido.h
+	"Cliente.h"
+	"ItemPedido.h"
+
+1498504710 c:\users\6311130\desktop\trabalho_final\itempedido.h
+	<vector>
+	"Pedido.h"
+	"Livro.h"
+
+1498506474 c:\users\6311130\desktop\trabalho_final\livro.h
+	"ItemPedido.h"
+
+1498505086 source:c:\users\6311130\desktop\trabalho_final\itempedido.cpp
+	"ItemPedido.h"
+	<iostream>
+
+1498601248 source:c:\users\6311130\desktop\trabalho_final\livro.cpp
+	<iostream>
+	<cstring>
+	"Livro.h"
+
+1498543593 source:c:\users\6311130\desktop\trabalho_final\pedido.cpp
+	"Pedido.h"
+	<iostream>
+	<cstring>
+
+1498600710 source:c:\users\6311130\desktop\trabalho_final\main.cpp
+	<iostream>
+	<fstream>
+	"Cliente.h"
+	"Pedido.h"
+	"Livro.h"
+	"ItemPedido.h"
+

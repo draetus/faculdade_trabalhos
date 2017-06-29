@@ -56,21 +56,3 @@ void Cliente::mostra(){
     }
     std::cout << "*____________________________________*" << std::endl;
 }
-
-void Cliente::grava(std::ofstream &outfile){
-    int totalsize=pedidos.size();
-    outfile.write((char *)&codigo, sizeof(codigo));
-    outfile.write((char *)&nome, sizeof(nome));
-    outfile.write((char *)&telefone, sizeof(telefone));
-    outfile.write((char *)&email, sizeof(email));
-}
-
-void Cliente::recupera(std::ifstream &infile){
-    int totalsize;
-    Pedido* aux;
-    infile.read((char *)&codigo, sizeof(codigo));
-    infile.read((char *)&nome, sizeof(nome));
-    infile.read((char *)&telefone, sizeof(telefone));
-    infile.read((char *)&email, sizeof(email));
-    pedidos.clear();
-}

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "Livro.h"
+#include <stdio.h>
 
 Livro::Livro(char* ISBN, char* titulo, char* autor, float preco){
     std::strcpy(this->ISBN,ISBN);

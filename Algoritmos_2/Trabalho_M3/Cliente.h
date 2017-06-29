@@ -25,8 +25,6 @@ public:
     char* getnome();
     Pedido* getpedido();
     void mostra();
-    void grava(std::ofstream &);
-    void recupera(std::ifstream &);
 };
 
 #endif // CLIENTE_H_INCLUDED

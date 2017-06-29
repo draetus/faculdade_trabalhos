@@ -43,7 +43,7 @@ int main(){
                 novo_cliente.setcodigo();
                 clientes.push_back(novo_cliente);
                 system("cls");
-                system("clear");/**/
+                /*system("clear");*/
                 novo_cliente.mostra();
                 std::cout << "Cliente cadastrado com sucesso!" << std::endl << std::endl;
                 do
@@ -106,14 +106,14 @@ int main(){
                         }
                     }
                     system("cls");
-                    system("clear");/**/
+                    /*system("clear");*/
                  }
                  while(naoachou);
                  Pedido novo_pedido(clientes[i]);
                  novo_pedido.setdata();
                  novo_pedido.setnumero();
                  system("cls");
-                 system("clear");/**/
+                 /*system("clear");*/
                  pedidos.push_back(novo_pedido);
                  clientes[i].mostra();
                  std::cout << "Pedido Criado com sucesso!" << std::endl;
@@ -167,7 +167,7 @@ int main(){
                         std::cout << "Livros Disponiveis: " << std::endl;
                         for (i=0;i<livros.size();i++){
                             if (livros[i].getdisponivel()){
-                                std::cout << "Livro Numero: " << cont++ << std::endl;
+                                std::cout << "Livro Numero: " << cont+1 << std::endl;
                                 livros[i].mostra();
                             }
                         }
@@ -183,15 +183,17 @@ int main(){
                     }while(naoachou);
                     novo_itempedido.addlivro(livros[cont]);
                     novo_itempedido.mostra();
+                    itempedidos.push_back(novo_itempedido);
                     std::cout << "Livro Comprado com sucesso!" << std::endl;
                     do
                     {
                         std::cout << "1 - Voltar para o menu principal " << std::endl;
+                        std::cout << "2 - Comprar outro livro" << std::endl;
                         std::cin >> opcao;
                         system("cls");
                         /*system("clear");*/
-                    }while (opcao<=1 || opcao>1);
-                }while (opcao == 1);
+                    }while (opcao<1 || opcao>1);
+                }while (opcao == 2);
                 break;
             }
 
@@ -309,7 +311,6 @@ int main(){
 
                  Livro novo_livro;
                  infile.read((char *)&tamanho, sizeof(tamanho));
-                 //tamanho = 8;
 
                  if (tamanho>0)
                  {

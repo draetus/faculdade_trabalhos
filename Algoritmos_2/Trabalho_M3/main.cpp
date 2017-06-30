@@ -8,11 +8,32 @@
 #include <stdio.h>
 #include <fstream>
 
+std::ostream& operator<<(std::ofstream& out, Livro &livro){
+    livro.grava(out);
+    return out;
+}
+
+std::istream& operator>>(std::ifstream& in, Livro &livro){
+    livro.recupera(in);
+    return in;
+}
+
+std::ostream& operator<<(std::ofstream& out, unsigned int &tamanho){
+    out.write((char *)&tamanho, sizeof(tamanho));
+    return out;
+}
+
+std::istream& operator>>(std::ifstream& in, unsigned int &tamanho){
+    in.read((char *)&tamanho, sizeof(tamanho));
+    return in;
+}
+
 int main(){
   int opc, opcao;
+  unsigned int aux1=0, aux2=0;
   std::vector<Cliente> clientes;
-  std::vector<Pedido> pedidos;
-  std::vector<ItemPedido> itempedidos;
+  Pedido* pedidos[100];
+  ItemPedido* itempedidos[100];
   std::vector<Livro> livros;
 
 
@@ -85,13 +106,20 @@ int main(){
 
          case 3:
              {
-                 int i;
+                 int i,qtdcliente=0;
                  bool naoachou=true;
                  std::cout << "Clientes Disponiveis: " << std::endl;
                  for (i=0;i<clientes.size();i++)
                  {
                      clientes[i].mostra();
+                     qtdcliente++;
                  }
+                 if(qtdcliente == 0){
+                        std::cout << "Nao ha clientes disponiveis! " << std::endl << std::endl;
+                        system("pause");
+                        system("cls");
+                        break;
+                    }
                  do
                  {
                     std::cout << "Digite o codigo do cliente que deseja: ";
@@ -109,12 +137,12 @@ int main(){
                     /*system("clear");*/
                  }
                  while(naoachou);
-                 Pedido novo_pedido(clientes[i]);
-                 novo_pedido.setdata();
-                 novo_pedido.setnumero();
+                 pedidos[aux1] = new Pedido(clientes[i]);
+                 pedidos[aux1]->setdata();
+                 pedidos[aux1]->setnumero();
+                 aux1++;
                  system("cls");
                  /*system("clear");*/
-                 pedidos.push_back(novo_pedido);
                  clientes[i].mostra();
                  std::cout << "Pedido Criado com sucesso!" << std::endl;
                  do
@@ -131,24 +159,32 @@ int main(){
 
          case 4:
             {
-                int i,num,cont=0;
+                int i,num,cont=0,disp=0,tam=0;
                 bool naoachou=true;
 
                 do
                 {
-                    std::cout << "Pedidos Disponiveis: " << std::endl;
-                    for (i=0;i<pedidos.size();i++)
+                    std::cout << "Pedidos Disponiveis: " << std::endl << std::endl;
+                    for (i=0;i<aux1;i++)
                     {
-                        pedidos[i].mostra();
+                        pedidos[i]->mostra();
+                        tam++;
+                    }
+
+					if(tam == 0){
+                        std::cout << "Nao ha pedidos disponiveis! " << std::endl << std::endl;
+                        system("pause");
+                        system("cls");
+                        break;
                     }
 
                     std::cout << "Digite o numero do pedido que deseja registrar a compra: ";
                     std::cin >> num;
                     std::cin.ignore();
 
-                    for (i=0;i<pedidos.size();i++)
+                    for (i=0;i<aux1;i++)
                     {
-                        if (num == pedidos[i].getnumero())
+                        if (num == pedidos[i]->getnumero())
                         {
                             naoachou = false;
                             break;
@@ -158,41 +194,62 @@ int main(){
                     /*system("clear");*/
                 }
                 while(naoachou);
-                ItemPedido novo_itempedido(pedidos[i]);
-
+				if(tam == 0){
+                        break;
+                }
+                itempedidos[aux2] = new ItemPedido(pedidos[i]);
+				for (i=0;i<livros.size();i++){
+                    if (livros[i].getdisponivel()){
+                        disp = disp + 1;
+                    }
+                }
                 do{
                     naoachou = true;
+
                     do
                     {
-                        std::cout << "Livros Disponiveis: " << std::endl;
+						if(disp == 0){
+                            setbuf(stdin,NULL);
+                            std::cout << "Nao ha livros disponiveis! " << std::endl;
+                            system("pause");
+                            system("cls");
+                            delete itempedidos[aux2];
+                            break;
+                        }
+                        std::cout << "Livros Disponiveis: " << std::endl << std::endl;
                         for (i=0;i<livros.size();i++){
                             if (livros[i].getdisponivel()){
-                                std::cout << "Livro Numero: " << cont+1 << std::endl;
+                                std::cout << "Livro Numero: " << i+1 << std::endl;
                                 livros[i].mostra();
                             }
                         }
-
+                        std::cout << "Quantidade de livros disponiveis: " << disp << std::endl << std::endl;
                         std::cout << "Digite o Numero do livro que deseja comprar ou digite 0 para sair:";
                         std::cin >> cont;
                         std::cin.ignore();
                         cont--;
-
                         if (livros[cont].getdisponivel()){
                                 naoachou = false;
                         }
                     }while(naoachou);
-                    novo_itempedido.addlivro(livros[cont]);
-                    novo_itempedido.mostra();
-                    itempedidos.push_back(novo_itempedido);
-                    std::cout << "Livro Comprado com sucesso!" << std::endl;
-                    do
-                    {
-                        std::cout << "1 - Voltar para o menu principal " << std::endl;
-                        std::cout << "2 - Comprar outro livro" << std::endl;
-                        std::cin >> opcao;
+                    if(cont + 1 == 0){
                         system("cls");
-                        /*system("clear");*/
-                    }while (opcao<1 || opcao>1);
+                        break;
+                    }
+                    else
+                       if(disp == 0){
+                            break;
+                        }
+                    itempedidos[aux2]->addlivro(livros[cont]);
+                    itempedidos[aux2]->mostra();
+                    cont = 0;
+                    disp--;
+                    std::cout << "Livro Comprado com sucesso!" << std::endl << std::endl;
+                    std::cout << "1 - Voltar para o menu principal " << std::endl;
+                    std::cout << "2 - Comprar outro livro" << std::endl;
+                    std::cin >> opcao;
+                    system("cls");
+                    /*system("clear");*/
                 }while (opcao == 2);
                 break;
             }
@@ -245,11 +302,11 @@ int main(){
                 int i;
                 do
                 {
-                    std::cout << "Total de Pedidos: " << pedidos.size() << std::endl << std::endl;
-                    for (i=0;i<pedidos.size();i++)
+                    std::cout << "Total de Pedidos: " << aux1 << std::endl << std::endl;
+                    for (i=0;i<aux1;i++)
                     {
-                        std::cout << "------Livro " << i+1 << "------" << std::endl;
-                        pedidos[i].mostra();
+                        std::cout << "------Pedido " << i+1 << "------" << std::endl;
+                        pedidos[i]->mostra();
                     }
                     std::cout << "1 - Voltar para o menu principal " << std::endl;
                     std::cin >> opcao;
@@ -276,10 +333,10 @@ int main(){
                       std::cout << "Nao foi possivel criar o arquivo!" << std::endl;
                       break;
                  }
-                 outfile.write((char *)&tamanho, sizeof(tamanho));
+                 outfile << tamanho;
                  for (i=0;i<tamanho;i++)
                  {
-                     livros[i].grava(outfile);
+                     outfile << livros[i];
                  }
                  outfile.close();
                  std::cout << "Arquivo Salvo com sucesso!" << std::endl;
@@ -310,13 +367,13 @@ int main(){
                  }
 
                  Livro novo_livro;
-                 infile.read((char *)&tamanho, sizeof(tamanho));
+                 infile >> tamanho;
 
                  if (tamanho>0)
                  {
                      for (i=0;i<tamanho;i++)
                      {
-                        novo_livro.recupera(infile);
+                        infile >> novo_livro;
                         livros.push_back(novo_livro);
                      }
                  }
@@ -339,5 +396,6 @@ int main(){
             }
      }
   }while(opc != 10);
-return 0;
+
+  return 0;
 }

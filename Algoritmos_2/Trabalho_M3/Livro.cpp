@@ -55,7 +55,7 @@ void Livro::mostra()
     std::cout << "Titulo: " << titulo << std::endl;
     std::cout << "ISBN: " << ISBN << std::endl;
     std::cout << "Autor: " << autor << std::endl;
-    std::cout << "Preco: " << preco  << " R$" << std::endl;
+    std::cout << "Preco: " << preco  << " R$" << std::endl << std::endl;
 }
 
 void Livro::grava(std::ofstream &outfile)

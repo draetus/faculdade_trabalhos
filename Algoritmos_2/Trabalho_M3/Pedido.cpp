@@ -28,8 +28,10 @@ int Pedido::getnumero(){
 char* Pedido::getdata(){
     return data;
 }
-Cliente* Pedido::getcliente(){
-    return cliente;
+
+void Pedido::deleteitem()
+{
+    itens.erase(itens.begin()+itens.size()-1);
 }
 
 float Pedido::calcularpreco()

@@ -1,12 +1,17 @@
 #include "ItemPedido.h"
 #include <iostream>
 
-ItemPedido::ItemPedido(Pedido &pedido)
+ItemPedido::ItemPedido(Pedido *pedido)
 {
     this->quantidade = 0;
-    this->pedido = &pedido;
+    this->pedido = pedido;
     this->pedido->additem(this);
     this->precounitario = 0;
+}
+
+ItemPedido::~ItemPedido()
+{
+    this->pedido->deleteitem();
 }
 
 int ItemPedido::getquantidade(){

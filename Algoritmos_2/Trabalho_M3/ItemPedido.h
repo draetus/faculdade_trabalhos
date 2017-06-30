@@ -16,7 +16,8 @@ private:
     Pedido* pedido;
     std::vector<Livro*> livros;
 public:
-    ItemPedido(Pedido&);
+    ItemPedido(Pedido*);
+    ~ItemPedido();
     int getquantidade();
     float getprecounitario();
     void addlivro(Livro&);

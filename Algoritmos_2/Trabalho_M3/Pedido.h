@@ -21,7 +21,7 @@ public:
     void additem(ItemPedido*);
     int getnumero();
     char* getdata();
-    Cliente* getcliente();
+    void deleteitem();
     float calcularpreco();
     void mostra();
 };

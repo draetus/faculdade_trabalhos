@@ -219,6 +219,7 @@ int main(){
                             }
                             break;
                         }
+                        system("cls");
                         std::cout << "Livros Disponiveis: " << std::endl << std::endl;
                         for (i=0;i<livros.size();i++){
                             if (livros[i].getdisponivel()){
@@ -231,8 +232,12 @@ int main(){
                         std::cin >> cont;
                         std::cin.ignore();
                         cont--;
-                        if (livros[cont].getdisponivel()){
+                        if (cont<livros.size() && cont>-2)
+                        {
+                            if (livros[cont].getdisponivel())
+                            {
                                 naoachou = false;
+                            }
                         }
                     }while(naoachou);
                     if(cont + 1 == 0){

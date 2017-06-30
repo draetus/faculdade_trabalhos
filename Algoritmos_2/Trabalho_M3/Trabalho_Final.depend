@@ -361,11 +361,11 @@
 	<fstream>
 	"Pedido.h"
 
-1498796936 c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\pedido.h
+1498800256 c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\pedido.h
 	"Cliente.h"
 	"ItemPedido.h"
 
-1498796952 c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\itempedido.h
+1498800256 c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\itempedido.h
 	<vector>
 	"Pedido.h"
 	"Livro.h"
@@ -373,22 +373,22 @@
 1498688588 c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\livro.h
 	"ItemPedido.h"
 
-1498796952 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\itempedido.cpp
+1498800316 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\itempedido.cpp
 	"ItemPedido.h"
 	<iostream>
 
-1498690418 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\livro.cpp
+1498797900 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\livro.cpp
 	<iostream>
 	<cstring>
 	"Livro.h"
 	<stdio.h>
 
-1498796936 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\pedido.cpp
+1498800450 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\pedido.cpp
 	"Pedido.h"
 	<iostream>
 	<cstring>
 
-1498796089 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\main.cpp
+1498842853 source:c:\users\mauricio\desktop\faculdade_trabalhos\algoritmos_2\trabalho_m3\main.cpp
 	<iostream>
 	<fstream>
 	"Cliente.h"

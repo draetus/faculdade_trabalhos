@@ -160,7 +160,7 @@ int main(){
          case 4:
             {
                 int i,num,cont=0,disp=0,tam=0;
-                bool naoachou=true;
+                bool naoachou=true,deletar=true;
 
                 do
                 {
@@ -200,7 +200,7 @@ int main(){
                 itempedidos[aux2] = new ItemPedido(pedidos[i]);
 				for (i=0;i<livros.size();i++){
                     if (livros[i].getdisponivel()){
-                        disp = disp + 1;
+                        disp++;
                     }
                 }
                 do{
@@ -213,7 +213,10 @@ int main(){
                             std::cout << "Nao ha livros disponiveis! " << std::endl;
                             system("pause");
                             system("cls");
-                            delete itempedidos[aux2];
+                            if (deletar)
+                            {
+                                delete itempedidos[aux2];
+                            }
                             break;
                         }
                         std::cout << "Livros Disponiveis: " << std::endl << std::endl;
@@ -241,9 +244,10 @@ int main(){
                             break;
                         }
                     itempedidos[aux2]->addlivro(livros[cont]);
+                    deletar = false;
                     itempedidos[aux2]->mostra();
                     cont = 0;
-                    disp--;
+                    disp = 0;
                     std::cout << "Livro Comprado com sucesso!" << std::endl << std::endl;
                     std::cout << "1 - Voltar para o menu principal " << std::endl;
                     std::cout << "2 - Comprar outro livro" << std::endl;

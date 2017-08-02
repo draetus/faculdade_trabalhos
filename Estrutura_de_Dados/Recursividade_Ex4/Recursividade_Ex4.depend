@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1501706979 source:/home/draetus/Desktop/faculdade_trabalhos/Estrutura_de_Dados/Recursividade_Ex4/main.cpp
+	<iostream>
+	<ncurses.h>
+

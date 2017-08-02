@@ -8,7 +8,7 @@ int soma(int n=1000)
     {
         return 5;
     }
-    return n+soma(aux);
+    return n+soma(n-1);
 }
 
 

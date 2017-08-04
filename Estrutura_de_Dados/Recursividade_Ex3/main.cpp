@@ -2,13 +2,13 @@
 
 using namespace std;
 
-int soma(int n=1000)
+int soma(int n)
 {
     if (n==5)
     {
         return 5;
     }
-    return n+soma(n-1);
+    return n+soma(n-5);
 }
 
 

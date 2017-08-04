@@ -17,6 +17,9 @@ int fibonacci(int n)
 
 int main()
 {
-    cout << fibonacci(0);
+    int n;
+    cout << "Qual posicao voce deseja: ";
+    cin >> n;
+    cout << fibonacci(n);6
     return 0;
 }

@@ -22,9 +22,11 @@ void somaProcede(int n, int &resultado)
 
 int main()
 {
-    int x=3,resultado;
-    cout << soma(x) << endl;
-    somaProcede(x, resultado);
-    cout << resultado << endl;
+    int n,resultado=0;
+    cout << "Digite o numero desejado para a soma de 1 a n: ";
+    cin >> n;
+    cout << "Funcao: " << soma(n) << endl;
+    somaProcede(n, resultado);
+    cout << "Procedimento: " << resultado << endl;
     return 0;
 }

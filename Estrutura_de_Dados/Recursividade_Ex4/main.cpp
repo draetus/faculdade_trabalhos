@@ -1,5 +1,4 @@
 #include <iostream>
-#include <ncurses.h>
 
 using namespace std;
 
@@ -7,7 +6,7 @@ using namespace std;
 void lerescrever()
 {
     char input;
-    input = cin.get();
+    cin >> input;
     if (input == '*')
     {
         return;

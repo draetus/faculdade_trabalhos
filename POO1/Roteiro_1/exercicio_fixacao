@@ -1,0 +1,48 @@
+Com base no que vimos até agora e no conhecimento adquirido no semestre anterior você deve
+ser capaz de responder às perguntas abaixo.
+
+1. O que devemos fazer no processo de abstração?
+R: Extrair os principais elementos do problema, definindo o que é considerado importante.
+
+2. Por que a classe Person é uma abstração?
+R: A classe é a modelarização de como resolver o problema que foi abstraido.
+
+3. Qual a mudança de paradigma da abordagem estruturada para a orientada a objetos?
+R: Na abordagem estruturada não tem encapsulamento na orientada a objetos tem.
+
+4. Qual a diferença entre uma classe e um objeto?
+R: A classe é o diagrama(ou receita) e o objeto é a materialização desse diagrama.
+
+5. O que é encapsulamento?
+R: Encapsulamento é a ação de dividir o programa em partes, tentando isolar o máximo
+possivel, controlando acesso aos atributos e métodos da classe.
+
+6. Como identificar classes e objetos necessários para resolver um problema?
+R: Por meio da abstração.
+
+7. O que é coesão?
+R: As classes devem servir para um propósito apenas e as classes agrupadas em um pacote
+devem compartilhar um objetivo em comum.
+
+8. Por que uma classe deve ter alta coesão?
+R: Facilita a compreensão do programa, e também a reutilização do codigo, pois cada classe
+será mais generalizada e assim podendo ser usada em mais casos.
+
+9. Por que as operações de uma classe devem ter alta coesão?
+R: Pois aumenta a reusabilidade, por ela se tornar mais genérica.
+
+10. Qual a relação entre abstração, classe e coesão?
+R: A abstração seria a ação de estudar o problema e separar o que é importante dentro dele,
+a classe seria a forma de resolve-lo, e a coesão seria a tecnica que deverá ser aplicada
+durante a criação da classe.
+
+11. Qual a diferença entre um objeto e a instância de uma classe?
+R: Um objeto é o que foi criado a partir da classe, e a instância é uma variável que 
+aponta para o objeto.
+
+12. O que significa um objeto ter uma identidade única?
+R: Ter um conjunto de dados que não se repita em outro objeto do mesmo tipo.
+
+13. O que representa a palavra reservada this em Java?
+R: Representa o proprio objeto de qual o método ou operação está sendo executado, usado 
+normalmente para acessar um método ou atributo desse objeto.

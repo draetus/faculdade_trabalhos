@@ -46,3 +46,145 @@ R: Ter um conjunto de dados que não se repita em outro objeto do mesmo tipo.
 13. O que representa a palavra reservada this em Java?
 R: Representa o proprio objeto de qual o método ou operação está sendo executado, usado 
 normalmente para acessar um método ou atributo desse objeto.
+
+14. Como explicar o estado de um objeto?
+R: Os estados são definidos pelos atributos do objeto
+
+15. Objetos com estados iguais representam um mesmo objeto?
+R: Não, podem ter comportamento diferente.
+
+16. Em quais situações o estado de um objeto é modificado?
+R: Quando seus atributos são modificados.
+
+17. O que é um objeto imutável? Adiciona um exemplo em Java, demonstrando o conceito.
+R: É um objeto que não muda de estado, por exemplo, seus atributos não deveriam mudar de 
+valor após a inicialização, ou seja, após a construção do objeto, seus atributos não 
+poderão mais mudar de valor.
+
+18. Quando devemos utilizar variáveis globais?
+R: É recomendado que não se use variaveis globais.
+
+19. Por que os atributos devem ser privados?
+R: Para manter o encapsulamento, a ocultação da informação e para que se for modificado 
+que seja por um método estabelecido.
+
+20. Qual a relação de atributos privados com encapsulamento e ocultamento de informação
+(information hiding)?
+R: Eles mantém tanto o encapsulamento quanto o ocultamento de informação.
+
+21. Quando um atributo deve ser público?
+R: Não é recomendado atributos publicos, pois quebram a Abstração.
+
+22. O que define o comportamento de um objeto:
+R: Os seus métodos.
+
+23. Todas as operações devem ser públicas (explique)?
+R: Nem todas, algumas podem ser usadas internamente por outra operação ou por uma 
+subclasse, apenas as operações que serão usadas externamente deverão ser públicas
+
+24. Quando uma operação pode ser privada?
+R: quando ela é utilizada somente por outro operação da mesma classe.
+
+25.O que é assinatura de uma operação?
+R: É o que diferencia a operação das outras, deve ser unica, formada por nome e número,
+modificadores e tipos dos parâmetros.
+
+26. O que você entendo por interface no contexto de uma classe?
+R: A forma em que ela se comunica, ou seja, seus métodos e operações.
+
+27. Qual a diferença entre criar um objeto e instanciar um objeto?
+R: Criar um objeto é preencher um espaço na memoria reservado para o tal objeto, e 
+Instanciar é criar uma variavel referenciando para esse espaço de memoria.
+
+28. Para quem devemos pedir a criação de um novo objeto?
+R: Para seu construtor.
+
+29. Para quem devemos pedir a destruição de um objeto (pense de modo geral, sem considerar
+especificamente a linguagem Java)?
+R: Para seu destrutor.
+
+30. Na linguagem Java, como os objeto são destruidos?
+R: Através do GarbageCleaner, que é o processo pelo qual os programas Java executam o 
+gerenciamento automático de memória, ele detecta se algum objeto não será mais usado e os
+deleta.
+
+31. Como o Garbage Collector sabe que ele pode destruir um objeto?
+R: Quando o objeto não está com nenhuma referencia, ou seja, não será mais usado.
+
+32. Qual a diferença entre um compilador e um interpretador?
+R: Um compilador converte o código fonte em um código alvo que poderá ser executado depois
+e o interpretador executa direto do código fonte.
+
+33. Qual a diferença entre código de máquina e bytecode?
+R: o código de máquina é o código executado diretamente pelo computador, e o bytecode é
+o código executado pela máquina virtual.
+
+34. Qual a função da Máquina Virtual Java (JVM)?
+R: Ela carrega e executa os aplicativos Java, convertendo os bytecodes em código 
+executável de máquina.
+
+35. Qual a diferença entre um arquivo ".java" e ".class"?
+R: O .java seria a classe criada e o .class seria o resultado da compilação dessa classe
+
+36. O que é UML?
+R: è uma ferramenta CASE, usada para modelar graficamente um software, representado-o de
+forma padronizada.
+
+37. Qual a utilidade da UML na orientação a objetos?
+R: è muito util para a modelagem de um software e o relacionamento entre as classes.
+
+38. Qual a definição de um pacote (package) e para que ele serve em UML e Java?
+R: è como uma biblioteca, ou seja, um agrupamento de classes que normalmente servem ao
+mesmo propósito, organizando e possibilitando a reutilização das classes.
+
+39. Qual a diferença entre operação e método?
+R: As operações podem ser classificadas como soma,multiplicação,etc... (+,_,/,%,&,|)
+e os métodos são algortimos que são criados dentro da classe(setnome(),getnome())
+
+40. O que é uma operação de classe (operação estática)?
+R: 
+
+41. Considerando o Diagrama UML abaixo, identifique e defina cada um dos elementos 
+indicados pelas letras (A, B, C, D e E). Explique cada elemento (e, quando for o caso, as
+informações contidas no elemento) no contexto da figura.
+R:
+A-> Definição de visibilidade de atributo ou método (+público,-privado,#protegido,~pacote)
+B->Valor Default do parâmetro (int x=0,float y=2.5)
+C->Nome da classe (class Pessoa,class Universidade)
+D->Atributos (-nome: String, -qtdeFilhos: Integer=0)
+E->Métodos (+getNome(): String, +setNome(valor: String))
+
+42. Como uma operação de classe (estática) é representada na UML?
+R: Através da marcação de uma opção (isStatic)
+
+43. Adicione a operação "+ getAge(): int" na classe Person. Esta operação retorna a idade
+(em anos) de uma pessoa. Desenvolva o método correspondente em Java(veja a classe de teste
+fornecida para mais detalhes sobre como implementá-la). Você saberia dizer porque a 
+operação poderia ter a propriedade UML isQuery marcada (não é obrigatório)?
+
+44. Considere que você precisa implementar um programa em Java para permiter o 
+gerenciamento de um cadastro de pessaos (considerando a classe Person trabalhada neste 
+roteiro). O programa precisa apenas permitir a inclusão de pessoas e oferecer uma
+funcionalidade para listar as pessoas que foram cadastradas até agora. Quais as classes
+seriam necessárias? Onde as pessaos ficariam aramazenadas? Em qual das classes definidas?
+Em qual classe estaria a entrada de dados?
+
+45. Modelo as classes em UML e implemente o programa que você descreveu na questão 
+anterior.
+
+Exercícios: 
+http://codingbat.com/java
+
+Exercícios, tutorial e atividades em Java e NetBeans:
+https://projecteuler.net/
+http://docs.oracle.com/javase/tutorial/
+http://www.java67.com/2013/01/10-programming-questions-and-exercises.html
+http://www.homeandlearn.co.uk/java/java.html
+http://www.javapractices.com
+http://javafree.uol.com.br/
+http://www.java.com/pt_BR/
+http://www.guj.com.br/
+
+Java Tutorial (Oracle): http://docs.oracle.com/javase/tutorial/index.html
+Java Documentation (Oracle): http://docs.oracle.com/en/java/
+NetBeans Tutorial: https://NetBeans.org/kb/docs/java/quickstart.html

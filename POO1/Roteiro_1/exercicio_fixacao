@@ -1,4 +1,4 @@
-POO - Programação Orientada a Objetos Prof. Marcello Thiry
+﻿POO - Programação Orientada a Objetos Prof. Marcello Thiry
 
 Com base no que vimos até agora e no conhecimento adquirido no semestre anterior você deve
 ser capaz de responder às perguntas abaixo.
@@ -39,15 +39,13 @@ a classe seria a forma de resolve-lo, e a coesão seria a tecnica que deverá se
 durante a criação da classe.
 
 11. Qual a diferença entre um objeto e a instância de uma classe?
-R: Um objeto é o que foi criado a partir da classe, e a instância é uma variável que 
-aponta para o objeto.
+R: É a mesma coisa.
 
 12. O que significa um objeto ter uma identidade única?
-R: Ter um conjunto de dados que não se repita em outro objeto do mesmo tipo.
+R: Todo objeto criado tem uma identidade única, é o que identifica ele como existente.
 
 13. O que representa a palavra reservada this em Java?
-R: Representa o proprio objeto de qual o método ou operação está sendo executado, usado 
-normalmente para acessar um método ou atributo desse objeto.
+R: Representa o ponteiro para o proprio objeto.
 
 14. Como explicar o estado de um objeto?
 R: Os estados são definidos pelos atributos do objeto
@@ -85,18 +83,17 @@ R: Nem todas, algumas podem ser usadas internamente por outra operação ou por 
 subclasse, apenas as operações que serão usadas externamente deverão ser públicas
 
 24. Quando uma operação pode ser privada?
-R: quando ela é utilizada somente por outro operação da mesma classe.
+R: quando ela é utilizada somente por outra operação da mesma classe.
 
 25.O que é assinatura de uma operação?
 R: É o que diferencia a operação das outras, deve ser unica, formada por nome e número,
 modificadores e tipos dos parâmetros.
 
 26. O que você entendo por interface no contexto de uma classe?
-R: A forma em que ela se comunica, ou seja, seus métodos e operações.
+R: São seus métodos públicos.
 
 27. Qual a diferença entre criar um objeto e instanciar um objeto?
-R: Criar um objeto é preencher um espaço na memoria reservado para o tal objeto, e 
-Instanciar é criar uma variavel referenciando para esse espaço de memoria.
+R: É a mesma coisa.
 
 28. Para quem devemos pedir a criação de um novo objeto?
 R: Para seu construtor.
@@ -140,11 +137,12 @@ R: è como uma biblioteca, ou seja, um agrupamento de classes que normalmente se
 mesmo propósito, organizando e possibilitando a reutilização das classes.
 
 39. Qual a diferença entre operação e método?
-R: As operações podem ser classificadas como soma,multiplicação,etc... (+,_,/,%,&,|)
-e os métodos são algortimos que são criados dentro da classe(setnome(),getnome())
+R: O método é a implementação da operação, a operação é a definição do serviço da classe,
+o método é como essa operação executa tal serviço.
 
 40. O que é uma operação de classe (operação estática)?
-R: 
+R: É uma operação que não é preciso instanciar um objeto para poder utiliza-la, ela 
+pertence a classe e não ao objeto.
 
 41. Considerando o Diagrama UML abaixo, identifique e defina cada um dos elementos 
 indicados pelas letras (A, B, C, D e E). Explique cada elemento (e, quando for o caso, as

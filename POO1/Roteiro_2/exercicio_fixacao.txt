@@ -1,26 +1,26 @@
 POO - Programação Orientada a Objetos Prof. Marcello Thiry
 
 1. O que significa a classe Person ser uma superclasse de Student?
-R: Quer dizer que a classe Person é um generalização da classe Student
+R: Quer dizer que a classe Person é um generalização da classe Student.
 
 2. O que significa a classe Student ser uma subclasse de Person?
-R: Quer dizer que a classe Student é uma especificação da classe Person
+R: Quer dizer que a classe Student é uma especificação da classe Person.
 
 3. Qual a relação entre o relacionamento de generalização/especialização (herança), 
 abstração e reusabilidade?
 R: A criação de classes especializadas gera a abstração e classe generalizadas geram alta
-reusabilidade
+reusabilidade.
 
 4. Faz sentido dizer que um objeto instanciado a partir da classe Student tem um objeto 
 Person dentro dele(Justifique sua resposta)?
 R: Sim, pois como ela herdou todos os atributos e operações, ela é uma especialização da 
-classe Person, portanto seria como um objeto Person mais as partes especificas de Student
+classe Person, portanto seria como um objeto Person mais as partes especificas de Student.
 
 5. Qual classe é mais abstrata (Person ou Student) e por que?
 R: Person, pois a classe Student pode modificar suas operações, mas o oposto não acontece.
 
 6. Qual classe é mais reutilizável (Person ou Student) e por que?
-R: Person, pois é uma generalização e Student é uma especificação
+R: Person, pois é uma generalização e Student é uma especificação.
 
 7. Qual classe é mais genérica (Person ou Student) e por que?
 R: Person, pois tem menos atributos e operações, e está no topo da cadeia.
@@ -34,45 +34,45 @@ acessa-los é recomendado usar os métodos setters ou getters.
 R: Public : Todos podem acessar
    Protected: Somente a classe origem, subclasses, ou classes no mesmo pacote podem acessar
    Package: Somente a classe origem e classes do mesmo pacote podem acessar
-   Private: Somente a classe origem pode acessar
+   Private: Somente a classe origem pode acessar.
 
 10. Todas as operações devem ser públicas?
-R: Não, somente as que serão usadas externamente.
+R: Não, somente as que serão usadas externamente..
 
 11. Quando utilizamos operações publicas e quando utilizamos privadas?
 R: Públicos quando serão acessadas externamente, e privadas quando são acessadas apenas
-internamente
+internamente.
 
 12. Quando utilizamos operações protegidas?
 R: Quando queremos que ela possa ser acessada pelas subclasses ou classes do mesmo pacote,
-mas não externamente
+mas não externamente.
 
 13. Como garantir que um atributo definido como privado na superclasse possa ser acessado
 somente pelos métodos de suas subclasses?
-R: Definindo Setters e Getters como protected
+R: Definindo Setters e Getters como protected.
 
 14. Qual a diferença entre operação e método?
-R: Nenhuma
+R: Nenhuma.
 
 15. Quais as orientações para dar nome a uma classe?
 R: A etapa de abstração é muito importante, tentando extrair informações e com elas 
-formar uma classe que o nome a descreva
+formar uma classe que o nome a descreva.
 
 16. Quais as orientações para dar nome a um atributo? 
 R: Abstração, analisando o que ele representa, e lhe dando um nome que faça sentido.
 
 17. Em quais situações percebemos que a classe não representa uma boa abstração?
 R: Quando muitas ações são executadas em uma só classe, ou quando seus nomes são dificeis
-de se entender
+de se entender.
 
 18. O que é a assinatura de uma operação?
-R: É o que a identifica, ou seja, o nome dado a ela
+R: É o que a identifica, ou seja, o nome e seus parametros.
 
 19. O que é um objeto imútavel?
-R: Um objeto que não pode ter o estado modificado depois de instanciado
+R: Um objeto que não pode ter o estado modificado depois de instanciado.
 
 20. Durante a modelagem de um sistema, como identificamos as classes que serão necessárias?
-R: Por meio da abstração, identificando os fatores necessários
+R: Por meio da abstração, identificando os fatores necessários.
 
 21. Defina coesão e relacione este conceito com OO.
 R: Coesão é a técnica de fazer as classes,suas operações e atributos fazerem sentido, ou
@@ -83,10 +83,10 @@ de classes e também facilita a manutenção.
 22.Com realação ao último passo da atividade 03 (PersonListTest):
    a. Qual conceito fundamental OO foi utilizado para permitir um vetor de Person receber
 objetos Student e Employee?
-   R: Herança
+   R: Herança.
 
    b. Você notou que não foram instanciados objeto Person? Por que?
-   R: Porque são uma generalização e não fazem sentido serem instanciados naquela situação
+   R: Porque são uma generalização e não fazem sentido serem instanciados naquela situação.
 
    c. Observando as operações createStudent() e createEmployee(), o que poderiamos
 melhorar na modelagem e implementação de nossas classes de entidade (Person, Student e 
@@ -94,23 +94,47 @@ Employee)?
    R:
 
 23. Qual a diferença entre uma classe abstrata e uma classe concreta?
-R: A classe abstrata não pode ser instanciada e a concreta pode
+R: A classe abstrata não pode ser instanciada e a concreta pode.
 
 24. Por que (e/ou quando) utilizamos classes abstratas?
-R: Para garantir uma reusabilidade de código, usa-se quando precisa-se de uma generalização
+R: Para garantir uma reusabilidade de código, usa-se quando precisa-se de uma generalização.
 
 25. O que é um padrão de projeto (design pattern)?
-R: è um padrão organizacional seguido pela equipe
+R: è um padrão organizacional seguido pela equipe.
 
 26. Qual a vantagem de utilizar padrões de projeto (design patter)?
-R: Facilita o entendimento da equipe sobre o trabalho
+R: Facilita o entendimento da equipe sobre o trabalho.
 
 27. Quais as vantagens e desvantagens do padrão Telescoping?
 R: A vantagem é que cria métodos com multiplas escolhas de parametro, mas é considerado um
 Code Smell, por que atrapalha no entendimento do código quando abusado.
 
 28. Por que não implementamos o padrão Telescoping na classe Person?
-R: Não há necessidade visto que seus unicos parametros são obrigatorios
+R: Não há necessidade visto que seus unicos parametros são obrigatorios.
 
 29. O que é code smell (ou bad smell)?
 R: É um código mal organizado.
+
+30. O que é polimorfismo?
+R: O polimorfismo permite que referências de tipos de classes mais abstratas apresentem 
+o comportamento das classes concretas qe referenciam.
+
+31. Qual a vantagem de utilizar polimorfismo?
+R: Garante uma reutilização de código e uma abstração maior.
+
+32. Qual a relação entre classes abstratas e polimorfismo (este tipo de polimorfismo é 
+chamado de inclusão ou de subtipo)?
+R: As classes abstratas permitem o polimorfismo, pois suas subclasses modificam seus
+métodos, esse tipo de polimorfismo é chamado de inclusão.
+
+33. O que é sobrecarga de operações (classificada como polimorfismo ad-hoc ou aparente)?
+R: São operações com o mesmo nome mas asssinaturas diferentes, ou seja parametros 
+diferentes.
+
+34. Quais as orientações para o uso adequado de sobrecarga?
+R: Usa-se quando tem-se uma classe generalizada e outras especializações dela.
+
+35. Apresente suas sugestões para os questionamentos feitos no último passo da atividade
+anterior. No próximo roteiro, voltaremos a este tópico e você poderá confrontas suas 
+anotações.
+R: 

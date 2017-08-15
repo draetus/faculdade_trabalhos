@@ -4,22 +4,10 @@ using namespace std;
 
 bool conferir(int *X, int *Y,int n)
 {
-    n--;
-    if (n == 0)
-    {
-        return X[n]==Y[n];
-    }
+    if (n==1)
+        return X[0]==Y[0];
     else
-    {
-        if (X[n]==Y[n])
-        {
-            return true*conferir(X,Y,n);
-        }
-        else
-        {
-            return false;
-        }
-    }
+        return (X[n-1]==Y[n-1])&& conferir(X,Y,n-1);
 }
 
 int main()

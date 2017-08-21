@@ -1,12 +1,13 @@
 package br.univali.kob.poo1.Ex_12;
 
 /**
- * 
+ * @author Mauricio
+ * Represents a card from a deck.
  */
 public class Card {
 
     /**
-     * Os naipes das cartas
+     * Enumeration with all the possible card's Suits.
      */
     public static enum Suit 
     {
@@ -29,7 +30,7 @@ public class Card {
     }
     
     /**
-     * Os valores das cartas
+     * Enumeration with all the possible card's values.
      */
     public static enum Value 
     {
@@ -61,18 +62,18 @@ public class Card {
     }
     
     /**
-     * 
+     * The card's Suit.
      */
     private final Suit suit;
 
     /**
-     * 
+     * The card's Value.
      */
     private final Value value;
     
     /**
-     * @param value Valor da carta
-     * @param suit Naipe da carta
+     * @param value Card's Value.
+     * @param suit Card's Suit.
      */
     public Card(Value value, Suit suit) 
     {
@@ -81,7 +82,7 @@ public class Card {
     }
 
     /**
-     * @return Valor da carta
+     * @return card's Value.
      */
     public String getValue() 
     {
@@ -90,7 +91,7 @@ public class Card {
     }
 
     /**
-     * @return
+     * @return Card's Suit.
      */
     public String getSuit() 
     {

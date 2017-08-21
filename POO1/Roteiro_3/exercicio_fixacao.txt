@@ -1,0 +1,43 @@
+POO - Programação Orientada a Objetos Prof. Marcello Thiry
+
+1. Por que a abordagem que utiliza atributos para implementar constantes em Java
+não quebra o principio da proteção aos dados?
+R: Porque elas não podem ser modificadas.
+
+2. Por que, quando utilizamos a abordagem citada na questão anterior, a constante
+só faz sentido se for pública?
+R: Porque como ela não será modificada não tem porque coloca-la como private.
+
+3. O que é uma regra de negócio?
+R: è uma regra definida pela equipe, seja de padrão deidentação ou de proprios 
+usos de algumas ferramentas.
+
+4. Implemente os programas abaixo e explique o funcionamento de super em cada um.
+
+   a. A saida foi a mesma do que sem o "Super", isso acontece pois nenhum outro
+metodo com a mesma assinatura foi definido.
+
+   b. A operação entrará em loop infinito, pois ficará se chamando
+
+   c. Ainda assim a saida continuou a mesma, pois Class3 não tem acesso ao foo()
+de Class1, somente tem acesso ao foo() de Class2.
+
+   d. A saida continua a mesma, pois Class4 não tem acesso ao foo acima de Class3.
+
+5. Você notou que, até o moento, não utilizamos métodos de leitura ou escrita
+durante a implementação de classes de entidade(Person, Student, Professor)? 
+Explique por que?
+R: Para manter a coesão, classes de entidade devem apenas guardar dados
+
+6. Explique como o polimorfismo implementado nesse roteiro funciona.
+R: Ele sobrescreve os métodos de superclasses
+
+7. O que é ligação tardia(também conhecida por ligação dinâmica, ligação em
+tempo de execução, late binding, dynamic binding ou runtime binding) no contexto
+da orientação a objetos?
+R: O mecanismo de identificação de qual método deve ser chamado é executado em tempo
+de execução
+
+8. Qual a relação da herança com o polimorfismo de inclusão (de subtipo)?
+R: A herança permite a ligação das classes, dessa forma, a classe sobrescreve
+seus métodos.

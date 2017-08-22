@@ -34,28 +34,28 @@ public class Card {
      */
     public static enum Value 
     {
-        ACE("Ace"),
-        TWO("Two"),
-        THREE("Three"),
-        FOUR("Four"),
-        FIVE("Five"),
-        SIX("Six"),
-        SEVEN("Seven"),
-        EIGHT("Eight"),
-        NINE("Nine"),
-        TEN("Ten"),
-        JACK("Jack"),
-        QUEEN("Queen"),
-        KING("King");
+        ACE(1),
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(11),
+        QUEEN(12),
+        KING(13);
         
-        String value;
+        int value;
         
-        private Value(String value)
+        private Value(int value)
         {
             this.value = value;
         }
         
-        public String getValue()
+        public int getValue()
         {
             return this.value;
         }
@@ -84,7 +84,7 @@ public class Card {
     /**
      * @return card's Value.
      */
-    public String getValue() 
+    public int getValue() 
     {
         // TODO implement here
         return this.value.getValue();

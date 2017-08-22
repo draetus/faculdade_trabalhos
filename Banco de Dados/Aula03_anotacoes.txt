@@ -1,0 +1,42 @@
+categoria -> Primária: CodCategora
+
+Cliente -> Primária: CodCli
+   	   Estrangeira: CodCategoria
+
+Funcionário -> Primária: CodFunc
+
+Fornecedor -> Primária: CodFornec
+
+Produto -> Primária: CodProd
+           Estrangeira: CodFornec
+
+ProdutoCliente -> Primária: CodCli
+                  Estrangeira: CodProd
+
+Explique o que deve ser feito pelo SGBD para garantir a
+integridade referencial nas seguintes situações:
+
+*Uma tupla é excluída na tabela Categoria:
+R: 1. Rejeitar
+   2. Excluir Cliente em cascata
+   3. Mudar os valores dos atributos referenciados em Cliente
+
+*Uma tupla é excluída na tabela Fornecedor
+R: 1. Rejeitar
+   2. Excluir Produto e ProdutoCliente em cascata
+   3. Mudar os valores dos atributos referenciados em Produto e ProdutoCliente
+
+
+Medico (_CRM_, Nome, Salario, #CodEspec)
+
+(Medico, Especialidade) -> Formacao(_#CRM#Cod_)
+
+Especialidade (_Cod_, Nome)
+
+(Medico, Paciente) -> Trata(Descricao, _#CRM#CPF_)
+
+Paciente (_CPF_, RG, Nome, Telefone(1,n), DataNascimento, #CRM, HorarioVisita, #QuartoNum)
+
+Endereço(Numero, Cidade, Logradouro, _#CPF_)
+
+Quarto(Andar, _Numero_)

@@ -1,0 +1,45 @@
+---------MIPS------------
+A memória do MIPS é endereçada em nivel de byte
+
+Palavras de 32 bits consecutivas diferem de 4 unidades de endereço
+
+A memória principal do MIPS pode ter até :
+*2^32Bytes = 4Gbytes
+ou
+*2^30Words = 1Gwords
+
+* A memória principal pode ser vista como um grande array unidimensional (vetor) onde cada
+elemento do vetor ocupa uma palavra de 32 bits.
+
+Exemplo:
+o elemento A[1] está armazenado na posição 4+1x4 = 8
+o elemento A[2] está armazenado na posição 4+2x4 = 12
+
+Exigir que cada instrução tenha exatamente três operandos segue a filosofia de manter
+o hardware tão simples quanto possivel
+
+Existem quatro principios de projejo
+
+1 -> A simplicidade é favorecida pela regularidade
+2 -> Quanto menor mais rápido
+3 -> Um bom projeto demanda compromisso
+
+* Os registradores do MIPS
+   Tamanho = 32 bits
+   Número de registradores = 32
+
+* Quando necessárias, em alguma operação aritmérica, as variáveis armazenadas na memória
+devem ser carregadas (load) para um registrador
+   SOLUÇÂO: instrução de transferência: load word(1w)
+
+Exemplo de instruções:
+
+lw -> lw %s1,100($s2) -> $s1 = Memória[$s2 + 100]
+sw -> sw $s1,100($s2) -> Memória[$s2 + 100] = $s1
+
+* Todas as instruções tem o mesmo tamanho (32 bits)
+
+MIPS:
+32 processadores de 32 bits
+3 formatos de instrução (R, I e J), todos com 32 bits
+5 modos de endereçamento

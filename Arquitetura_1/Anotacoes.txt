@@ -1,0 +1,57 @@
+O computador se comunica com periféricos e com linhas de comunicação.
+
+O Computador tem uma arquitetura de interconexão que conecta :
+* Processador
+* Memória Principal
+* Entrada e Saída
+
+Essa arquitetura faz a comunicação entre os componentes.
+
+Processador:
+Controla o computador e realiza o processamento de dados
+
+Memória Principal:
+Armazena dados e programas em execução
+
+Entrada e Saida:
+Move dados entre o computador e seu ambiente externo
+
+Arquitetura x Organização
+* Arquitetura diz respeito aos atributos de um computadore que são visiveis ao programador de software básico.
+1. Conjunto de instruções
+2. Modos de endereçamento
+3. Formatos de representação de dados e instruçoes
+
+* Organização refere-se a como a arquitetura é implementada, sendo invisivel ao programador.
+1. Sinais de controle
+2. Tecnologia de memória
+3. Barramentos
+
+______________________________________________________________________________________________________________
+A tecnologia tem evoluido rapidamente:
+Válvulas -> Transistores -> Cls -> VLSI -> ULSI
+CI -> Circuito integrado
+VLSI -> Very Large Scaled Integrated
+ULSI -> Ultra Large Scaled Integrated
+
+18 meses -> dobra-se a capacidade das memórias e a velocidade dos processadores
+
+COmputador:
+Entrada(mouse,teclado)
+Saida(monitor,impressora)
+Memória(RAM,HD,CD)
+Processador:
+* Implementado usando milhões de transistores
+* Impossivel de ser entendido quando estudado
+* È necessario abstrair para poder ser estudado
+
+Aplicações embarcadas possuem necessidades específicas
+* Desempenho deve ser apenas o mínimo necessário
+* O custo e o consumo de energia devem ser mínimos
+
+Processadores embarcados podem ser discretos ou baseados em núcleos:
+* Discreto: COmponente físico já fabricado e pronto para montagem em uma placa de circuito impresso -> É o que vem pronto
+* Núcleo: Componente Lógico reutilizável a ser incluido no projeto de um circuito (ou sistema) integrado a ser fabricado
+Um mesmo núcleo pode ser reutilizado para a implementação de diferentes computadores embutidos
+
+Circuitos digitais: 

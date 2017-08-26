@@ -1,0 +1,104 @@
+Ler capitulo "O processador"
+Procurar "bipide"
+
+Exercicios:
+
+Calcular quanto endereços podem ser representados com 5 fios(bits)
+R: 2^5 = 35
+
+Calcular quantos endereços podem ser representados com 7 fios
+R: 2^7 = 127
+
+Calcular quantos fios são necessário para construir uma via ADDR para acessar uma memória com 80 células
+R: 7 fios
+
+Calcular quantos fios são necessário para construir uma via ADDR para acessar uma memória com 256 células
+R: 8 fios
+
+Calcular quantos fios são necessário para construir uma via ADDR para acessar uma memória com 500 células
+R: 9 fios
+
+BIP (Basic instruction-set Processor) Arquitetura 16bits
+Duas versões: BIP 1, BIP 2.
+
+Comente cada linha dos codigos a seguir, conforme exemplificado no primeiro exercicio.
+
+LDI 0 ; ACC = 0
+STO A ; A = ACC
+
+LDI 0 ; ACC = 0
+STO A ; A = ACC
+STO B ; B = A
+
+LDI  2 ; ACC = 2
+STO  A ; A = ACC
+LDI  1 ; ACC = 1
+STO  B ; B = ACC
+LD   A ; ACC = A
+SUB  B ; ACC = ACC - B
+SUBI 1 ; ACC = ACC - 1
+ADDI 3 ; ACC = ACC + 3
+STO  C ; C = ACC (A-B-1+3)
+
+Convertendo do C ao Assembly:
+
+"------------------------"
+
+X=1;
+Y=X;
+
+LDI  1 ; ACC = 1
+STO  X ; X = ACC
+STO  Y ; Y = X
+
+"------------------------"
+
+Y = 0;
+X = Y + 1;
+
+LDI  0 ; ACC = 0
+STO  Y ; Y = ACC
+ADDI 1 ; ACC = ACC + 1
+STO  X ; X = ACC
+
+"------------------------"
+
+X = 0;
+Y = 2;
+X = X + Y;
+
+LDI  0 ; ACC = 0
+STO  X ; X = ACC
+LDI  2 ; ACC = 2
+STO  Y ; Y = ACC
+ADD  X ; ACC = ACC + X
+STO  X ; X = ACC
+
+"------------------------"
+
+Y = X - Y - 1
+
+LD   X ; ACC = X
+SUB  Y ; ACC = ACC - Y
+SUBI 1 ; ACC = ACC - 1
+STO  Y ; Y = ACC
+
+"------------------------"
+
+LD   A ; ACC = A
+ADD  B ; ACC = ACC + B
+ADD  C ; ACC = ACC + C
+STO  D ; D = ACC
+
+Codigo C:
+D = A + B + C
+
+"------------------------"
+
+LD   B ; ACC = B
+ADDI 1 ; ACC = ACC + 1
+SUB  C ; ACC = ACC - C
+STO  A ; A = ACC
+
+Codigo C:
+A = B + 1 - C

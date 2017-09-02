@@ -1,0 +1,26 @@
+Operação AND : Usada para desligar bits : (Qualquer_Coisa) AND 0 = 0 ; (Qualquer_Coisa) AND 1 = (Qualquer_Coisa)
+Operação OR  : Usada para ligar bits : (Qualquer_Coisa) OR 1 = 1 ; (Qualquer_Coisa) OR 0 = (Qualquer_Coisa)
+Operação XOR : Usada para inverter bits : 1 XOR 1 = 1 ; 0 XOR 1 = 1
+
+
+Registrador $zero: 
+* Registrador somente de leitura com endereço 0 cujo conteúdo é sempre igual a: 00000000000000000000000000000000
+
+
+Desvio Condicional : Vai para algum lugar mediante a uma comparação
+
+* Branch on equal (desvia se igual) : beq reg1, reg2, L1 #vai p/ L1 se reg1=reg2
+* Branch on not equal (desvia se não igual) : beq reg1, reg2, L1 #vai p/ L1 se reg1/=reg2
+
+Desvio Incondicional : Vai para algum lugar
+* Jump : j L1 #vai p/ L1
+
+
+Comparação menor que (Set on less than)
+
+Codigo em C
+if (a < b) go to Less
+
+Codigo em ASM (Assembly)
+slt $t0, $s0, $s1 -> $t0 recebe 0 se $s0 for diferente de $s1 e 1 se forem iguais
+bne $t0, $zero, Less

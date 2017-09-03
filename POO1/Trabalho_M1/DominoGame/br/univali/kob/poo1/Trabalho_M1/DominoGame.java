@@ -7,40 +7,40 @@ import java.util.ArrayList;
  * @author Gabriel e Mauricio
  */
 public class DominoGame {
-    
+
     /**
      * Players list
      */
     private final ArrayList<Player> players = new ArrayList<>();
-    
+
     /**
      * The current game table
      */
     private final Table table = new Table();
-    
+
     /**
      * Number of players
      */
     private final int numOfPlayers;
-    
+
     /**
      * Current turn on the game
      * Used for inform the player
      */
     private int turnsPassed;
-    
+
     /**
-     * Current player 
+     * Current player
      * Used for ifoms the player on user interface
      */
     private Player currentPlayer;
-    
+
     /**
      * Last tile played
      * Used for user interface to infom the player
      */
     private Tile lastUsedTile;
-    
+
     /**
      * Constructor used for a demonstration game
      * Without a parametrized player name
@@ -61,11 +61,11 @@ public class DominoGame {
         currentPlayer = Checker.checkFirstPlayer(table, players);
         turnsPassed = 0;
     }
-    
+
     /**
      * Constructor used for a normal game with a human player
      * @param numOfPlayers
-     * @param name 
+     * @param name
      */
     public DominoGame (int numOfPlayers, String name)
     {
@@ -87,54 +87,54 @@ public class DominoGame {
         currentPlayer = Checker.checkFirstPlayer(table, players);
         turnsPassed = 0;
     }
-    
+
     /**
-     * 
+     *
      * @return the current player
      */
     public Player getCurrentPlayer()
     {
         return currentPlayer;
     }
-    
+
     /**
      * The turns passed amount
-     * @return 
+     * @return
      */
     public int getTurnsPassed()
     {
         return this.turnsPassed;
     }
-    
+
     /**
-     * 
-     * @return Last played tile 
+     *
+     * @return Last played tile
      */
     public Tile getLastUsedTile()
     {
         return this.lastUsedTile;
     }
-    
+
     /**
-     * 
-     * @return Current array of tiles on the table 
+     *
+     * @return Current array of tiles on the table
      */
     public ArrayList<Tile> getTableChain()
     {
         return this.table.getTableChain();
     }
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public Player getWinner()
     {
         return Checker.checkWinner(table, players);
     }
-    
+
     /**
-     * 
+     *
      * @return Previous player  - iseful on the user intercafe
      */
     public Player getPreviousPlayer()
@@ -148,48 +148,41 @@ public class DominoGame {
             return players.get(players.indexOf(currentPlayer) - 1);
         }
     }
-    
+
     /**
      * An automatic played by the bots
-     * @return 
+     * @return
      */
     public boolean playBotTurn()
     {
-        if (currentPlayer.isHuman())
+        for (int i=0;i<currentPlayer.getHand().size();i++){
+            if (playTile(i))
+            {
+                return true;
+            }
+        }
+        if (Checker.checkDraw(currentPlayer, table))
         {
-            return false;
+            drawTile();
+            return true;
+        }
+        else if (Checker.checkPass(currentPlayer, table))
+        {
+            pass();
+            return true;
         }
         else
         {
-            for (int i=0;i<currentPlayer.getHand().size();i++){
-                if (playTile(i))
-                {
-                    return true;
-                }
-            }
-            if (Checker.checkDraw(currentPlayer, table))
-            {
-                drawTile();
-                return true;
-            }
-            else if (Checker.checkPass(currentPlayer, table))
-            {
-                pass();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
-    
+
     /**
      * Using the checkTileAddition logic, return true if it's possible to place
      * the tile on the table
      * Also remove the tile on the player hand if it's possible to play
      * @param index
-     * @return 
+     * @return
      */
     public boolean playTile(int index)
     {
@@ -201,23 +194,23 @@ public class DominoGame {
                 currentPlayer.removeFromHand(index);
                 setNextCurrentPlayer();
                 return true;
-                
+
             case 2:
                 table.addToTableChain(currentPlayer.getTile(index), false);
                 lastUsedTile = currentPlayer.getTile(index);
                 currentPlayer.removeFromHand(index);
                 setNextCurrentPlayer();
                 return true;
-                
+
             default:
                 return false;
         }
     }
-    
+
     /**
      * Check if it's possible to take a tile from the Boneyard
      * Also remove this tile from boneyars if it's possible
-     * @return 
+     * @return
      */
     public boolean drawTile()
     {
@@ -233,11 +226,11 @@ public class DominoGame {
             return false;
         }
     }
-    
+
     /**
      * Check if it's possible to pass the turn
      * Also set the last tile played as null
-     * @return 
+     * @return
      */
     public boolean pass()
     {
@@ -252,7 +245,7 @@ public class DominoGame {
             return false;
         }
     }
-    
+
     /**
      * PLay de first tile on the table checking who is the first player
      */
@@ -262,7 +255,7 @@ public class DominoGame {
         currentPlayer.removeFromHand(currentPlayer.getHand().size()-1);
         setNextCurrentPlayer();
     }
-    
+
     /**
      * Defines who is the next current player
      */

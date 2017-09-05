@@ -149,38 +149,36 @@ public class DominoGame {
         }
     }
     
+    public ArrayList<Tile> getBoneyard()
+    {
+        return this.table.getBoneyard();
+    }
+    
     /**
      * An automatic played by the bots
      * @return 
      */
     public boolean playBotTurn()
     {
-        if (currentPlayer.isHuman())
+        for (int i=0;i<currentPlayer.getHand().size();i++){
+            if (playTile(i))
+            {
+                return true;
+            }
+        }
+        if (Checker.checkDraw(currentPlayer, table))
         {
-            return false;
+            drawTile();
+            return true;
+        }
+        else if (Checker.checkPass(currentPlayer, table))
+        {
+            pass();
+            return true;
         }
         else
         {
-            for (int i=0;i<currentPlayer.getHand().size();i++){
-                if (playTile(i))
-                {
-                    return true;
-                }
-            }
-            if (Checker.checkDraw(currentPlayer, table))
-            {
-                drawTile();
-                return true;
-            }
-            else if (Checker.checkPass(currentPlayer, table))
-            {
-                pass();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
     

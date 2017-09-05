@@ -10,10 +10,13 @@ public class UserInterface {
     
     private DominoGame game;
     
+    private boolean demonstration;
+    
     public void run()
     {
         createGame();
         Player winner = null;
+        System.out.println("PRESS ENTER TO PASS THE INFORMATION!!!");
         game.playFirstTile();
         printFirstPlayer();
         do
@@ -43,7 +46,7 @@ public class UserInterface {
                         case 2:
                             if (game.drawTile())
                             {
-                                repeatTurn = false;
+                                repeatTurn = true;
                             }
                             else
                             {
@@ -72,6 +75,10 @@ public class UserInterface {
                 game.playBotTurn();
             }
             printEndTurnInfo();
+            if (demonstration)
+            {
+                printBoneyard();
+            }
             Console.WaitForEnter();
             winner = game.getWinner();
         }
@@ -90,10 +97,12 @@ public class UserInterface {
         if (Console.ask("Do you want to participate of the game(Y/N)?: "))
         {
             game = new DominoGame(numOfPlayer, Console.readLine("Inform your name: "));
+            demonstration = false;
         }
         else
         {
             game = new DominoGame(numOfPlayer);
+            demonstration = true;
         }
     }
     
@@ -165,5 +174,25 @@ public class UserInterface {
             System.out.print(Arrays.toString(tile.getEnds()));
         }
         System.out.println();
+    }
+    
+    /**
+     * Prints the boneyard
+     */
+    private void printBoneyard()
+    {
+        System.out.println("Boneyard: ");
+        if (!game.getBoneyard().isEmpty())
+        {
+            for (Tile tile: game.getBoneyard())
+            {
+                System.out.print(Arrays.toString(tile.getEnds()));
+            }
+            System.out.println();
+        }
+        else
+        {
+            System.out.println("Boneyard is empty!!!");
+        }
     }
 }

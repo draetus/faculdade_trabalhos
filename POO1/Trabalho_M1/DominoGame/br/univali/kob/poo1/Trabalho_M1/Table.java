@@ -35,7 +35,7 @@ public class Table {
     
 
     /**
-     * 
+     * Getter
      * @return The array whith the tiles that composes the table
      */
     public ArrayList<Tile> getTableChain(){
@@ -75,9 +75,19 @@ public class Table {
     
     /**
      * Informs if Boneyard array is empty
+     * @return Boolean meaning that the boneyard is empty or not
      */
     public boolean isBoneyardEmpty()
     {
         return Boneyard.isEmpty();
+    }
+    
+    /**
+     * Getter
+     * @return The boneyard with an array of tiles
+     */
+    public ArrayList<Tile> getBoneyard()
+    {
+        return this.Boneyard;
     }
 }

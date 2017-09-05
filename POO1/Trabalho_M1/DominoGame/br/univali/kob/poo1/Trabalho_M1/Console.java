@@ -11,7 +11,7 @@ public class Console {
     /**
      * Integgers datas to be asked and printed 
      * @param question
-     * @return 
+     * @return the answer
      */
     public static int readInt(String question)
     {
@@ -40,7 +40,7 @@ public class Console {
      * @param question
      * @param begin
      * @param end
-     * @return 
+     * @return the read int
      */
     public static int readIntBetween(String question, int begin, int end)
     {
@@ -71,7 +71,7 @@ public class Console {
      * Asks if the player wanna play the game or if he wanna a demostration game
      * (only bots)
      * @param question
-     * @return 
+     * @return a boolean with the answer
      */
     public static boolean ask(String question)
     {
@@ -89,7 +89,7 @@ public class Console {
     /**
      * 
      * @param question
-     * @return 
+     * @return the line read
      */
     public static String readLine(String question)
     {

@@ -103,7 +103,7 @@ public class Checker {
      * Informs if its possible to pass your turn (only if the boneyard is empty)
      * @param player
      * @param table
-     * @return 
+     * @return a boolean meaning that the player can pass or not
      */
     public static boolean checkPass(Player player, Table table){
         boolean cannot_play = true;

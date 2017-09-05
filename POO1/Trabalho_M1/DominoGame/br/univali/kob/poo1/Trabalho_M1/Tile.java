@@ -23,7 +23,7 @@ public class Tile {
     }
     
     /**
-     * @param index
+     * @param index the position of the end
      * @return one of the tile sides indexed with 0 or 1
      */
     public int getEnd(int index){

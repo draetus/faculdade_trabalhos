@@ -44,7 +44,7 @@ public class DominoGame {
     /**
      * Constructor used for a demonstration game
      * Without a parametrized player name
-     * @param numOfPlayers - array with the number of players
+     * @param numOfPlayers - Number of players to be created
      */
     public DominoGame (int numOfPlayers)
     {
@@ -64,8 +64,8 @@ public class DominoGame {
     
     /**
      * Constructor used for a normal game with a human player
-     * @param numOfPlayers
-     * @param name 
+     * @param numOfPlayers Number of players to be created
+     * @param name Name of the human player
      */
     public DominoGame (int numOfPlayers, String name)
     {
@@ -89,7 +89,7 @@ public class DominoGame {
     }
     
     /**
-     * 
+     * Getter
      * @return the current player
      */
     public Player getCurrentPlayer()
@@ -98,8 +98,8 @@ public class DominoGame {
     }
     
     /**
-     * The turns passed amount
-     * @return 
+     * Getter
+     * @return The turns passed amount
      */
     public int getTurnsPassed()
     {
@@ -107,7 +107,7 @@ public class DominoGame {
     }
     
     /**
-     * 
+     * Getter
      * @return Last played tile 
      */
     public Tile getLastUsedTile()
@@ -116,7 +116,7 @@ public class DominoGame {
     }
     
     /**
-     * 
+     * Getter
      * @return Current array of tiles on the table 
      */
     public ArrayList<Tile> getTableChain()
@@ -125,8 +125,8 @@ public class DominoGame {
     }
     
     /**
-     * 
-     * @return 
+     * Getter
+     * @return Winner
      */
     public Player getWinner()
     {
@@ -134,8 +134,8 @@ public class DominoGame {
     }
     
     /**
-     * 
-     * @return Previous player  - iseful on the user intercafe
+     * Getter
+     * @return Previous player  - usefull on the user intercafe
      */
     public Player getPreviousPlayer()
     {
@@ -149,6 +149,10 @@ public class DominoGame {
         }
     }
     
+    /**
+     * Getter
+     * @return Boneyard of the table
+     */
     public ArrayList<Tile> getBoneyard()
     {
         return this.table.getBoneyard();
@@ -156,7 +160,7 @@ public class DominoGame {
     
     /**
      * An automatic played by the bots
-     * @return 
+     * @return a boolean meaning the operation has worked
      */
     public boolean playBotTurn()
     {
@@ -186,8 +190,8 @@ public class DominoGame {
      * Using the checkTileAddiction logic, return true if its possible to place
      * the tile on the table
      * Also remove the tile on the player hand if its possible to play
-     * @param index
-     * @return 
+     * @param index the tile chosed
+     * @return a boolean meaning the operation has worked
      */
     public boolean playTile(int index)
     {
@@ -215,7 +219,7 @@ public class DominoGame {
     /**
      * Check if its possible to take a tile from the Boneyard
      * Also remove this tile from boneyars if its possible
-     * @return 
+     * @return a boolean meaning the operation has worked
      */
     public boolean drawTile()
     {
@@ -235,7 +239,7 @@ public class DominoGame {
     /**
      * Check if its possible to pass the turn
      * Also set the last tile played as null
-     * @return 
+     * @return a boolean meaning the operation has worked
      */
     public boolean pass()
     {

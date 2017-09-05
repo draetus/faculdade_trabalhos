@@ -64,8 +64,8 @@ public class Table {
     }
     
     /**
-     * Remove the first tile of Boneyard and
-     * @return it 
+     * Remove the first tile of Boneyard and returns it
+     * @return first tile of boneyard
      */
     public Tile getTile(){
         Tile tile = Boneyard.get(0);

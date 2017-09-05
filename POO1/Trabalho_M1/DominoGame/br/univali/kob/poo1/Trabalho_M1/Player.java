@@ -30,8 +30,8 @@ public class Player {
     
     /**
      * Setting to player
-     * @param name
-     * @param human 
+     * @param name Name of the player
+     * @param human Boolean symbolizing if it is human or bot
      */
     public Player(String name, boolean human){
         this.name = name;
@@ -39,7 +39,7 @@ public class Player {
     }
     
     /**
-     * 
+     * Getter
      * @return the player hand array 
      */
     public ArrayList<Tile> getHand(){
@@ -47,7 +47,7 @@ public class Player {
     }
     
     /**
-     * 
+     * Getter
      * @return  the bought tiles by the player
      */
     public ArrayList<Tile> getBoughtTiles(){
@@ -66,7 +66,7 @@ public class Player {
     
     /**
      * Remove a especifc tile on the player hand
-     * @param index - tile addres
+     * @param index - tile address
      */
     public void removeFromHand(int index)
     {
@@ -74,8 +74,8 @@ public class Player {
     }
     
     /**
-     * Add a tile to te current player hand and to the boughtTiles
-     * @param tile 
+     * Add a tile to the current player hand and to the boughtTiles
+     * @param tile Tile chosen
      */
     public void addToHand(Tile tile){
         hand.add(tile);
@@ -83,7 +83,7 @@ public class Player {
     }
     
     /**
-     * 
+     * Getter
      * @return the player name
      */
     public String getName(){
@@ -91,7 +91,7 @@ public class Player {
     }
     
     /**
-     * 
+     * Getter
      * @return informs if its a human player
      */
     public boolean isHuman(){

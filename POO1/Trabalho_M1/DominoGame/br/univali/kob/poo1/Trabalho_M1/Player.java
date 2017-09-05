@@ -92,7 +92,7 @@ public class Player {
     
     /**
      * 
-     * @return informs if it's a human player
+     * @return informs if its a human player
      */
     public boolean isHuman(){
         return human;

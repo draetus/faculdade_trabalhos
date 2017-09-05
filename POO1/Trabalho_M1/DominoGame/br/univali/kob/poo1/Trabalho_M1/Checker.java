@@ -9,14 +9,14 @@ import java.util.ArrayList;
 public class Checker {
     
     /**
-     * Test if it's possible to play a tile in the table
-     * if it's possible to play on the table chain begin, retunrs 1
-     * if it's possible to play on the table chain end, returns 2
-     * or, if it's not possible to play this tile, returns 3
+     * Test if its possible to play a tile in the table
+     * if its possible to play on the table chain begin, retunrs 1
+     * if its possible to play on the table chain end, returns 2
+     * or, if its not possible to play this tile, returns 3
      * @param tile - the tile tha will be added
      * @param table - the game table
      */
-    public static int checkTileAddition(Tile tile, Table table){
+    public static int checkTileAddiction(Tile tile, Table table){
         
         if (table.getTableChain().get(0).getEnd(0) == tile.getEnd(1)){
             return 1;
@@ -80,7 +80,7 @@ public class Checker {
     }
     
     /**
-     * Informs if it's possible to take a tile of the boneyard
+     * Informs if its possible to take a tile of the boneyard
      * Only if Boneyard isnt empty
      * @param player
      * @param table
@@ -92,7 +92,7 @@ public class Checker {
             return false;
         }
         for (int i=0; i<player.getHand().size(); i++){
-            if (checkTileAddition(player.getTile(i), table) != 3){
+            if (checkTileAddiction(player.getTile(i), table) != 3){
                 return false;
             }
         }
@@ -100,7 +100,7 @@ public class Checker {
     }
     
     /**
-     * Informs if it's possible to pass your turn (only if the boneyard is empty)
+     * Informs if its possible to pass your turn (only if the boneyard is empty)
      * @param player
      * @param table
      * @return 
@@ -109,7 +109,7 @@ public class Checker {
         boolean cannot_play = true;
         
         for (int i=0; i<player.getHand().size(); i++){
-            if (checkTileAddition(player.getTile(i), table) != 3){
+            if (checkTileAddiction(player.getTile(i), table) != 3){
                 cannot_play = false;
             }
         }
@@ -117,7 +117,7 @@ public class Checker {
     }
     
     /**
-     * Check who's the winning player, if there are any.  
+     * Check who is the winning player, if there are any.  
      * @param table
      * @param players
      * @return The winning player

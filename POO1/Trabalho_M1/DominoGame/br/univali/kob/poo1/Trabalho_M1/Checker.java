@@ -20,25 +20,22 @@ public class Checker {
         
         if (table.getTableChain().get(0).getEnd(0) == tile.getEnd(1)){
             return 1;
-        }else{
-            if(table.getTableChain().get(0).getEnd(0) == tile.getEnd(0)){
-                tile.flip();
-                return 1;
-            }
-            else{
-                if (table.getTableChain().get(table.getTableChain().size()-1).getEnd(1) == tile.getEnd(0)){
-                    return 2;
-                }else{
-                    if(table.getTableChain().get(table.getTableChain().size()-1).getEnd(1) == tile.getEnd(1)){
-                    tile.flip();
-                    return 2;
-                    }
-                    else{
-                        return 3;
-                    }
-                }
-            }
         }
+        
+        if(table.getTableChain().get(0).getEnd(0) == tile.getEnd(0)){
+            tile.flip();
+            return 1;
+        }
+        if (table.getTableChain().get(table.getTableChain().size()-1).getEnd(1) == tile.getEnd(0)){
+            return 2;
+        }
+            
+        if(table.getTableChain().get(table.getTableChain().size()-1).getEnd(1) == tile.getEnd(1)){
+        tile.flip();
+        return 2;
+        }
+        
+        return 3;
     }
     
     /**
@@ -86,7 +83,7 @@ public class Checker {
      * @param table
      * @return a boolean if its possible
      */
-    public static boolean checkDraw (Player player, Table table){
+    public static boolean checkDraw (Player player, Table table){ 
         if (table.isBoneyardEmpty())
         {
             return false;

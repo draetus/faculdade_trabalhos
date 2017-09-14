@@ -1,0 +1,17 @@
+1. Explique o conceito de pilha de execução e qual a sua relação com o tratamento de exceções em Java.
+R: A pilha de execuções empilha os metodos quando os mesmos chamam outros, e desempilha-os quando uma exceção
+é lançada, procurando um metodo que a trate.
+
+2. Qual a diferença entre catch e finally?
+R: O catch só é executado quando a exceção(s) que ele é especificado é capturada por ele, o finally é
+sempre executado independente se uma exceção foi lançada ou não.
+
+3. Quando devemos utilizar catch?
+R: Quando se precisa lidar com uma exceção runtime, ou seja, lançada por algum fator externo, seja de usuario ou não.
+
+4. Quando devemos utilizar finally?
+R: Quando algo precisa ser sempre executado, independete de uma exceção ser levantada ou não, por exemplo, para fechar um
+arquivo.
+
+5. Quais as diferenças entre exceções checadas(checked) e não checadas(unchecked) em Java?
+R: As exceções checadas são exceções que são levantadas em tempo de compilação, e as não checadas são em tempo de execução.

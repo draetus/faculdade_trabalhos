@@ -1,17 +1,48 @@
+POO - Programação Orientada a Objetos Prof. Marcello Thiry
+
 1. Explique o conceito de pilha de execução e qual a sua relação com o tratamento de exceções em Java.
-R: A pilha de execuções empilha os metodos quando os mesmos chamam outros, e desempilha-os quando uma exceção
-é lançada, procurando um metodo que a trate.
+R: A pilha de execuções empilha os metodos quando os mesmos chamam outros, e desempilha-os
+quando uma exceção é lançada, procurando um metodo que a trate.
 
 2. Qual a diferença entre catch e finally?
-R: O catch só é executado quando a exceção(s) que ele é especificado é capturada por ele, o finally é
-sempre executado independente se uma exceção foi lançada ou não.
+R: O catch só é executado quando a exceção(s) que ele é especificado é capturada por ele,
+o finally é sempre executado independente se uma exceção foi lançada ou não.
 
 3. Quando devemos utilizar catch?
-R: Quando se precisa lidar com uma exceção runtime, ou seja, lançada por algum fator externo, seja de usuario ou não.
+R: Quando se precisa lidar com uma exceção runtime, ou seja, lançada por algum fator 
+externo, seja de usuario ou não.
 
 4. Quando devemos utilizar finally?
-R: Quando algo precisa ser sempre executado, independete de uma exceção ser levantada ou não, por exemplo, para fechar um
-arquivo.
+R: Quando algo precisa ser sempre executado, independete de uma exceção ser levantada ou 
+não, por exemplo, para fechar um arquivo.
 
 5. Quais as diferenças entre exceções checadas(checked) e não checadas(unchecked) em Java?
-R: As exceções checadas são exceções que são levantadas em tempo de compilação, e as não checadas são em tempo de execução.
+R: As exceções checadas são exceções que são levantadas em tempo de compilação, e as não 
+checadas são em tempo de execução.
+
+6. Quais as orientações para escolher entre uma exceção checada e uma não checada?
+R: Deve-se tratar apenas as exceções não checadas, pois dependem de um fator externo, as
+exceções checadas são levantadas quando o programa não compila, e servem para ajudar o 
+programador.
+
+7. Em quais situações devemos declarar uma exceção no método com a claúsula throws?
+R: Quando aquele método tem a possibilidade de lançar tal exceção.
+
+8. Quando devemos criar a nossa própria classe de exceção? Quais orientações devem ser seguidas?
+R: Apenas quando não há uma exceção que englobe aquele problema, é necessario que ela 
+tenha uma mensagem altamente explicativa e que identifique o problema.
+
+9. Por que colocar try-catch(Exception) ao longo do programa para evitar que ele aborte não é
+uma boa prática?
+R: Porque isso gera uma dependencia e não se sabe qual foi o problema ocorrido, portanto,
+dificulta muito a manutenção do codigo e como "Exception" engloba "todas" as exceções, 
+dificilmente haverá um tratamento para todas elas que seja global, portanto o problema 
+abordado pela exceção não será resolvido.
+
+10. O que é um invariante da classe?
+R: É uma condição que os objetos de tal classe devem seguir e nunca quebrar, elas
+restringem o estado do objeto.
+
+11. Como podemos respeitar invariantes em Java?
+R: Criando atributos constantes ou deixando sua atribuição apenas acontecer no construtor,
+privando de métodos set para modificar os valores desse atributo

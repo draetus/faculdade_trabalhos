@@ -1,0 +1,7 @@
+Aluno: Mauricio
+
+O escopo escolhido foi a administração de um servidor de um jogo, com foco nas contas dos usuários e funcionamento interno do jogo.
+
+Foi escolhido pelo fato de que varios usuários usam o mesmo servidor, sem contar com administradores e moderadores que também o usam
+é necessário um banco de dados para manter esses dados de conta ou os proprios dados que os jogos usam dentro do funcionamento,
+informações de atributos, de personagens não criados por usuários ou de objetos existentes no jogo.

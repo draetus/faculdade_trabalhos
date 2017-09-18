@@ -1,57 +1,36 @@
 .data
-  enterNum: 
-.asciiz "Enter your number (base 10):  "
- printBaseTwo: 
-.asciiz "The number in base 2 is:  "
- #-----------------------------------------------------------------------
+message1: 	.asciiz 	"Enter your number (base 10): "
+message2:	.asciiz 	"Binary: "
 
 .text
-#Print out string, collect intger input
-main: li $v0, 4
-      la $a0, enterNum
-      syscall
-  li $v0, 5
-  syscall
-  move $t0, $v0
 
-
-#create mask/print out the second string and prepare to print out binary
-mask: 
-  addi $t1, $zero, 1
-  sll $t1, $t1, 31
-  addi $t2, $zero, 32
-  li $v0, 4
-  la $a0, printBaseTwo
-  syscall
-
-
- # compares mask to integer, starting at the most sig place
- # if the mask is zero, print out zero
- loop: 
-  and $t3,$t0, $t1
-  beq $t3, $zero, print
-  add $t3, $zero, $zero
-  addi $t3, $zero, 1
-  j print
-
-
- print: 
-      #prepares to print integer in $a0
-  li $v0, 1
-
-      # moves either 1 or 0 into $a0 to be printed
-  move $a0, $t3
-  syscall
-
-      # shifts over right 1, getting closer to 0
-  srl $t1, $t1, 1
-
-      #lowers count
-  addi $t2, $t2, -1
-
-      #loop back to beginning if not finished printing binary Num
-  bne $t2, $zero, loop
-  beq $t2, $zero, exit
- exit: 
-  li $v0, 10
-  syscall
+main:
+	li	$v0, 4			#Print "Enter your number (base 10):  "
+	la	$a0, message1
+	syscall
+	
+	li	$v0, 5			#Read int
+	syscall
+	add	$s0, $zero, $v0		#Saves integer in $s0
+	
+	addi	$s1, $zero, 1		#Creates bit mask
+	sll	$s1, $s1, 31		#Moves bit to the last position (32 bits)
+	li 	$t0, 32			#Loop's Controller
+	
+	li	$v0, 4			#Print "Binary: "
+	la	$a0, message2
+	syscall
+	
+loop:
+	and 	$t1, $s0, $s1		#Gets response 0 or some other
+	beq	$t1, $zero, print	#If it gets 0 then it straight out print
+	addi	$t1, $zero, 1		#if not gets a 0, then $t1 = 1
+	
+print:
+	li	$v0, 1			#Print int
+	add	$a0, $zero, $t1		#The response of the and will be printed
+	syscall
+	
+	srl	$s1, $s1, 1		#Moves the bit mask one to the right so it gets closer to 0
+	addi	$t0, $t0, -1		#Decreases the loop counter
+	bne	$t0, $zero, loop	#Branch to loop if $t0 is not equal to 0 ( = end of loop)

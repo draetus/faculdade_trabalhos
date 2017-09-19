@@ -1,7 +1,8 @@
-package br.univali.kob.poo1.aula04;
+package br.univali.kob.poo1.aula05;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.Period;
 
 /**
@@ -11,7 +12,7 @@ public class Employee extends Person {
     
     /**
      * Construtor para ser reutilizado
-     * Utiliza formato float para taxa de hora e
+     * Utiliza formato String para taxa de hora e
      * formato string na data de nascimento e
      * data de inicio de contrato para
      * facilitar chamada
@@ -22,14 +23,14 @@ public class Employee extends Person {
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, String dateOfBirth, String hireDate, int hoursPerWorkWeek, float hourlyRate)
+    public Employee(String name, String dateOfBirth, String hireDate, int hoursPerWorkWeek, String hourlyRate)
     {
         this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate));
     }
     
     /**
      * Construtor para ser reutilizado
-     * Utiliza formato float para taxa de hora para
+     * Utiliza formato String para taxa de hora para
      * facilitar chamada
      * 
      * @param name Nome da pessoa
@@ -38,7 +39,7 @@ public class Employee extends Person {
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, LocalDate dateOfBirth, LocalDate hireDate, int hoursPerWorkWeek, float hourlyRate)
+    public Employee(String name, LocalDate dateOfBirth, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate)
     {
         this(name, dateOfBirth, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate));
     }
@@ -72,7 +73,6 @@ public class Employee extends Person {
         this.setHireDate(hireDate);
         this.setHourlyRate(hourlyRate);
         this.setHoursPerWorkWeek(hoursPerWorkWeek);
-        this.setTerminationDate(terminationDate);
         validadeState();
     }
 
@@ -109,10 +109,11 @@ public class Employee extends Person {
      * @param hireDate Data de inicio de contrato
      */
     public void setHireDate(LocalDate hireDate) {
-        if (hireDate.isEqual(null) || hireDate.isAfter(LocalDate.now()) || hireDate.isAfter(terminationDate))
+        /*LocalDate today = LocalDate.now();
+        if (hireDate == null || hireDate.isAfter(LocalDate.of(today.getDayOfYear(), today.getMonthValue(), today.getDayOfMonth())))
         {
             throw new IllegalArgumentException("The hire date must be superior to both the terminationDate and to the present Date...");
-        }
+        }*/
         this.hireDate = hireDate;
         this.terminationDate = null;
     }
@@ -130,7 +131,7 @@ public class Employee extends Person {
      * @param terminationDate 
      */
     public void setTerminationDate(LocalDate terminationDate) {
-        if (terminationDate.isBefore(hireDate))
+        if (terminationDate == null || terminationDate.isBefore(LocalDate.of(hireDate.getYear(), hireDate.getMonthValue(), hireDate.getDayOfMonth())))
         {
             throw new InternalError("The date must be before the present date...");
         }
@@ -180,7 +181,6 @@ public class Employee extends Person {
      */
     public void setHourlyRate(BigDecimal hourlyRate) throws OutOfRangeException {
         this.hourlyRate = hourlyRate;
-        validadeHoursPerWorkWeek();
     }
 
     /**

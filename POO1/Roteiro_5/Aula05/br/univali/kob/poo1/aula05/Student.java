@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package br.univali.kob.poo1.aula04;
+package br.univali.kob.poo1.aula05;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 /**
  * Classe base para a hierarquia de estudantes no sistema acadêmico.
@@ -64,7 +60,8 @@ public class Student extends Person {
      */
     public void setEnrollmentDate(LocalDate enrollmentDate)
     {
-        if (enrollmentDate.isEqual(null) || enrollmentDate.isAfter(LocalDate.now()))
+        LocalDate today = LocalDate.now();
+        if (enrollmentDate == null || enrollmentDate.isAfter(LocalDate.of(today.getYear(), today.getMonthValue(), today.getDayOfMonth())))
         {
             throw new InternalError("The enrollment date must be after the current date...");
         }

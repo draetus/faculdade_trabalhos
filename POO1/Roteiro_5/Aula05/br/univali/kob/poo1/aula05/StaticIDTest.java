@@ -35,9 +35,9 @@ public class StaticIDTest {
         if (PERSON_LIST.get(0) instanceof Employee) {
             ((Employee)PERSON_LIST.get(0)).setTerminationDate(LocalDate.parse("09/08/2001", DATE_FORMAT));
         }
-        // permite percorrer a lista sem a necessidade de variáveis de controle  
+        // permite percorrer a lista sem a necessidade de variáveis de controle
         for (Person person : PERSON_LIST) {
-            System.out.printf("%2d: %s, %d years old\n", person.getId(), person.getName(), person.getAge());
+            System.out.printf(person.toString());
         }
         System.out.println();
     }

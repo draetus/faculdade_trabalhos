@@ -1,7 +1,6 @@
 package br.univali.kob.poo1.aula05;
 
 import java.time.LocalDate;
-import java.time.Month;
 
 /**
  * Classe base para a hierarquia de estudantes no sistema acadêmico.
@@ -99,5 +98,16 @@ public class Student extends Person {
     public LocalDate getDropDate()
     {
         return this.dropDate;
+    }
+    
+    
+    @Override
+    protected String appendToString() 
+    {
+        StringBuilder output = new StringBuilder();
+        output.append("  //Student" + AppConfig.NEW_LINE);
+        output.append("  enrollmentDate = ");
+        output.append(((dropDate == null) ? null : dropDate.format(AppConfig.DATE_FORMAT)) + AppConfig.NEW_LINE);
+        return output.toString();
     }
 }

@@ -2,7 +2,6 @@ package br.univali.kob.poo1.aula05;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.Period;
 
 /**
@@ -136,7 +135,6 @@ public class Employee extends Person {
             throw new InternalError("The date must be before the present date...");
         }
         this.terminationDate = terminationDate;
-        this.hireDate = null;
     }
 
     /**
@@ -188,7 +186,7 @@ public class Employee extends Person {
      * @return True=Contratado; False=Não Contratado
      */
     public boolean isEmployee() {
-        return getTerminationDate() == null;
+        return (getTerminationDate() == null);
     }
 
     /**
@@ -244,5 +242,22 @@ public class Employee extends Person {
     private void validadeState()
     {
         validadeHoursPerWorkWeek();
+    }
+
+    /**
+     * Append to String
+     * @return String a ser impressa no metodo toString()
+     */
+    @Override
+    protected String appendToString() 
+    {
+        StringBuilder output = new StringBuilder();
+        output.append("  // Employee" + AppConfig.NEW_LINE);
+        output.append("  hireDate = " + hireDate.format(AppConfig.DATE_FORMAT) + AppConfig.NEW_LINE);
+        output.append("  terminationDate = ");
+        output.append(((terminationDate == null) ? null : terminationDate.format(AppConfig.DATE_FORMAT)) + AppConfig.NEW_LINE);
+        output.append("  hoursPwerWorkWeek = " + hoursPerWorkWeek + AppConfig.NEW_LINE);
+        output.append("  hourlyRate = " + hourlyRate.toPlainString() + AppConfig.NEW_LINE);
+        return output.toString();
     }
 }

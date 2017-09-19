@@ -127,4 +127,17 @@ public class Professor extends Employee{
     {
         return super.getHourlyRate().add(this.getAcademicBonus());
     }
+    
+    /**
+     * Append to String
+     * @return String a ser impressa no metodo toString()
+     */
+    @Override
+    protected String appendToString()
+    {
+        StringBuilder output = new StringBuilder(super.appendToString());
+        output.append("  // Professor" + AppConfig.NEW_LINE);
+        output.append("  academicDegree = " + academicDegree + AppConfig.NEW_LINE);
+        return output.toString();
+    }
 }

@@ -2,6 +2,36 @@ Aluno: Mauricio
 
 O escopo escolhido foi a administração de um servidor de um jogo, com foco nas contas dos usuários e funcionamento interno do jogo.
 
-Foi escolhido pelo fato de que varios usuários usam o mesmo servidor, sem contar com administradores e moderadores que também o usam
+Foi escolhido pelo fato de que varios usuários usam o mesmo servidor, sem contar com moderadores que também o usam
 é necessário um banco de dados para manter esses dados de conta ou os proprios dados que os jogos usam dentro do funcionamento,
 informações de atributos, de personagens não criados por usuários ou de objetos existentes no jogo.
+
+No banco de dados o Jogo seria a entidade inicial, tendo varios servidores, o usuario cria uma conta e os dados dessa conta são apenas para um servidor,
+podendo ter varios personagens que terão habilidades, itens, talvez participem de uma guilda(grupo de jogadores), esses personagens navegam por mapas
+que possuem objetos que podem ter itens, esses que tem atributos que interferem nos atributos do Personagem, ao longo do jogo, o usuario irá interagir com
+criaturas ou npcs(personagem não jogável), criaturas o fornecerão itens e/ou experiencia(atributo de personagem), e npcs poderão trocar itens, ou dar missões
+aos personagens, essas missões serão conectadas a itens que seriam suas recompensas, todos esses personagens, criaturas e npcs, o jogo terá conexão com
+os fatores mais primitivos, como Ícones e Audio e existirá uma Loja Global que seria uma conexão de troca entre os players do mesmo Servidor,
+portanto essa Loja Global pertencerá a apenas um Servidor, e o mesmo terá duas Lojas Globais para cada Facção.
+
+Entidades esperadas:
+Jogo
+Ícone
+Facção
+Audio
+Servidor
+Loja Global
+Conta
+Guilda
+Personagem
+Classe
+Raça
+Arvore de habilidades
+Habilidade
+Profissão
+Item
+NPC
+Criatura
+Mapa
+Objeto
+Missão

@@ -8,12 +8,16 @@ informações de atributos, de personagens não criados por usuários ou de objetos 
 
 No banco de dados o Jogo seria a entidade inicial, tendo varios servidores, o usuario cria uma conta e os dados dessa conta são apenas para um servidor,
 podendo ter varios personagens que terão habilidades, itens, talvez participem de uma guilda(grupo de jogadores), esses personagens navegam por mapas
-que possuem objetos que podem ter itens, esses que tem atributos que interferem nos atributos do Personagem.
+que possuem objetos que podem ter itens, esses que tem atributos que interferem nos atributos do Personagem, ao longo do jogo, o usuario irá interagir com
+criaturas ou npcs(personagem não jogável), criaturas o fornecerão itens e/ou experiencia(atributo de personagem), e npcs poderão trocar itens, ou dar missões
+aos personagens, essas missões serão conectadas a itens que seriam suas recompensas, todos esses personagens, criaturas e npcs, o jogo terá conexão com
+os fatores mais primitivos, como Ícones e Audio e existirá uma Loja Global que seria uma conexão de troca entre os players do mesmo Servidor,
+portanto essa Loja Global pertencerá a apenas um Servidor, e o mesmo terá duas Lojas Globais para cada Facção.
 
 Entidades esperadas:
 Jogo
 Ícone
-Cinematica
+Facção
 Audio
 Servidor
 Loja Global

@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.univali.kob.poo1.aula04;
+
+import java.time.LocalDate;
+
+/**
+ * Classe base para a hierarquia de estudantes no sistema acadêmico.
+ * @author Mauricio
+ */
+public class Student extends Person {
+    
+    /**
+     * Construtor para ser reutilizado
+     * Utiliza formato string na data de nascimento
+     * e na data de inicio para
+     * facilitar chamada
+     * 
+     * @param name Nome da pessoa
+     * @param dateOfBirth Data de nascimento
+     * @param enrollmentDate Data de inicio
+     */
+    public Student(String name, String dateOfBirth, String enrollmentDate)
+    {
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), LocalDate.parse(enrollmentDate, AppConfig.DATE_FORMAT));
+    }
+    
+    /**
+     * @param name Nome da pessoa
+     * @param dateOfBirth Data de nascimento
+     * @param enrollmentDate Data de inicio
+     */
+    public Student(String name, LocalDate dateOfBirth, LocalDate enrollmentDate)
+    {
+        super(name, dateOfBirth);
+        this.setEnrollmentDate(enrollmentDate);
+    }
+    
+    /**
+     * Data em que o estudante ingressou
+     */
+    private LocalDate enrollmentDate;
+    
+    /**
+     * Data em que o estudante saiu
+     */
+    private LocalDate dropDate;
+    
+    /**
+     * Informa se o aluno está ou não matriculado
+     * @return True=Matriculado; False=Não matriculado
+     */
+    public boolean isEnrolled()
+    {
+        return this.dropDate == null;
+    }
+    
+    /**
+     * Setter
+     * @param enrollmentDate Data de entrada do estudante
+     */
+    public void setEnrollmentDate(LocalDate enrollmentDate)
+    {
+        if (enrollmentDate.isEqual(null) || enrollmentDate.isAfter(LocalDate.now()))
+        {
+            throw new InternalError("The enrollment date must be after the current date...");
+        }
+        this.enrollmentDate = enrollmentDate;
+        this.dropDate = null;
+    }
+    
+    /**
+     * Setter
+     * @param dropDate Data de saida do estudante
+     */
+    public void setDropDate(LocalDate dropDate) throws InternalError
+    {
+        if (dropDate.isBefore(enrollmentDate))
+        {
+            throw new InternalError("The dropDate must be after enrollment date...");
+        }
+        this.dropDate = dropDate;
+        this.enrollmentDate = null;
+    }
+    
+    /**
+     * Getter
+     * @return Data de entrada do estudante 
+     */
+    public LocalDate getEnrollmentDate()
+    {
+        return this.enrollmentDate;
+    }
+    
+    /**
+     * Getter
+     * @return Data de saida do estudante 
+     */
+    public LocalDate getDropDate()
+    {
+        return this.dropDate;
+    }
+}

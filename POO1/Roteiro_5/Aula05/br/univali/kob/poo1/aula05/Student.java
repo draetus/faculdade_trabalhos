@@ -1,6 +1,7 @@
 package br.univali.kob.poo1.aula05;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * Classe base para a hierarquia de estudantes no sistema acadêmico.
@@ -109,5 +110,38 @@ public class Student extends Person {
         output.append("  enrollmentDate = ");
         output.append(((dropDate == null) ? null : dropDate.format(AppConfig.DATE_FORMAT)) + AppConfig.NEW_LINE);
         return output.toString();
+    }
+    
+    /**
+     * Sobrescrevendo método equals que foi sobrescrito em Person
+     * @param obj o objeto a ser comparado
+     * @return true quando os objetos têm o mesmo estado, false caso contrário
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (!super.equals(obj))
+        {
+            return false;
+        }
+        
+        Student student = (Student)obj;
+        return
+                (enrollmentDate == student.enrollmentDate || enrollmentDate.equals(student.enrollmentDate)) &&
+                Objects.equals(dropDate, student.dropDate);
+    }
+    
+    /* 
+     * Sobrescrevendo método sobrescrito em Person
+     * 
+     * @return o valor calculado a partir do estado atual do objeto
+     */
+    @Override
+    public int hashCode()
+    {
+        return
+                super.hashCode() ^
+                enrollmentDate.hashCode() ^
+                (dropDate == null ? 19 : dropDate.hashCode());
     }
 }

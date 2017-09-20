@@ -3,6 +3,7 @@ package br.univali.kob.poo1.aula05;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Objects;
 
 /**
  * 
@@ -259,5 +260,44 @@ public class Employee extends Person {
         output.append("  hoursPwerWorkWeek = " + hoursPerWorkWeek + AppConfig.NEW_LINE);
         output.append("  hourlyRate = " + hourlyRate.toPlainString() + AppConfig.NEW_LINE);
         return output.toString();
+    }
+    
+    
+    /**
+     * Sobrescrevendo método equals que foi sobrescrito em Person
+     * @param obj o objeto a ser comparado
+     * @return true quando os objetos têm o mesmo estado, false caso contrário
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (!super.equals(obj))
+        {
+            return false;
+        }
+        
+        Employee employee = (Employee)obj;
+        return
+                // testa primeiro com == para ser mais eficiente
+                (hireDate == employee.hireDate || hireDate.equals(employee.hireDate)) &&
+                Objects.equals(terminationDate, employee.terminationDate) &&
+                hoursPerWorkWeek == employee.hoursPerWorkWeek && 
+                (hourlyRate == employee.hourlyRate || hourlyRate.equals(employee.hourlyRate));
+    }
+    
+    /* 
+     * Sobrescrevendo método sobrescrito em Person
+     * 
+     * @return o valor calculado a partir do estado atual do objeto
+     */
+    @Override
+    public int hashCode()
+    {
+        return
+                super.hashCode() ^
+                hireDate.hashCode() ^
+                (terminationDate == null ? 19 : terminationDate.hashCode()) ^
+                hoursPerWorkWeek ^
+                getHourlyRate().hashCode();
     }
 }

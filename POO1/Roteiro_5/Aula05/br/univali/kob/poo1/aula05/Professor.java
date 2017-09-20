@@ -140,4 +140,37 @@ public class Professor extends Employee{
         output.append("  academicDegree = " + academicDegree + AppConfig.NEW_LINE);
         return output.toString();
     }
+    
+    
+    /**
+     * Sobrescrevendo método equals que foi sobrescrito em Employee
+     * @param obj o objeto a ser comparado
+     * @return true quando os objetos têm o mesmo estado, false caso contrário
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (!super.equals(obj))
+        {
+            return false;
+        }
+        
+        Professor professor = (Professor)obj;
+        
+        return
+                academicDegree == professor.academicDegree || academicDegree.equals(professor.academicDegree);
+    }
+    
+    /* 
+     * Sobrescrevendo método sobrescrito em Employee
+     * 
+     * @return o valor calculado a partir do estado atual do objeto
+     */
+    @Override
+    public int hashCode()
+    {
+        return
+                super.hashCode() ^
+                academicDegree.ordinal();
+    }
 }

@@ -175,4 +175,60 @@ public abstract class Person {
      * @see #toString() para detalhes sobre o formato das linhas
      */
     protected abstract String appendToString();
+    
+    /**
+     * Define uma relação de equivalência entre o objeto atual e aquele passado
+     * como parâmetro. Esta operação deve atender às seguintes regras:
+     * 
+     * 1) Reflexiva: a.equals(a) é sempre verdadeiro.
+     * 2) Simétrica: se a.equals(b), então b.equals(a).
+     * 3) Transitiva: se a.equals(b) e b.equals(c), então a.euqlas(c)
+     * 4) Consistente: se os objetos não foram modificados, o valor retornado
+     *    deve sempre ser o mesmo.
+     * 5) a.equals(null) sempre retorna false.
+     * 
+     * Compara o estado (valor) do objeto atual com o objeto passado como
+     * parâmetro. Caso o objeto passado seja null, a comparação falhará. Se o
+     * objeto passado apontar para o mesmo endereço (a == n), a comparação
+     * retornará sucesso. Se os objetos não pertencerem a mesma classe, a
+     * comparação falhará.
+     * 
+     * @param obj o objeto a ser comparado
+     * @return true quando os objetos têm o mesmo estado, false caso contrário
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this)
+        {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass())
+        {
+            return false;
+        }
+        Person person = (Person)obj;
+        // considerado que dateOfBirth nunca poderá ser null (validações)
+        // note que estamos na classe Person, logo temos acesso também aos
+        // atributos do outro objeto
+        return
+                id == person.id &&
+                (name == person.name || name.equals(person.name)) &&
+                (dateOfBirth == person.dateOfBirth || dateOfBirth.equals(person.dateOfBirth));
+    }
+    
+    /**
+     * Calcula um valor inteiro a partir do valor dos atributos do objeto
+     * (estado), por meio de um XOR entre seus valores. Esta função deve ser
+     * consistente, ou seja, se o estado do objeto não for alterado, o valor
+     * retornado deve sempre ser o mesmo. Também deve manter a regra que sempre
+     * que a.equals(b), então a.hashCode() deve ser igual a b.hashCode().
+     * 
+     * @return o valor calculado a partir do estado atual do objeto
+     */
+    @Override
+    public int hashCode()
+    {
+        return id ^ (name.hashCode()) ^ (dateOfBirth.hashCode());
+    }
 }

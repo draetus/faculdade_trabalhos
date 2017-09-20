@@ -1,0 +1,93 @@
+POO - Programação Orientada a Objetos Prof. Marcello Thiry
+
+1. O método de uma operação de objeto pode manipular atributos de classe (estáticos)? Justifique sua resposta.
+R: Sim, pois o atributo estático pertence a classe que o objeto foi criado, portanto ele tem acesso a ele.
+
+2. O método de uma operação de classe (estática) pode manipular atributos de objeto? Justifique sua resposta.
+R: Não, pois o método estático não é pertencente ao objeto e sim a classe.
+
+3. O método de uma operação de classe (estática) pode acessar a palavra reservada this? Justifique sua resposta.
+R: Não, pois o método estático não é pertencente a nenhum objeto e sim a classe.
+
+4. Qual a função do bloco static em uma classe Java?
+R: Geralmente é usado para inicializar os atributos estaticos.
+
+5. No nosso diagrama UML (antes da criação da classe de configuração), por que os atributos
+DATE_FORMAT_DDMMYYYY e nextId estão sublinhados?
+R: Porque são atributos estaticos, ou seja pertencem a todos os objetos junto.
+
+6. No nosso diagrama UML (antes da criação da classe de configuração), por que o atributo
+DATE_FORMAT_DDMMYYYY está com a propriedade {read only} e nextId não?
+R: Porque o atributo DATE_FORMAT_DDMMYYYY é um formato de data que será sempre o mesmo valor,
+ja nextId mudará o valor a cada objeto instanciado
+
+7. O que é uma API?
+R: É a interface de uma aplicação
+
+8. O que é polimorfismo paramétrico?
+R: É quando uma classe é generica, ou seja, quando ela pode ter varios tipos atribuidos a ela.
+
+9. Como polimorfismo paramétrico é utilizado em Java?
+R: É utilizado com generics
+
+10. O que é uma classe genérica?
+R: É uma classe que pode receber qualquer tipo de atributo
+
+11. Qual a diferença entre upcasting e downcasting?
+R: Upcasting é a indução de uma referência para uma superclasse
+e Downcasting é a indução de uma referência para uma subclasse
+Upcasting -> Person person = new Employee();
+Downcasting -> Employee employee = (Employee)person;
+
+12. Explique por que, no nosso exemplo se trocarmos o downcast (Employee) por (Student), será disparada a exceção
+ClassCastException somente em tempo de execução?
+R: Porque o Downcasting é somente checado em tempo de execução ja que o compilador não tem como checar o que será
+usado futuramente ou no momento da chamada do método o compilador não sabe que tipo de objeto é aquele.
+
+13. O que acontece se, na linha do downcast, modificarmos apenas a posição de 0 para 2? Explique o porquê de ter
+dado certo ou errado.
+R: Dará certo, pois o objeto na posição 2 é um objeto do tipo Professor que é uma subclasse de Employee, portanto
+ele possui os seus atributos e metodos.
+
+14. Quando devemos utilizar instanceof?
+R: Quando é necessario checar de que tipo o objeto é.
+
+15. Por que o uso abusivo de instanceof pode ser um indicador de que sua solução pode ser melhorada?
+R: Porque quebra o principal objeto de polimorfismo, que é você não precisar saber de qual tipo é  o objeto usado.
+
+16. O que é refatoração (refactoring)?
+R: É o ato de voltar e consertar o codigo.
+
+17. Quando devemos refatorar o código?
+R: Quando métodos estão se tornando muito grandes, ou alguns dados desnecessarios estão sendo criados, basicamente
+quando sua solução está deixando de ser tão eficiente, ou quando está se tornando um pouco ilegivel.
+
+18. O que é uma operação abstrata?
+R: É uma operação de uma classe que força suas subclasses a implementa-la
+
+19. Uma classe abstrata precisa ter operações abstratas? Justifique
+R: Não, o fato de ser abstrata apenas identifica que não pode ter um objeto instanciado, mas pode ter métodos
+não abstratos, mesmo sem nunca ter um objeto.
+
+20. Uma classe que possui alguma operação abstrata precisa ser abstrata? Justifique
+R: Sim, pois como a operação abstrata não é implementada na proprio classe e sim nas subclasses, um objeto não pode
+ser instanciado em uma classe com um metodo incompleto.
+
+21. Explique a metáfora de um contrato em relação a operações abstratas.
+R: É baseada no fato que a operação abstrata obriga as subclasses da classe que ela pertence a implementa-la
+
+22. Considere que B é uma subclasse de A e C é uma subclasse de B:
+
+	a. Se A possui uma operação abstrata, B é obrigada a implementá-la? Justifique.
+	R: Se B não for outra calsse abstrata, sim, pois se não, não é possivel instanciar um objeto seu com um metodo
+	não implementado
+
+	b. Se A possui uma operação abstrata, C é obrigada a implementa-la? Justifique.
+	R: Se B for uma classe abstrata sim, se não, não, a obrigação de implementa-la cai para B como ele não é 
+	classe abstrata
+
+23. Por que a expressão a.equals(null) deve retornar sempre false?
+R: Porque não se pode acessar atributos de algo null, ou seja não tem como comparar null com a.
+
+24. Por que não podemos comparar dois objetos somente com "=="?
+R: Pois não são tipos primitivos, esse operador irá verificar se são o mesmo objeto(mesmo endereço).

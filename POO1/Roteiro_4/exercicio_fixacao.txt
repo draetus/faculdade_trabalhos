@@ -34,10 +34,7 @@ tenha uma mensagem altamente explicativa e que identifique o problema.
 
 9. Por que colocar try-catch(Exception) ao longo do programa para evitar que ele aborte não é
 uma boa prática?
-R: Porque isso gera uma dependencia e não se sabe qual foi o problema ocorrido, portanto,
-dificulta muito a manutenção do codigo e como "Exception" engloba "todas" as exceções, 
-dificilmente haverá um tratamento para todas elas que seja global, portanto o problema 
-abordado pela exceção não será resolvido.
+R: As exception checadas não deveriam ser capturadas pelo catch, somente as runtime exceptions.
 
 10. O que é um invariante da classe?
 R: É uma condição que os objetos de tal classe devem seguir e nunca quebrar, elas

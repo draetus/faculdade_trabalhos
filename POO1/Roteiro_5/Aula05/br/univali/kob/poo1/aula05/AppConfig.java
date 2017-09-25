@@ -1,6 +1,7 @@
 package br.univali.kob.poo1.aula05;
 
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,7 +32,7 @@ public class AppConfig {
     /**
      * Armazenar as configurações lidas de alguma fonte
      */
-    public static final Object SETTINGS[] = new Object[10];
+    public static final ArrayList<Object> SETTINGS = new ArrayList<>();
     
     /**
      * Um bloco static é um bloco normal de codigo cercado por chaves
@@ -43,10 +44,10 @@ public class AppConfig {
     static
     {
         loadSettings();
-        APP_NAME = (String)SETTINGS[0];
-        APP_VERSION = (String)SETTINGS[1];
-        DATE_FORMAT = (DateTimeFormatter)SETTINGS[2];
-        NEW_LINE = (String)SETTINGS[3];
+        APP_NAME = (String)SETTINGS.get(0);
+        APP_VERSION = (String)SETTINGS.get(1);
+        DATE_FORMAT = (DateTimeFormatter)SETTINGS.get(2);
+        NEW_LINE = (String)SETTINGS.get(3);
     }
     
     /**
@@ -57,9 +58,9 @@ public class AppConfig {
     {
         // Inserir aqui o codigo para carregar preencher settings a
         // partir de alguma fonte
-        SETTINGS[0] = "Sistema Academico";
-        SETTINGS[1] = "1.0";
-        SETTINGS[2] = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        SETTINGS[3] = System.getProperty("line.separator");
+        SETTINGS.add("Sistema Academico");
+        SETTINGS.add("1.0");
+        SETTINGS.add(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        SETTINGS.add(System.getProperty("line.separator"));
     }
 }

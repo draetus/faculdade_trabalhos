@@ -33,7 +33,7 @@ public class StaticIDTest {
         PERSON_LIST.add(new Employee("Susan Kent-Barr", "06/10/1969", "09/08/1995", 40, "25.23"));
         // apenas para mostrar o uso de instanceof e typecast
         if (PERSON_LIST.get(0) instanceof Employee) {
-            ((Employee)PERSON_LIST.get(0)).setTerminationDate(LocalDate.parse("09/08/2001", DATE_FORMAT));
+            ((Employee)PERSON_LIST.get(2)).setTerminationDate(LocalDate.parse("09/08/2001", DATE_FORMAT));
         }
         // permite percorrer a lista sem a necessidade de variáveis de controle
         for (Person person : PERSON_LIST) {

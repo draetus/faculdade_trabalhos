@@ -89,11 +89,11 @@ public class OutOfRangeException extends IllegalArgumentException {
      */
     public Object getMin()
     {
-        if (value instanceof Integer)
-            return (int)value;
+        if (min instanceof Integer)
+            return (int)min;
         
-        if (value instanceof String)
-            return (String)value;
+        if (min instanceof String)
+            return (String)min;
         
         return null;
     }
@@ -103,11 +103,11 @@ public class OutOfRangeException extends IllegalArgumentException {
      */
     public Object getMax()
     {
-        if (value instanceof Integer)
-            return (int)value;
+        if (max instanceof Integer)
+            return (int)max;
         
-        if (value instanceof String)
-            return (String)value;
+        if (max instanceof String)
+            return (String)max;
         
         return null;
     }

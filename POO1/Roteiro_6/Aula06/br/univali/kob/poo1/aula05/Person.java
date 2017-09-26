@@ -8,7 +8,7 @@ import java.time.Period;
  *
  * @author Mauricio
  */
-public abstract class Person {
+public abstract class Person implements Contactable{
 
     /**
      * Construtor para ser reutilizado pelas subclasses de
@@ -62,7 +62,13 @@ public abstract class Person {
      * ID da pessoa
      */
     private int id;
-
+    
+    /**
+     * Email da pessoa
+     */
+    private String email;
+    
+    
     /**
      * Getter
      *
@@ -230,5 +236,25 @@ public abstract class Person {
     public int hashCode()
     {
         return id ^ (name.hashCode()) ^ (dateOfBirth.hashCode());
+    }
+
+    /**
+     * Setter
+     * 
+     * @param email Email da pessoa
+     */
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    /**
+     * Getter
+     * 
+     * @return Email da pessoa
+     */
+    @Override
+    public String getEmail() {
+        return this.email;
     }
 }

@@ -1,0 +1,12 @@
+Compilador: Transforma um programa escrito em uma linguagem de alto nivel(C, C++) 
+	    em um equivalente expresso na linguagem de montagem (assembly) 
+
+Montador: Transoforma um programa expresso na linguagem de montagem(assembly) 
+          para a linguagem de máquina gerando um codigo não executável denominado 
+          arquivo-objeto (ou  módulo-objeto)
+     
+          O montador precisa saber os endereços que correspondem a cada um dos labels do programa. 
+          Isso é feito por meio de uma tabela chamada tabela de símbolos que aramazena pares de 
+          símbolo/endereço
+
+Linker:   Liga os módulos-objeto e gera um programa executável

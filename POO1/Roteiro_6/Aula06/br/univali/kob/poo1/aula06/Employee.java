@@ -1,4 +1,4 @@
-package br.univali.kob.poo1.aula05;
+package br.univali.kob.poo1.aula06;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -19,13 +19,14 @@ public class Employee extends Person {
      * 
      * @param name Nome da pessoa
      * @param dateOfBirth Data de nascimento
+     * @param email Email do funcionario
      * @param hireDate Data de contratação
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, String dateOfBirth, String hireDate, int hoursPerWorkWeek, String hourlyRate)
+    public Employee(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, String hourlyRate)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate));
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate));
     }
     
     /**
@@ -35,13 +36,14 @@ public class Employee extends Person {
      * 
      * @param name Nome da pessoa
      * @param dateOfBirth Data de nascimento
+     * @param email Email do funcionario
      * @param hireDate Data de contratação
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, LocalDate dateOfBirth, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate)
+    public Employee(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate)
     {
-        this(name, dateOfBirth, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate));
+        this(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate));
     }
     
     /**
@@ -52,24 +54,26 @@ public class Employee extends Person {
      * 
      * @param name Nome da pessoa
      * @param dateOfBirth Data de nascimento
+     * @param email Email do funcionario
      * @param hireDate Data de contratação
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, String dateOfBirth, String hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate)
+    public Employee(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, hourlyRate);
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, hourlyRate);
     }
     
     /**
      * @param name Nome da pessoa
      * @param dateOfBirth Data de nascimento
+     * @param email Email do funcionario
      * @param hireDate Data de contratação
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, LocalDate dateOfBirth, LocalDate hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate) {
-        super(name, dateOfBirth);
+    public Employee(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate) {
+        super(name, dateOfBirth, email);
         this.setHireDate(hireDate);
         this.setHourlyRate(hourlyRate);
         this.setHoursPerWorkWeek(hoursPerWorkWeek);

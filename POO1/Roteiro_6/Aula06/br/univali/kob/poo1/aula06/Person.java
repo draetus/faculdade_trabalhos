@@ -1,4 +1,4 @@
-package br.univali.kob.poo1.aula05;
+package br.univali.kob.poo1.aula06;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -17,19 +17,21 @@ public abstract class Person implements Contactable{
      *
      * @param name O nome da pessoa
      * @param dateOfBirth A data de nascimento da pessoa
+     * @param email Email da pessoa
      */
-    public Person(String name, String dateOfBirth)
+    public Person(String name, String dateOfBirth, String email)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT));
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email);
     }
 
     /**
      * Construtor Requer nome e data de nascimento
      * @param name Nome da Pessoa
      * @param dateOfBirth Data de nascimento da pessoa
+     * @param email Email da pessoa
      * @throws InternalError in case of invalid parameters
      */
-    public Person(String name, LocalDate dateOfBirth){
+    public Person(String name, LocalDate dateOfBirth, String email){
         if (name.isEmpty())
         {
             throw new IllegalArgumentException("The name cannot be null...");
@@ -39,6 +41,7 @@ public abstract class Person implements Contactable{
             throw new InternalError("The date must be before the present date...");
         }
         this.name = name;
+        this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.id = nextid++;
     }
@@ -74,6 +77,7 @@ public abstract class Person implements Contactable{
      *
      * @return O nome da pessoa
      */
+    @Override
     public String getName() {
         return this.name;
     }

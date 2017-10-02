@@ -1,4 +1,4 @@
-package br.univali.kob.poo1.aula05;
+package br.univali.kob.poo1.aula06;
 
 import java.time.format.DateTimeFormatter;
 

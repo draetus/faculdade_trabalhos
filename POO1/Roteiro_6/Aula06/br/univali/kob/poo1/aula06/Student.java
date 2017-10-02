@@ -1,4 +1,4 @@
-package br.univali.kob.poo1.aula05;
+package br.univali.kob.poo1.aula06;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -17,22 +17,25 @@ public class Student extends Person {
      * 
      * @param name Nome da pessoa
      * @param dateOfBirth Data de nascimento
+     * @param email Email do estudante
      * @param enrollmentDate Data de inicio
      */
-    public Student(String name, String dateOfBirth, String enrollmentDate)
+    public Student(String name, String dateOfBirth, String email, String enrollmentDate)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), LocalDate.parse(enrollmentDate, AppConfig.DATE_FORMAT));
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(enrollmentDate, AppConfig.DATE_FORMAT));
     }
     
     /**
      * @param name Nome da pessoa
      * @param dateOfBirth Data de nascimento
+     * @param email Email do estudante
      * @param enrollmentDate Data de inicio
      */
-    public Student(String name, LocalDate dateOfBirth, LocalDate enrollmentDate)
+    public Student(String name, LocalDate dateOfBirth, String email, LocalDate enrollmentDate)
     {
-        super(name, dateOfBirth);
+        super(name, dateOfBirth, email);
         this.setEnrollmentDate(enrollmentDate);
+        this.setEmail(email);
     }
     
     /**

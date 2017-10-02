@@ -1,4 +1,4 @@
-package br.univali.kob.poo1.aula05;
+package br.univali.kob.poo1.aula06;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Mauricio
  */
-public class aula05 {
+public class aula06 {
 
     /**
      * @param args the command line arguments

@@ -1,8 +1,11 @@
 POO - Programação Orientada a Objetos Prof. Marcello Thiry
 
 1. Quais as diferenças entre uma classe abstrata e uma interface?
-R: A classe abstrata tem o tipo de relação "é um" com as classes que a herdam, 
+R: * A classe abstrata tem o tipo de relação "é um" com as classes que a herdam, 
    mas a interface está mais para um tipo de relação "realiza".
+   * Classes abstratas podem possuir construtores, interfaces não.
+   * Classes abstratas podem ter atributos que não são constantes nem estaticas
+   enquanto as interfaces so podem ter atributos constantes e estaticas.
 
 2. O que é uma classe wrapper em Java?
 R: É uma classe que agrupa um atributo primitivo dentro de um objeto.
@@ -11,14 +14,17 @@ R: É uma classe que agrupa um atributo primitivo dentro de um objeto.
 R: Autoboxing é quando o compilador modifica automaticamente o valor primitivo
    que é passado como parâmetro ou atribuido para algo que espera um objeto da 
    respectiva classe wrapper.
+   Unboxing seria o contrario disso, quando é passado ou atribuido um objeto de 
+   uma classe wrapper e ele é convertido pelo compilador para o seu respectivo
+   tipo primitivo.
 
 4. Quando devemos utilizar uma classe abstrata e quando devemos utilizar uma interface?
-R: A classe abstrata é mais para quando a relação é do tipo "é um" e a interface é mais
+R: A classe abstrata é para quando a relação é do tipo "é um" e a interface é mais
    para quando a relação é do tipo "realiza".
 
 5. Quais as vantagens de utilizar interfaces?
-R: Garante baixo acoplamento, pois não interessa qual classe esta usando, portanto que
-   implemente os métodos e as classes podem implementar varias interfaces.
+R: Principalmente organização do código, pois a interface interpreta um papel de "realiza"
+   diferentemente da classe abstrata que representa uma papel de "é um". 
 
 6. O que é uma interface genérica?
 R: É uma interface que muda seu comportamento dependendo de qual tipo passado a ela
@@ -26,10 +32,12 @@ R: É uma interface que muda seu comportamento dependendo de qual tipo passado a 
 
 7. Por que precisamos utilizar classes ou interfaces genéricas?
 R: Para podermos manter a reutilização, ja que a classe/interface genérica pode ser usada
-   com qualquer tipo passado.
+   com qualquer tipo passado, assim não é preciso criar varias versões diferentes para
+   suportar varios tipos diferentes, gerando um código muito mais flexibilidade e muito
+   menos extenso.
 
 8. Quando um método deve ser final?
-R: Quando quer-se garantir que ele não seja mudado pelas classes inferiores.
+R: Quando quer-se garantir que ele não seja sobescrevido pelas classes inferiores.
 
 9. Explique o que significa a parte genérica na declaração da nossa classe ComparableValidator.
 R: A classe ComparableValidator consegue funcionar com qualquer outra classe que implementa a
@@ -37,4 +45,4 @@ R: A classe ComparableValidator consegue funcionar com qualquer outra classe que
 
 10. O que é um parâmetro de tipo em classes genéricas? Qual o seu propósito?
 R: É o tipo que será substituido pelos tipos genéricos usados dentro da classe, serve para 
-   manter a reutilização da classe, modificando seus tipos em instanciação.
+   manter a reutilização da classe.

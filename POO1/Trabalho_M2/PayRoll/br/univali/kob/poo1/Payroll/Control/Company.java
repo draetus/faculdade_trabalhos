@@ -46,7 +46,7 @@ public class Company {
      * @return true if the Department exists
      *         false if the Departments doesn't exists
      */
-    public boolean existDepartament(String name){
+    private boolean existDepartament(String name){
         for (int i=0; i<departaments.size(); i++){
             if (departaments.get(i).getName().equals(name)){
                 return true;

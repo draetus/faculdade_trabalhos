@@ -30,9 +30,9 @@ public class test {
                 
         Company company = new Company("P&G");
         company.addDepartament(employee, "Departamento Pessoal");
-        company.getDepartament("Departamento Pessoal").addEmployee("Amenediel", LocalDate.now(), LocalDate.now(), 160, new BigDecimal(14), Role.REGULAR);
-        company.getDepartament("Departamento Pessoal").addEmployee("Kayle", LocalDate.now(), LocalDate.now(), 160, new BigDecimal(17), Role.REGULAR);
-        company.getDepartament("Departamento Pessoal").addEmployee("Sam", LocalDate.now(), LocalDate.now(), 160, new BigDecimal(15), Role.REGULAR);
+        company.getDepartament("Departamento Pessoal").addEmployee("Amenediel", LocalDate.now(), LocalDate.now(), 160, new BigDecimal(14));
+        company.getDepartament("Departamento Pessoal").addEmployee("Kayle", LocalDate.now(), LocalDate.now(), 160, new BigDecimal(17));
+        company.getDepartament("Departamento Pessoal").addEmployee("Sam", LocalDate.now(), LocalDate.now(), 160, new BigDecimal(15));
         Paycheck test9 = new Paycheck(company.getDepartament("Departamento Pessoal").getEmployeeByName("Sam"));
         Paycheck test10 = new Paycheck(company.getDepartament("Departamento Pessoal").getEmployeeByName("Amenediel"));
         Paycheck test11 = new Paycheck(company.getDepartament("Departamento Pessoal").getEmployeeByName("Kayle"));

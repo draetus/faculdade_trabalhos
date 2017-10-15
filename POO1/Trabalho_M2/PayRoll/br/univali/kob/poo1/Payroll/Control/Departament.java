@@ -45,7 +45,7 @@ public class Departament {
      * @param hourlyRate Value of the hours worked by the Regular Employee
      * @param role Role of the Regular Employee
      */
-    public void addEmployee(String name, LocalDate dateOfBirth, LocalDate hireDate, int hoursWorked, BigDecimal hourlyRate, Role role){
+    public void addEmployee(String name, LocalDate dateOfBirth, LocalDate hireDate, int hoursWorked, BigDecimal hourlyRate){
         employees.add(new RegularEmployee(name, dateOfBirth, hireDate, hoursWorked, hourlyRate, Role.REGULAR));
     }
     
@@ -64,7 +64,7 @@ public class Departament {
      * @return true if the Regular Employee exists
      *         false if the Regular Employee don't exists
      */
-    public boolean existEmployee(String name){
+    private boolean existEmployee(String name){
         for (int i=0; i<employees.size(); i++){
             if (employees.get(i).getName().equals(name)){
                 return true;

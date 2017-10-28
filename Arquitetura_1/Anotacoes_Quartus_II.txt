@@ -1,0 +1,8 @@
+Como simular projeto Quartus II:
+
+* Va em Files e procure Simulacao
+* Abra ele e execute "Run Timing Simulation"
+
+Como ver visão fisica do projeto Quartus II:
+
+Tools -> Netlist Viewers -> RTL Viewer

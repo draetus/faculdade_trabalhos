@@ -1,0 +1,21 @@
+A cada instrução o PC é incrementado em 4 univadades para apontar para a instrução seguinte.
+
+Caminho de dados para instruções lw e sw
+
+A UAL calcula o endereço a ser acessado na memoria somando rs (*Addr_rd_1) com o imediato, após a 
+extensão do sinal. A transferência ocorre entre a memória e o rt, onde:
+::rt = Addr_wr para um load
+::rt = Addr_rd_2, para um store
+
+Controle:
+
+O bloco de controle principal envia um comando de dois bits ao bloco de controle da UAL onde
+    UALOp = 00 -> instrução lw ou sw
+    UALOp = 01 -> instrução beq
+    UALOp = 10 -> instrução no formato R
+
+No caso de instrução no formato R, o controle da UAL tem que analisar o valor do campo Funct da instrução
+
+Controle de Operação da UAL
+   Entradas Funct: campo da instrução
+   UALOp (ou OpALU): gerado pelo controle principal

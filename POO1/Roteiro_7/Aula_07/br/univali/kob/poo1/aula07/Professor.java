@@ -24,8 +24,8 @@ public class Professor extends Employee{
      * @param hoursPerWorkWeek Horas por semana do professor
      * @param hourlyRate Valor da hora do professor
      */
-    public Professor(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, String hourlyRate, AcademicDegree academicDegree) {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate), academicDegree);
+    public Professor(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, String hourlyRate, AcademicDegree academicDegree, Address address) {
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate), academicDegree, address);
     }
     
     /**
@@ -39,8 +39,8 @@ public class Professor extends Employee{
      * @param hoursPerWorkWeek Horas por semana do professor
      * @param hourlyRate Valor da hora do professor
      */
-    public Professor(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate, AcademicDegree academicDegree) {
-        this(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate), academicDegree);
+    public Professor(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate, AcademicDegree academicDegree, Address address) {
+        this(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate), academicDegree, address);
     }
     
     /**
@@ -55,8 +55,8 @@ public class Professor extends Employee{
      * @param hoursPerWorkWeek Horas por semana do professor
      * @param hourlyRate Valor da hora do professor
      */
-    public Professor(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate, AcademicDegree academicDegree) {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, hourlyRate, academicDegree);
+    public Professor(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate, AcademicDegree academicDegree, Address address) {
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, hourlyRate, academicDegree, address);
     }
     
     /**
@@ -68,8 +68,8 @@ public class Professor extends Employee{
      * @param hoursPerWorkWeek Horas por semana do professor
      * @param hourlyRate Valor da hora do professor
      */
-    public Professor(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate, AcademicDegree academicDegree) {
-        super(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, hourlyRate);
+    public Professor(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate, AcademicDegree academicDegree, Address address) {
+        super(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, hourlyRate, address);
         this.setAcademicDegree(academicDegree);
     }
     

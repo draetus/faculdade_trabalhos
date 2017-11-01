@@ -1,38 +1,39 @@
 package br.univali.kob.poo1.aula07;
 
 /**
- * Classe representando Estado
+ * Classe que representa uma cidade com um estado correspondente.
  * @author Mauricio
  */
-public final class State {
+public final class City {
     
     /**
-     * Nome do estado
+     * Nome da cidade
      */
     private final String name;
     
     /**
-     * Sigla do estado
+     * Estado da cidade
      */
-    private final String abbreviation;
+    private final State state;
     
     /**
      * Constructor
-     * @param name Nome do estado
-     * @param abbreviation Abreviação do nome do estado
+     * @param name Nome da cidade
+     * @param state Estado relacionado a cidade
      */
-    public State(String name, String abbreviation)
+    public City(String name, State state)
     {
         StringValidator val = new StringValidator();
+        
         val.minWordsCount(name, 1);
-        val.maxWordsCount(abbreviation, 1);
+        
         this.name = name;
-        this.abbreviation = abbreviation;
+        this.state = state;
     }
     
     /**
      * Getter
-     * @return Nome da compania
+     * @return Nome da cidade
      */
     public String getName()
     {
@@ -41,11 +42,11 @@ public final class State {
     
     /**
      * Getter
-     * @return Abreviação do nome da compania
+     * @return Estado da cidade
      */
-    public String getAbbreviation()
+    public State getState()
     {
-        return this.abbreviation;
+        return this.state;
     }
     
     /**
@@ -65,10 +66,10 @@ public final class State {
         {
             return false;
         }
-        State state = (State)obj;
+        City city = (City)obj;
         
         return
-                name.equals(state.name) && abbreviation.equals(state.abbreviation);
+                name.equals(city.name) && state.equals(city.state);
     }
 
     /**
@@ -77,7 +78,7 @@ public final class State {
      */
     @Override
     public int hashCode() {
-        return (name.hashCode()) ^ (abbreviation.hashCode());
+        return (name.hashCode()) ^ (state.hashCode());
     }
     
     /**
@@ -87,6 +88,7 @@ public final class State {
     @Override
     public String toString()
     {
-        return "\nEstado:\nNome: " + name + "\nAbreviacao: " + abbreviation;
+        return "\nCidade:\nNome: " + name + state.toString() + "\n";
     }
+    
 }

@@ -24,9 +24,9 @@ public class Employee extends Person {
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, String hourlyRate)
+    public Employee(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, String hourlyRate, Address address)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate));
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, new BigDecimal(hourlyRate), address);
     }
     
     /**
@@ -41,9 +41,9 @@ public class Employee extends Person {
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate)
+    public Employee(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, String hourlyRate, Address address)
     {
-        this(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate));
+        this(name, dateOfBirth, email, hireDate, hoursPerWorkWeek, new BigDecimal(hourlyRate), address);
     }
     
     /**
@@ -59,9 +59,9 @@ public class Employee extends Person {
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate)
+    public Employee(String name, String dateOfBirth, String email, String hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate, Address address)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, hourlyRate);
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(hireDate, AppConfig.DATE_FORMAT), hoursPerWorkWeek, hourlyRate, address);
     }
     
     /**
@@ -72,8 +72,8 @@ public class Employee extends Person {
      * @param hoursPerWorkWeek Horas de trabalho por semana
      * @param hourlyRate Preço da hora trabalhada
      */
-    public Employee(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate) {
-        super(name, dateOfBirth, email);
+    public Employee(String name, LocalDate dateOfBirth, String email, LocalDate hireDate, int hoursPerWorkWeek, BigDecimal hourlyRate, Address address) {
+        super(name, dateOfBirth, email, address);
         this.setHireDate(hireDate);
         this.setHourlyRate(hourlyRate);
         this.setHoursPerWorkWeek(hoursPerWorkWeek);

@@ -20,9 +20,9 @@ public class Student extends Person {
      * @param email Email do estudante
      * @param enrollmentDate Data de inicio
      */
-    public Student(String name, String dateOfBirth, String email, String enrollmentDate)
+    public Student(String name, String dateOfBirth, String email, String enrollmentDate, Address address)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(enrollmentDate, AppConfig.DATE_FORMAT));
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, LocalDate.parse(enrollmentDate, AppConfig.DATE_FORMAT), address);
     }
     
     /**
@@ -31,9 +31,9 @@ public class Student extends Person {
      * @param email Email do estudante
      * @param enrollmentDate Data de inicio
      */
-    public Student(String name, LocalDate dateOfBirth, String email, LocalDate enrollmentDate)
+    public Student(String name, LocalDate dateOfBirth, String email, LocalDate enrollmentDate, Address address)
     {
-        super(name, dateOfBirth, email);
+        super(name, dateOfBirth, email, address);
         this.setEnrollmentDate(enrollmentDate);
         this.setEmail(email);
     }

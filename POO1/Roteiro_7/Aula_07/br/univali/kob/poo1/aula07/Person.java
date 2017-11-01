@@ -18,10 +18,11 @@ public abstract class Person implements Contactable{
      * @param name O nome da pessoa
      * @param dateOfBirth A data de nascimento da pessoa
      * @param email Email da pessoa
+     * @param address Endereço da pessoa
      */
-    public Person(String name, String dateOfBirth, String email)
+    public Person(String name, String dateOfBirth, String email, Address address)
     {
-        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email);
+        this(name, LocalDate.parse(dateOfBirth, AppConfig.DATE_FORMAT), email, address);
     }
 
     /**
@@ -29,9 +30,10 @@ public abstract class Person implements Contactable{
      * @param name Nome da Pessoa
      * @param dateOfBirth Data de nascimento da pessoa
      * @param email Email da pessoa
+     * @param address Endereço da pessoa
      * @throws InternalError in case of invalid parameters
      */
-    public Person(String name, LocalDate dateOfBirth, String email){
+    public Person(String name, LocalDate dateOfBirth, String email, Address address){
         if (name.isEmpty())
         {
             throw new IllegalArgumentException("The name cannot be null...");
@@ -44,6 +46,7 @@ public abstract class Person implements Contactable{
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.id = nextid++;
+        this.address = address;
     }
 
     /**
@@ -71,10 +74,34 @@ public abstract class Person implements Contactable{
      */
     private String email;
     
+    /**
+     * Endereço da pessoa
+     */
+    private Address address;
+    
+    /**
+     * Setter
+     * @param address Endereço da pessoa
+     */
+    public void setAddress(Address address)
+    {
+        this.address = address;
+    }
     
     /**
      * Getter
-     *
+     * @return Endereço da pessoa
+     */
+    public Address getAddress()
+    {
+        return new Address(address.getStreetLine1(),
+                address.getStreetLine2(), 
+                address.getCity(),
+                address.getZipCode());
+    }
+    
+    /**
+     * Getter
      * @return O nome da pessoa
      */
     @Override
@@ -170,6 +197,7 @@ public abstract class Person implements Contactable{
         output.append("   id = " + id + AppConfig.NEW_LINE);
         output.append("   name = " + name + AppConfig.NEW_LINE);
         output.append("   dateOfBirth = " + dateOfBirth.format(AppConfig.DATE_FORMAT) + AppConfig.NEW_LINE);
+        output.append(address.toString());
         output.append(appendToString());
         return output.toString();
     }
@@ -224,7 +252,8 @@ public abstract class Person implements Contactable{
         return
                 id == person.id &&
                 (name == person.name || name.equals(person.name)) &&
-                (dateOfBirth == person.dateOfBirth || dateOfBirth.equals(person.dateOfBirth));
+                (dateOfBirth == person.dateOfBirth || dateOfBirth.equals(person.dateOfBirth)) &&
+                (address == person.address || address.equals(person.address));
     }
     
     /**
@@ -239,7 +268,9 @@ public abstract class Person implements Contactable{
     @Override
     public int hashCode()
     {
-        return id ^ (name.hashCode()) ^ (dateOfBirth.hashCode());
+        return id ^ (name.hashCode()) ^
+               (dateOfBirth.hashCode()) ^
+               (address.hashCode());
     }
 
     /**

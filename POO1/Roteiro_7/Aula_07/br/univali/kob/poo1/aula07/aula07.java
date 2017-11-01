@@ -1,14 +1,10 @@
 package br.univali.kob.poo1.aula07;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 /**
  *
  * @author Mauricio
  */
-public class aula06 {
+public class aula07 {
 
     /**
      * @param args the command line arguments
@@ -45,6 +41,31 @@ public class aula06 {
         new ComparableValidator<String>().range(myStr, "My Integer", minStr, maxStr);
         
         System.out.println("Validacoes feitas com sucesso. Todo mundo passou!");*/
+        
+        /*State s1 = new State("Santa Catarina", "SC");
+        System.out.println(s1.toString());
+        
+        State s2 = new State("Santa Catarina", "SC");
+        System.out.println(s2.toString());
+        
+        System.out.println("TRUE ==> " + s1.equals(s2));
+        System.out.println("TRUE ==> " + s2.equals(s1));
+        System.out.println("FALSE ==> " + (s1 == s2));
+        
+        //exceção aqui...
+        //State s3 = new State("Santa Catarina", "");
+        
+        //exceção aqui...
+        //State s4 = new State("", "SC");*/
+        
+        /*State s1 = new State("Santa Catarina", "SC");
+        City c1 = new City("Florianopolis", s1);
+        System.out.println(c1.toString());*/
+        
+        State s1 = new State("Santa Catarina", "SC");
+        City c1 = new City("Florianopolis", s1);
+        Address a1= new Address("Rua Floriano, 2012", null, c1, "88015200");
+        System.out.println(a1.toString());
     }
     
 }

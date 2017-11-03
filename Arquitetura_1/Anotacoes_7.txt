@@ -1,0 +1,44 @@
+Arquitetura Multiciclo
+
+A arquitetura multiciclo divide as multiplas operações em varios ciclos
+
+A organização de um processador pode ser estruturada em duas partes
+
+Caminho de dados ->Responsavel pela execução das instruções ou seja pelo processamento de dados
+
+Controle-> Decodifica as instruções pelo acionamento de todos os componentes do caminho de dados associado
+à execução de cada instrução
+
+Ciclo de execução de uma instrução MIPS:
+* IF: le uma instrução de memoria e incrementa o PC(PC + 4)
+* ID: Decodifica a instrução, busca os registradores (rs e rt) e estende o sinal do operando imediato
+* EX: 
+* MEM:
+* WB:
+
+***TCLK -> tempo de clock
+
+Organização monociclo:
+* Todas as fases do ciclo de instrução são executadas em um unico ciclo de relogio
+* TCLK é definido pela instrução mais lenta(load word)
+* Todas as instrução consomem um ciclo de relógio (1 ciclo = monociclo)
+
+Organização multiciclo
+* Cada fase do ciclo de instrução em TCLK
+* TCLK é definido pela fase mais lenta(acesso à memória)
+* As instruções consomem varios ciclos de relogio(multiciclo)
+* Diferentes instruções consomem diferentes quantidade de ciclos de relogio
+* Em um dado ciclo de relogio, apenas uma fase de instrução é executada
+
+Organização em pipeline
+* Cada fase do ciclo de instrução é executada em um TCLK
+* TCLK é definido pela fase mais lenta( acesso à memoria)
+* Todas as instruções gastam o mesmo número de ciclos(5)
+* A cada ciclo é instrução é concluida e uma nova instruçõa é iniciada
+* Em um dado ciclo é possivel ter várias fases diferentes em execução para diferentes instruções
+
+Memória de instruções : Armazena o programa em execução
+Memória de dados: Armazena os dados do porgrama
+UAL: Unidade Aritmética Lógica (ULA, UAL, ALU)
+
+

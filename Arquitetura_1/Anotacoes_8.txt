@@ -1,0 +1,222 @@
+PIPELINES 
+
+Busca por Arquivos 
+
+Melhorando a eficiência
+
+* Busca documento
+* Identifica tipo de transação
+* Verifica se saldo é positivo
+* Efetiva transação e atualiza saldo
+
+Exemplo: Lavanderia
+* Lavagem: 30 min
+* Secagem: 30 min
+* Passar a ferro: 30 min
+* Guardar: 20 min
+
+Lavagem de 4 ciclos normal: 8 horas
+Lavagem de 4 ciclos em pipeline: 3,5 horas
+
+Pipelining não diminui o tempo de execução de cada estágio, 
+ele ajuda a taxa de execução da tarefa
+
+Pipeline:
+IF: Instruction fetch
+ID: Instruction decode/register file read
+EX: Execute/address calculation
+MEM: Memoria access
+WB: Write back
+
+Hazard
+
+Estrutural
+-Algum recurso não suficientemente replicado
+-Mesma memória(cache) para instrução e dado
+
+Resolvendo o hazard de dado
+- Software: Inserir NOP's (causa degradação de desempenho)
+- Trocar a ordem das instruções (necessário compilador "inteligente")
+- Hardware: método do curto circuito (operações entre registradores)
+- Inserir retardo (bolhas)
+
+Hazard de controle
+
+- Necessidade de alteração do fluxo:
+* Desvios condicionais e incondicionais
+* chamadas e retornos de subrotinas
+* interrupções
+
+- Como resolver o conflito minimizando a perda de desempenho?
+
+Você pode reduzir o retardo devido a desvios
+
+Esperar para buscar proxima instrução até que o desvio seja executado -> congelamento do pipeline
+* Descoberta de instrução de desvio no pipeline
+
+
+* Esperar para buscar proxima instrução até que o desvio seja executado -> congelamenteo do pipeline
+* Predizer o comportamento do desvio -> Execução especulativa
+
+Execução especulativa
+* O estado da maquina antes do desvio deve ser guardado
+* Perda de desempenho
+* Tecnicas de compilação para aumento de acerto
+  
+
+  Buscar sempre a instrução seguinte do desvio
+    Fazer desvio com efeito retardado
+
+
+Execeçõe
+* Comportamento do pipeline: Zerar instruções que foram carregadas no pipeline  
+
+Tipos de exceção
+*Opcode nao valido
+*Overflow
+*Mal funcionamento do hardware
+*Chmada de SO
+* Requisição de dispotivo E/S
+
+Pipeline:
+* Procura melhor utilização do hardware durante execução das instruções
+* Hazards estrutural de dado e de controle
+* Estrutural dupplicação de recurso
+
+
+Controle:
+* Congelamento
+* Execução especulativo: estática dinami9ca
+* Desvio com efeito retaradado
+
+Exceções:
+-Hardware para anular instruções subsequentes a que causo a exceção
+
+RISC X CISC:
+Slidesd baseados nas apresentações "Arquiteturas RISC e CISC" do prof. José E. Baggio da UNIFRA e "Processadores RISC"
+do Prof Flávio R. Wagner da UFRGS
+
+Os processadores da familia IBM x86, e vários outros, possuem caracteristica em comum:
+* 1 CPU (c/ 8 a 16 registradores) + 1 memoria externa
+* Centenas de instruções
+* 12ou mais modos de endereçamento
+
+Ese tipo de arquitetura é denominado CISC
+
+Os primeiros computadores eram simples
+*Poucas instruções 1 ou 2 modos de endereçamento
+
+Em 1964 a serie IBM 360 instroduzio novos conceitos
+* Uma arquitetura e varias organizações
+* Controle baseado em microprogramação
+  - Um microprograma é uma representação simbolica do controle em forma de microconstruçoes que são ativam os sinais
+
+Outro fator importante era a baixa velocidade das memorias em realçao a velocida da CPU
+ * As memorias eram de nucleos magneticos de ferrite que tinha um tempo de acesso alto
+ * A execução de uma operação mais complexa poderia ser viabilizada de duas formas
+ * A segunda abordagem foi bastante utilizada, tornando os conjuuntos de instruções cada vez mais complexas
+
+O uso de instruções complexas
+ * Facilita a tarefa dos compiladores
+ * Aumentava o desempenho dos programas
+
+Exemplos de arquiteturas CISC:
+ * Digital VAX 11/780
+    * 303 instruções 
+    * 16 modos de endereçamento
+
+ * Instruções com comprimento e formatos variáveis
+
+
+Em direção a uma mudança de filosofia
+ * Memorioa principal semicondutores no lugar de nucleos
+    * A memoria principal nao seria mais 10 vezes mais lenta que memoria controle
+    * Na decada de 80, as RAMs ficaram mais rapidas devido ao avanço da tecnologia de fabricação de circuitos integradas
+
+
+* Pesquisas identificaram que tipos de instruções era usadas em programas reais e percebeu-se que
+  * Instruções mais complexas eram raramente utilizadas
+ 
+* Efeitos colaterais de conjuunto completox de instruções
+ * Surgimento de memorias caches
+
+Compiladores utilizando sub-conjuntos da arquitetura
+ * Dificil utilização de instruções
+ * Otimização de codigo tornava possivel utilização de instruções mais simples
+
+RISC
+
+ * Computadores RISC são arquiteturas baseadas na simplificação do hardware e na 
+transferencia da complexidade para o software(compilador)
+
+ * Com isso, as coisas simples que os programas fazem, tais como a adição de 2 registradores, podem ser feitas em uma unica instruções/ 
+ciclo de clock
+
+Desenvolver conjunto de instruções bem simples
+ * Melhor aproveitamento de recurso escassos em um processador num chip unico
+ * Perspectiva global de aumento de desempenho
+
+Projetar maquina bem mais simples que tenha implementação rapida
+
+Maior numero de ibnstruções nor programas compensador por
+* Instruções mais rapidas e curtas
+
+1. A simplicidade favorece a regularidade
+2. Menor signifca mais rapido
+3. Agilize os casos mais comuns
+4. Um bom projeto exige bons compromissos
+
+Executar uma instrução por ciclo de relogio
+ * Instruções seriam tao rapidas quanto micro instruções
+
+Fazer todas as intruções com mesmo taamnho e formato
+ * Simplificar implementação do controle
+
+Dados imediatos pequenos e deslocamentos pequenos
+
+Acessar memoria principal apenas atraves de instruções LOAD e STORE
+ * Demais instruções fazem operação apenas entre registradores
+ * Simplificar implementação do controle (pipeline)
+ * Torna operações logica e aritmeticas muito mais rapida
+
+Usar modos de endereçamento bem simples
+ * Simplificar implementação do controle
+
+Poucos tipos de dados
+
+Usar arquitetura Harvard
+ * Memorias de dados e instruções separadas permitem aumentar bandwidth de memoria
+
+Uso de instruções compare-and-branch
+ * Estatisticas mostram que ate 98% dos branches são precedidos por uma comparação
+
+Uso de logica hardwired e nao microprogramada - maior velocidade
+
+Microprocessadores convencionais ocupam até 50% do espaço com bloco de controle
+
+Nos processadores RISC, o controle ocupa apenas 10% de espaço
+
+Aumento do numero de registradores no espaço ganho
+
+Maior possibilidade de uso de pipelines homogêneos
+
+RISC
+* Instruções simples de um uncio ciclo
+* Apenas LOAD e STORE acessam a memoria
+* Altamente pipelined
+* Unidade de contole hardwired
+* Instruções com formato fixo
+* Poucas instruções e modos de endereçamento
+* Complexidade no compilador
+* Multiplos conjuntos de registradores
+
+
+CISC
+* Instruções complexas em varias ciclos
+* Qualquer instrução pode referenciar a memoria
+* Sem pipeline
+* Unidade de controle microprograma
+* Instruções com formato variavel
+* Muitas instruções e modos de endereçamento
+* Complexidade no microprograma
+* Conjunto unico de registradores

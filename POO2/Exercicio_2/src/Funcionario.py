@@ -1,5 +1,6 @@
 from abc import ABC
 
+
 class Funcionario(ABC):
 
     __nome = ""
@@ -8,7 +9,7 @@ class Funcionario(ABC):
     __dataAdmissao = ""
     __rg = ""
 
-    def __init__(self, nome = "", departamento = "", salario = "", dataAdmissao = "", rg = ""):
+    def __init__(self, nome="", departamento="", salario="", dataAdmissao="", rg=""):
         self.__nome = nome
         self.__departamento = departamento
         self.__salario = salario
@@ -20,15 +21,14 @@ class Funcionario(ABC):
     #def equals(self):
 
     def imprimeDados(self):
-        print("\nNome: " + str(self.getNome()));
-        print("Departamento: " + str(self.getDepartamento()));
-        print("Salário: " + str(self.getSalario()));
-        print("Data de Admissão: " + str(self.getDataAdminissao()));
-        print("RG: " + str(self.getRg()));
-
+        print("\nNome: " + str(self.getNome()))
+        print("Departamento: " + str(self.getDepartamento()))
+        print("Salário: " + str(self.getSalario()))
+        print("Data de Admissão: " + str(self.getDataAdminissao()))
+        print("RG: " + str(self.getRg()))
 
     def recebeAumento(self, aumento):
-        salario += aumento
+        self.salario += aumento
 
     def getGanhoAnual(self):
         return self.__salario * 12

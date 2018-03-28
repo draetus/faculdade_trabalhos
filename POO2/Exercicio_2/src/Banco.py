@@ -13,4 +13,3 @@ class Banco(object):
         if funcionario in self.__funcionarios:
             return True
         return False
-

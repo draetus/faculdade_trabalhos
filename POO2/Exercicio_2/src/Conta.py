@@ -1,8 +1,9 @@
 from abc import ABC
 from Cliente import Cliente
 
+
 class Conta(ABC):
-    __contasCriadas = 1;
+    __contasCriadas = 1
     __numero = 0
     __saldo = 0
     __limite = 0

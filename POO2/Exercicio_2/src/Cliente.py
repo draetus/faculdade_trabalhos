@@ -12,11 +12,15 @@ class Cliente(object):
 
     def getNome(self):
         return self.__nome
+
     def setNome(self, nome):
         self.__nome = nome
+
     def getSobrenome(self):
         return self.__sobrenome
+
     def setSobrenome(self, sobrenome):
         self.__sobrenome = sobrenome
+
     def getCPF(self):
         return self.__cpf

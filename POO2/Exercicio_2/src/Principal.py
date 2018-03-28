@@ -5,7 +5,7 @@ from Gerente import Gerente
 from Diretor import Diretor
 from Presidente import Presidente
 
-cl= Cliente("Breno", "Oliveira", "08552242664")
+cl = Cliente("Breno", "Oliveira", "08552242664")
 c = ContaCorrente(2000, cl)
 print(c.deposita(1000))
 
@@ -29,10 +29,9 @@ cc.atualizaTaxa(1)
 print(cc.getSaldo())
 
 d = Diretor("Materzao", "TI", 3200, "18/03/2018", "08552242664")
-d.imprimeDados();
+d.imprimeDados()
 print(d.getBonificacao())
 print(f.getBonificacao())
 
-p =  Presidente("Materzao REIREIREIREI", "TI", 3200, "18/03/2018", "08552242664")
+p = Presidente("Materzao REIREIREIREI", "TI", 3200, "18/03/2018", "08552242664")
 print(p.getBonificacao())
-

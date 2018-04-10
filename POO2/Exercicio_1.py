@@ -8,14 +8,17 @@ class Product(object):
         print(name)
         print("Product")
 
+
 class Loan(Product):
     __interest = 0.0
     __lenders = []
 
+
 class ManagedFund(Product):
     __fundId = ""
-    __distribution= 0.0
+    __distribution = 0.0
     __currentUnitPrice = 0.0
+
 
 class Cash(Product):
     __interest = 0.0

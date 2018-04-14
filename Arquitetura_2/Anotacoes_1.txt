@@ -1,0 +1,53 @@
+Pipelining
+
+Execução especulativa
+Previsão do desvio: 
+* A ocorrência de todos/nenhum desvio
+* com base no opcode
+* análise da direção do desvio
+* dinâmica
+  - Chave desvio/ não desvio
+  - uso do branch target buffer(BTB)
+     - Profilling
+     - Pentium e Power-PC
+
+Chave desvia/não desvia
+* Máquina de estado
+
+Buscar sempre a instrução seguinte ao desvio
+* Desvio com efeito retardado
+
+* Instruções seguinte ao desvio devem ser independentes do desvio
+
+Exceções
+
+Comportamento do pipeline:
+* Instruções antes da que causou a exceção devem ser terminadas
+* Instruções após a que causou exceção  devem ser anuladas
+
+Tipos de Exceções
+* opcode não válido
+* overflow
+* mal funcionamento do hardware
+* chamada de S.O.
+* Requisição de Dispositivo de E/S
+
+* Como salvar o endereço correto em EPC?
+
+Resumo
+
+* Melhor utilização do hardware durante a execução das instruções
+  - Pipeline
+* Hazards: estrutural, de dado e de controle
+* Estrutural: duplicação de recurso
+* Dado:
+  - hardware: curto-circuito
+  - software: rearrumação
+* Controle: 
+ - Congelamento
+ - Execução especulativa:
+ - Desvio com efeito retardado
+
+* Execeções:
+ - Hardware para anular instruções subsequentes a que causou a exceção
+ - Que valor salvar em EPC?

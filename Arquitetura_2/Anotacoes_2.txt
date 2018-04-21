@@ -1,0 +1,145 @@
+Como funciona a hierarquia de memória?
+*Estudante escrevendo artigo sobre os importantes desenvolvimentos ocorridos no hardware ao longo do tempo
+  - Ele está em uma mesa na biblioteca da universidade e sobre a mesa existem vários livros sobre a história dos computadores.
+    Poém ele precisa discutir aspectos do ENIAC e nenhum desses livros trata do ENIAC
+  - O aluno precisa procurar um outro livro na prateleira sobre computadores e, dessa forma, a busca da informação sobre o ENIAC consome mais tempo.
+* Moral da história
+  - O aluno possui vários livros à sua disposição nas prateleiras (uma grande memória), mas apenas alguns deles estão próximos deles sobre a mesa
+    (memória de tempo de acesso menor).
+
+* Um programa que é executado num computador não precisa acessar todas as suas instruç~eos e os dados processados com o mesmo nível de prioridade
+
+* Os programas acessam uma parte relativamente pequena do seu espaço de endereçamento em um instante qualquer
+
+* Localidade temporal (no tempo)
+  - Se um item (instrução ou dado) é referenciado ele tende a ser referenciado novamente dentro de um espaço de tempo curto
+
+  - Analogia: Se o estudante tiver levado um livro recetemente para a sua mesa, a fim de examiná-lo, é provavel que irá em breve precisar dele mais uma vez
+
+  - Exemplo: X=1000;  while (x>0)   {    x--;    }
+
+  - A instrução "X = 1000" é executada uma única vez, mas a instrução "X--" é executada 1000 vezes
+
+* Localidade espacial( no espaço)
+  - Se um item é referenciado, itens cujo endereço sejam próximos dele tendem a ser logo referenciados
+
+  - Analogia : Provavelmente, os livros proximos ao livro escolhido na prateleira tambem devem falara da historia dos computadores e podem ser uteis mais tarde
+
+  - Exemplo: x = c/2;   y = 2.5*x;    printf("\ny=%d", y);
+
+* Que tipo de localidade exibe o trecho de programa abaixo?
+k = 0;
+for(i=0;i<1000;i++){
+    A[i] = A[i]*k;
+}
+
+* É o principio da localidade que permite construir um sistema hierarquico de memoria de modo que as informações que serao provavelmente utilizadas em um
+  futuro proximo sejam copiadas para as memoras mais proximas ao processador, as quais possuem menor tempo de acesso
+
+* Contudo, as memorias com menor tempo de acesso sao as mais caras e, por isso, são utilizadas em menor quantidade que as de maior tempo de acesso
+
+* Características básicas de uma hierarquia de memoria
+  - Os dados sao sempre copiados entre dois niveis por vez
+
+  - A unidade minima de informacao entre dois niveis e chamada bloco ou linha
+    Analogia: no exemplo, bloco = 1 livro
+
+* Acerto(Hit)
+  - Ocorre quando a informacao buscada em um nivel esta presente naquele nivel
+  - Taxa de falta
+    - Fração de acessos com acerto
+    - Ex. 90 acerto em 100 acessos => taxa de acerto = 0,9
+
+* Falta (Miss)
+  - Ocorre quando a informacao buscada nao esta presente exigindo que seja copiada do nivel inferior ou ate do nivel mais baixo da hierarquia
+  - Taxa de falta
+    - Fração de acessos com falta
+    - Ex. 10 faltas em 100 acessos => taxa de faltas = 0,1
+
+taxa de faltas = 1-taxa de acertos
+
+Importante: A taxa de acertos do HD é igual a 1. Mas a da memória principal e da cache não.
+
+* Tempo de acerto
+  - Tempo necessario para acessar o nivel superior da hierarquia (inclui o tempo p/ determinar se o acesso vai gerar um acerto ou uma falta
+
+* Penalidade por falta
+  - Tempo necessario para substituir um dos blocos do nivel superior pelo bloco do nivel inferior mais o tempo para enviar a informação ao processador
+
+* Tempo de acerto << Penalidade por falta
+
+* Os programas gastam a maior parte do tempo de processamento acessando a memoria
+
+* O sistema de memoria influi no desempenho final do computador
+
+* Os projetistas tem dedicado bastante atencao ao sistema de memoria
+
+* Os programadores devem entender como funciona o sistema de memoria de modo a colaborar com a obtencão de um bom desempenho
+
+* Acessos que geram acerto no nivel mais alto da hierarquia (mais rapido) são processados em um tempo menor
+
+* Acessos que geram faltas estao nos niveis mais baixos da hierarquia, os quais sao mais lentos
+
+* Se a taxa de acertor é suficientemente alta, a hierarquia de memoria tem um tempo de acesso efetivo muit mais proximo ao do componente do nivel masi alto e,
+  emconsequencia, mais rapido
+
+* Na maioria dos sistemas, a memoria e implementada como uma hierarquia real
+  - Uma informacao nao pode estar presente no nivel mais alto, a menos que esteja presente nos niveis mais baixos
+
+* Como funciona o mapeamento direto
+  - Cada posicao da memoria é mapeada em uma posição da cache baseada no endereço do item na memoria
+  - A posição do item na cache pode ser obtida pela equação
+  Posição na cache = (posição na memoria) módulo(número de posições na cache)
+  - Um conjunto de bits menos signifcativos forma o indice que define o bloco (entrada) da cache para o qual um bloco de memoria sera copiado
+  - Diferentes blocos da memoria concorrem pelo mesmo bloco da cache
+  - Para saber qual posição da memoria esta sendo mantida na cache inclu-se um conjunto de tags na cache que contem essa informaçao
+
+* Cache diretamente mapeada para o MIPS
+  - Tamanho da cache = (2^n x  { 2^m x 32 + [ 32 - ( n + m + 2)] + 1})
+                      ou (2^n x (2^m x 32 + 31 - n - m))
+  - onde
+    - n = numero de bits no indice
+    - 2^n = numero de blocos (entradas) na cache
+    - 2^m = numero de words em um bloco(entrada) da cache
+    - 32 = numero de bits em uma word
+    - 2^m x 32 = numero de bits em um bloco da cache
+    - 32 - (n + m + 2) = tamanho da tage em bits
+    - 1 = tamanho do bit de validade
+
+Tratando faltas na cache de instruções
+1. Enviar o valor do PC original (PC atual -4) para a memoria
+2. Instruir a memoria principal a realizar uma leitura e esperar que a memoria complete seu acesso
+3. Escrever bloco lido na entrada da cache, escrevendo tambem nessa entrada os bits mais significativos do endreço no campo tag e ligando o bit de validade
+4. Reiniciar a execução da instrução, gerando uma nova busca da instrução na cache mas dessa vez com a certeza de que ela será encontrada
+
+* A cache deve ser consistente com a memoria principal
+
+* Opções de atualização da memoria principal
+  - Write-through
+    - Uma escrita sempre atualiza a cache e a memoria principal garantino a consistencia de dados nos dois niveis
+    - Compromete o desempenho do processdor pois uma escrita consome muitos ciclos, embora esse problema possa ser minimizado com o uso de um buffer de escrita
+
+  - Write-back
+    - Inicialmente, apenas a cache é atualizada. Após,  quando o bloco é substituido, então ele é copiado para a memoria principal
+    - Ofere um desempenho melhor, mas sua implementação é mais complexa que a do write through
+
+Como explorar a localidade espacial?
+
+* Tempo de busca:
+  - Latencia para busca da primeira palavra
+  - Latencia para transferencia do restante do bloco
+
+* Maior tamanho do bloco, maior penalidade da falta
+
+* Solução:
+  - Reinicio antecipado(melhor para instruções)
+  - Palavra requisitada primeiro
+
+* Considere o custo de busca de um bloco da memoria na qual gaste-se
+  - 1 ciclo de clock do barramento de memoria para enviar o endereço
+  - 15 ciclos de clock do barramento de memoria para cada acesso iniciado na DRAM
+  - 1 ciclo de clock do barramento de memoria para enviar word de dados
+
+* Considere um bloco igual a 4 words e uma memoria com largura de barramento igual a 1 word
+  - Penalidade por falta = 1 + 4x15 + 4x1 = 65 ciclos de clock
+  - Largura de banda = (4x4)/65 = 0,25 byte/ciclo de clock

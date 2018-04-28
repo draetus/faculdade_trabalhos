@@ -1,0 +1,85 @@
+Tempo de CPU = (Ciclos de clock de execução da CPU + Ciclos de clock de stall de memoria) x Tempo de ciclo de clock
+
+Ciclos de clock de stall de memoria = Ciclos de stall de leitura + Ciclos de stall de escrita
+
+Ciclos de stall de leitura = Leituras/Programa x Taxa de faltas de leitura x Penalidade de falta de leitura
+
+Ciclos de stall de escrita = (Escritas/Programa x Taxa de faltas de escrita x Penalidade de falta de escrita) + Stalls do buffer de escrita
+
+Ciclos de stall de memoria = Acessos à memória/Programa x Taxa de faltas x Penalidade de falta
+
+Ciclos de stall de memoria = Instruções/Programa x Faltas/Instrução x Penalidade de falta
+
+
+* Cache total associativa
+  - Estrutura de cache em que um bloco pode ser posicionado em qualquer entrada da cache
+
+* Cache associativa por conjunto
+  - Estrutura de cache que possui um numero fixo de entradas (no minimo duas) nas quais um bloco pode ser posicionado
+
+* Cache diretamente mapeada(não associativa)
+  - Estrutura de cache em cada bloco de memoria é mapeado exatamento para uma entrada na cache
+
+* Cache diretamente mapeada
+  - Posição a cache = (posição na memoria) módulo(numero de posições na cache)
+
+* Cache associativa por conjunto
+  - O bloco pode ser colocado em qualquer entrada do conjunto que é determinado por:
+  - Posição na cache = (posição na memoria) módulo(numero de conjuntos na cache)
+
+Quanto maior for o grau de associatividade, menor será o índice e maior será o tag, e portante a cache
+
+* Quanto maior a associatividade, maior é sobrecusto (overhead) em tags na cache
+
+* O custo em tags de uma cache associativa pode ser calculado por:
+  - Custo em tags = w x 2^n x (32 - n - m - k)
+Onde
+  - w : número de blocos por conjunto(numero de vias)
+  - 2^n : numero de conjuntos( de blocos no mapeamento direto)
+  - n : tamanho do indice para selecionar um conjunto
+  - 
+
+* Custo em tags de cache de 4Kblocos, onde
+  - 2^m = 4 words/bloco, logo m= 2
+  - 2^k = 4 bytes/word, logo k = 2
+  - Palavra de endereço de 32 bits e 
+  - w e n dependem do grau de associatividade
+
+* Diretamente mapeada(w = 1, n = 12)
+  - Custo em tags = 1 / 4K / (32 - 12 - 2 - 2) = 4K * 16  = 64Kbits
+
+* Associativa por conjunto de duas vias (w = 2, n = 11)
+  - Custo em tags  = 2 * 2K * (32 - 11 - 2 - 2) = 4K*17K=68 Kbits
+
+* Associativa por conjutno de quatro vias(w = 4, n = 10)
+  - Custo em tags = 4 + 1K * (32 - 10 - 2 -2) = 4K * 18 = 72Kbits
+
+Custo em dados = 4Kblocos * 4words/bloco * 32bits/word = 512Kbits
+
+* Para escolher um bloco a ser substituido em um conjunto, usa-se os seguintes esquemas:
+
+  - LRU (Least recently used - Usado menos recentemente)
+    -O bloco a ser substituido será aquele que não foi usado há mais tempo
+
+  - FIFO(Fisr in first out)
+    -O bloco a ser substituido será aquele está armazenado a mais tempo
+
+  - Aleatória
+
+
+* Como diminuir ainda mais a diferença de velocidade do processador e da memoria principal DRAM?
+
+* Sistemas de memoria modernas usam mais de um nivel de cache(L1, L2, ...) dentro e/ou fora do processador
+
+* Uso de caches L2 reduz a penalidade sofrida pelo processador quando ocorre uma falta na cache primária(L1) e a informação necessária já está na cache secundária(L2)
+
+* Assim com a cache L1, a cache L2 pode ser implementada no mesmo chip do processador (ou fora dele)
+
+* Alguns sistemas suportam niveis adicionais de cache, além do L1 e do L2
+
+* Caches de dois niveis permitem que
+  - A cache L1 seja projetada visando minimizar o tempo de acerto para produzir um ciclo de clock menor
+  - A cache L2 seja projetada visando minimizar a taxa de faltas para reduzir a penalidade dos longos tempos de acesso à memória
+  - A penalidade por falta da L1 seja reduzida pela presença da L2, o que permite que a L1 seja menor e tenha uma taxa de falta maior
+
+* Em comparação

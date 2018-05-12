@@ -1,0 +1,165 @@
+ENTRADA E SAIDA
+
+Entrada e saida
+* Parte do computadores responsavel pela transferencia de informações com o usuario ou com outros computadores
+
+Requisitos de sistemas de E/S
+* Sistemas de E/S devem ser confiaveis
+  - Falhas de comunicação em redes e de armazenamento em discos devem ser minimas
+* Sistemas de E/S devem ter desempenho satisfatorio
+* A confiabilidade é mais importante que o desempenho
+
+Expansão da capacidade de armazenamento
+* Sistemas computacionais exigem sistemas de armazenamento expansiveis
+
+Sistema Computacional
+* O processador e a memoria sao interligados a dispositivos de E/S por meio de um barramento e de controladores de E/S
+
+Caracteristicas dos dispositivos de E/S
+* Comportamento
+  - Entrada(somente leitura)
+  - Saida(somente escrita)
+  - Armazenamento(leitura e escrita)
+
+* Parceria
+  - Com um humano
+  - Com outra maquina
+
+* Taxa de dados
+  - Taxa de pico em que os dados transferidos entre o dispositivo de E/S e a memória principal ou o processador
+
+Métricas para desempenho de sistemas de E/S
+* Vazão(quantidade de ações realizadas por um sistema na unidade de tempo)
+* Largura de banda(capacidade de transmissão de um determinado meio)
+* Tempo de resposta(tempo total gasto para realizar uma tarefa)
+
+Qual métrica utilizar
+* Em sistemas multimidia (com fluxo de dados longos)
+  - Largura de banda
+
+* Em sistemas com muitos acessos pequenos
+  - Vazão
+
+* Em sistemas interativos(ex. caixa eletrônico)
+  - Tempo de resposta
+
+Desktops, servidores e computadores embutidos são sensiveis à confiabilidade e ao custo da E/S
+* Sistema de desktop e sistemas embarcados se concentram mais no tempo de resposta e na diversidade dos dispositivos de E/S
+* Sistemas de servidores focalizam mais a vazão e a facilidade de expansão dos dispositivos de E/S
+
+Geometria de um disco rigido
+* O disco rigido é formado por pratos metalicos
+* Cada prato possui duas superficies magneticas
+* Cada superficie é dividida em trilhas(circulos concentricos)
+* Cada trilha é dividida em setores
+* As trilhas das diferentes superficies situadas a um mesmo raio em relação ao eixo constituem um cilindro
+Valores típicos:
+* 1 a 4 pratos
+* 10000 a 50000 trilhas/superficies
+* 100 a 500 setores/trilhas
+* 512 Bytes/setor
+* Velocidade de rotação 5.400 a 15.000 RPM
+
+Geometria de um disco rigido
+* Zone bit recording (ZBR): possibilita um numero variavel de setores (e de bits) por trilha
+
+Componentes do disco rigido
+* Pratos(discos)
+* Eixo
+* Cabeças de leitura/escrita cabeçotes
+* Motor
+* Atuador
+* Controladora
+
+Tempo de seek (seek time)
+* Tempo para posicionar a cabeça de leitura/escrita sobre a trilha desejada
+* Tempo de seek médio = 3 a 14 ms (valores tipicos)
+
+Latencia (atraso) rotacional
+* Tempo para poscionar a cabeça de leitura/escrita sobre o setor desejado
+* Latencia rotacional media = 0,5 / RPM = 0,5/(rotações/60)
+* Exemplo - disco de 5400 RPM
+  - Latencia rotacional media = 0,5 rotação / 5400 rotações por minuto  -> 0,5 rotação / 90 rotação por segundo = 5,6ms
+
+Tempo de transferencia
+* Tempo para transferir um bloco de bits
+* É função da quantidade de bits a transferir e da taxa de transferência (quanto maior a taxa, menor o tempo)
+
+Taxa de transferencia
+* Taxa de dados que o disco consegue suportar
+* É função do tamanho do setor, da velocidade de rotação e da densidade de gravação de uma trilha
+* Valores típicos (em 2008) 70 a 125 MB/s
+
+Tempo da controladora
+* Overhead que a placa controladora impôe na realização do acesso de E/S
+
+Tempo de acesso ao disco
+* Tempo medio de acesso ao disco = tempo de seek + latencia rotacional + tempo de transferencia + tempo da controladora
+
+Confiabilidade
+* É uma medida da realização continua do serviço
+* Quanto maior o MTTF, mais confiável é o sistema
+
+Disponibilidade
+* É uma medida da realizaçãodo serviço em relação à alternância entre os dois estados (realização e interrupção)
+Disponibilidade = MTTF/MTBF = MTTF/(MTTF+MTTR)
+
+Melhorando o MTTF
+* Impedimento de falha (melhor construção)
+* Tolerância a falhas (redundância)
+* Previsão de falha (substituição antes da falha)
+
+Armazenamento em Flash
+
+Desenvolvida década de 80 pela Toshiba
+
+Caracteristicas
+* Não volatil
+* Latencia de 100-1000x mais rápida
+* Tamanho reduzido
+* Menor consumo
+* Maior resistencia
+
+Uso diversos:
+* Smartphones
+* Câmeras digitais
+* Player MP3
+* Disponivel em menor capacidade
+
+Baseada em EEPROM
+
+NOR
+* Primeira a ser desenvolvida
+* Semelhança a porta NOR
+* Aleatoriamente endereçável
+* Menor capacidade
+
+NAND
+* Maior Densidade
+* Escrita e Leitura em Blocos
+* Nivelamento de desgaste
+
+Velocidade de resposta muito maior se comparada à tradicional arquitetura dos hard disks
+Não volátil
+Utiliza banco de memorias NAND
+Possui memoria DRAM(Cache de dados)
+Controlador de Memória
+* Controla o caminho do fluxo de dados entre as memórias
+* Interface com barramentos(Ex. SATA)
+* ECC
+
+Banco de Memórias
+
+Dispostas em barramentos paralelos
+* MLC(Multi Level Cell)
+* SLC(Single Level Cell)
+
+MLC
+* Arranjadas para possuir maior densidade de armazenamento e ganho na perfomance de RW
+* Pipeline
+* Endereçar bits de diferentes chips simultaneamente
+* Mais lento e mais barato
+
+SLC
+* Arranjadas em um único nível logico
+* Mais rapidas e mais caras

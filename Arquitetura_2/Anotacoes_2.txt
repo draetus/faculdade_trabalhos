@@ -46,7 +46,7 @@ for(i=0;i<1000;i++){
 
 * Acerto(Hit)
   - Ocorre quando a informacao buscada em um nivel esta presente naquele nivel
-  - Taxa de falta
+  - Taxa de Acerto
     - Fração de acessos com acerto
     - Ex. 90 acerto em 100 acessos => taxa de acerto = 0,9
 
@@ -80,8 +80,8 @@ Importante: A taxa de acertos do HD é igual a 1. Mas a da memória principal e da
 
 * Acessos que geram faltas estao nos niveis mais baixos da hierarquia, os quais sao mais lentos
 
-* Se a taxa de acertor é suficientemente alta, a hierarquia de memoria tem um tempo de acesso efetivo muit mais proximo ao do componente do nivel masi alto e,
-  emconsequencia, mais rapido
+* Se a taxa de acertos é suficientemente alta, a hierarquia de memoria tem um tempo de acesso efetivo muito mais proximo ao do componente do nivel mais alto e,
+  em consequencia, mais rapido
 
 * Na maioria dos sistemas, a memoria e implementada como uma hierarquia real
   - Uma informacao nao pode estar presente no nivel mais alto, a menos que esteja presente nos niveis mais baixos
@@ -103,7 +103,7 @@ Importante: A taxa de acertos do HD é igual a 1. Mas a da memória principal e da
     - 2^m = numero de words em um bloco(entrada) da cache
     - 32 = numero de bits em uma word
     - 2^m x 32 = numero de bits em um bloco da cache
-    - 32 - (n + m + 2) = tamanho da tage em bits
+    - 32 - (n + m + 2) = tamanho da tag em bits
     - 1 = tamanho do bit de validade
 
 Tratando faltas na cache de instruções

@@ -1,4 +1,4 @@
-//Interpolação Lagrnage
+//Interpolação Lagrange
 
 clear
 close

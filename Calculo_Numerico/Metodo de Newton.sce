@@ -1,13 +1,15 @@
 //Método de Newton
+//O algoritmo só calcula até o polinomio de grau 6
 
 clear
 close
 clc
 
-x = [-1; 0; 2]
-y = [4; 1; -1]
+x = [0.4; 0.52; 0.6]
+y = [0.27; 0.29; 0.32]
+p = 0.47
 
-p = 0.5
+
 n = size(x,1)
 
 function [s] = f1(x1)
@@ -65,5 +67,4 @@ for i = 1 : (n)
     resultado = resultado + (aux * f(i))
 end
 
-
-disp (resultado)
+disp (resultado, "f(x): ", p, "X: ")

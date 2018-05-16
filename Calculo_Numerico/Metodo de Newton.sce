@@ -5,9 +5,10 @@ clear
 close
 clc
 
-x = [0.4; 0.52; 0.6]
-y = [0.27; 0.29; 0.32]
-p = 0.47
+x = [-1; 0; 2]     //Pontos X
+y = [4; 1; -1]    //Pontos f(x) ou Y
+p1 = 0.5                 //Ponto que se deseja calcular
+p2 = poly(0, 'p')        //Variavel usada para calculo do polinomio
 
 
 n = size(x,1)
@@ -58,13 +59,18 @@ function [s] = f(opc)
     end
 endfunction
 
-resultado = 0
-for i = 1 : (n)
-    aux = 1
-    for j = 1 : (i-1)
-        aux = aux * (p - x(j,1))
+function [s] = main(p)
+    resultado = 0
+    for i = 1 : (n)
+        aux = 1
+        for j = 1 : (i-1)
+            aux = aux * (p - x(j,1))
+        end
+        resultado = resultado + (aux * f(i))
     end
-    resultado = resultado + (aux * f(i))
-end
+    s = resultado
+endfunction
 
-disp (resultado, "f(x): ", p, "X: ")
+resultado = main(p1)
+polinomio = main(p2)
+disp (resultado, "Resultado: ", polinomio, "Polinomio: ", p1, "X: ")

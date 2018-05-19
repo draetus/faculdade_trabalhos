@@ -1,0 +1,169 @@
+Barramento
+
+* Objetivos
+  - Conhecer os conceitos relacionados ao funcionamento dos barramentos e ao acesso aos dispositivos de E/S
+
+* Conteudo
+  - Fundamentos do barramento
+  - Interfaceameno com dispositivos de E/S
+  - Acesso Direto à Memória
+
+* Definição de barramento (bus)
+  - É um link de comunicação compartilhada que utiliza um conjunto de fios para conectar diversos subsistemas
+
+* Vantagens do barramento
+  - Versatilidade, baixo custo e reusabilidade
+
+* Desvantagens do barramento
+  - Representa um gargalo de comunicação que limite a vazão máxima de E/S
+
+* Limitações do barramento
+  - Velocidade limitada pelo comprimento do barramento e pelo numero de dispositivos conectados
+
+* Desafio de projeto
+  - Sistema de barramento que atenda as demandas do processador e tambem conecte uma grande quantidade de dispotivos de E/S
+
+* Um barramento é formado por linhas (fios) de 
+  - Controle: sinalizam solicitações e confirmações, bem como o tipo de informação nas linhas de dados
+  - Dados: transportam dados, endereços e comandos complexos
+
+* Requer um protocolo (conjunto de regra) para gerenciar o seu compartilhamento
+
+* Transação de barramento
+  - Sequência de operações de barramento que inclui uma requisição e pode incluir uma resposta, amas podendo transportar dados
+  - Exemplo :
+      1. Enviar endereço
+      2. Receber ou enviar dados
+
+* Tipos básicos de transações
+  - Transação de leitura
+    - transfere dados da memoria para o processador ou para um dispositivo de E/S
+
+* Tipos básicos de barramento
+  - Barramento processador-memória
+    - Curtos
+    - Alta velocidade
+    - Alta largura de banda
+    - Usando na conexão entre a memoria e o processador
+
+* Barrament de E/S
+  - Longos
+  - Suportam uma faixa de larguras de banda
+  - Suportam muitos tipos de dispositivos
+
+* Barramento backplane
+  - São barramentos que suportam a coexistência de CPUs, memórias e dispositivos de entrada-e-saída em um único barramento
+
+* Barramento síncrono
+  - Inclui um sinal de clock nas linhas de controle e um protocolo fixo para comunicação relativa ao clock
+  - Barramento processador-memória (ex. leitura da memória)
+    - Ciclo 1: CPU envia endereço e comando deleitura para a mem
+    - Ciclo 2 - 4: Wait states (tempo de espera do acesso à memoria)
+    - Ciclo 5: Memoria envia dado lido à CPU
+  - Barramento de E/S PCI (ex. escrita no dispositivo)
+    - Ciclo 1: Controlado PCI envia endereço do dispositivo
+    - Ciclo 2: Controladora PCI envia o dado a ser escrito no dispositivo
+    - Ciclos de wait state podem ser necessário
+  - Desvantagens 
+    - Dispositivo tem que operar na frenquencia do clock do barramento
+    - O barramento nao pode ser longo
+
+* Barramento assíncrono
+  - Ao inves do clock, utiliza um protoolo de handshaking (aperto de mão) para coordenar o seu uso
+  - Pode acomodar um grande variedade de dispositivos de diferentes velocidades
+  - É extensivel 
+  - Pode ser estendido sem qualquer preocupaçao com problemas de variação de clock ou sincronismo
+
+* Protocolo de handshaking 
+  - Consiste de uma serie de etapas para coordenas as transferencias em barramentos assincrono em que o emissor e o recepetor so prosseguem para a proxima etapa
+    quando as duas partes concordarem que a etapa atual fi concluida
+  - Exemplo - Handshake baseado em tres linhas de controle
+    - ReqLeitura(ReadReq)
+    - DadoPronto(DataRdy)
+    - Confirmacao(Ack)
+
+* Fatores que afetam a banda passante:
+  - Tamanho do barramento
+  - Dados e endereços separados ou multiplexados
+  - Transferências em blocos (burst)
+
+* Arbitragem do barramento
+  - Os componentes conectados ao barramento sao classificadas como
+    - Mestre: pode iniciar uma transação, controlando o barramento
+    - Escravo: deve responder a uma transação e nao controla o barramento
+    - Mestre/Escravo: pode atuar como mestre ou como escravo
+
+* A arbitragem de um barramento consiste em decidir qual componente mestre terá direito ao controle do barramento quando mais de um mestre quer iniciar uma transação ao mesmo tempo
+
+* A arbitragem é feita por um arbitro que
+  1. Recebe requisições dos mestres
+  2. Seleciona uma requisição com base em algum criterio
+  3. Envia um sinal de garantia (grant) de uso ao mestre selecionado
+
+* Arbitragem do barramento
+  - Requisitos para o projeto do árbitro
+    - Dispositivos devem ter prioridades no acesso ao barramento
+    - Todo dispositivo deve ter acesso garantido ao barramento
+  - Tipos básicos de esquemas de arbitragem
+    - Arbitragem daisy chain
+    - Arbitragem centralizada com requisições em paralelo
+    - Arbitragem distribuida com acesso por auto seleção
+    - Arbitragem distribuida com acesso por detecção de colisão
+
+* Funções necessarias ao SO
+  1. Controle de acesso aos dispositivos (ex. arquivos do usr)
+  2. Abstração do acesso aos dispositivos (APIs)
+  3. Tratamento de interrupções geradas pelos dispositivos
+  4. Balancear o uso dos dispositivos e melhorar a vazão do sistema
+
+* Tipos de comunicação SO-dispositivos necessárias
+  1. O SO deve ser capaz de enviar comandos aos dispositivos
+  2. O dispotivo deve ser capaz de enviar notificações ao SO
+  3. Os dados precisam ser transferidos entre a memoria e um dispositivo de E/S
+
+* Endereçamento do dispositivo
+  - E/S mapeada em memoria
+    - Esquema de E/S em que partes do espaço de endereçamento são atribuidas a dispositivos de E/S e leituras e escritas nesses endereços são interpretradas como comandos aos dispositivos de E/S
+  - Instruções de E/S
+    - Instruções dedicadas usadas para dar um comando a um dispostivo de E/S e que especifica o número do dispositivo e aword de comando (ou local da word de comando na memória)
+
+* Comunicação com o processador
+  - Polling 
+    - Verifica periodicamente o status de um dispositivo de E/S para determinar a necessidade de atender o dispositivo
+    - Tem melhor previsibilidade de tempo (bom para sistemas de tempo real), mas desperdiça o tempo do processador
+
+* Comunicação com o processador
+  - E/S controlada por interrupção
+    - Emprega interrupções para indicar ao processador que um dispositivo precisa de atenção
+    - Uma interrupção é um evento que desvia o fluxo de execução do programa para uma rotina que atenda à necessidade do dispositivo que gerou a interrupção
+    - Um interrupção é assíncrona à execução da instrução e não impede o término da instrução
+    - Cada dispositivo pode ter um nível de prioridade diferente para o atendimento da sua interrupção
+
+* Identificando a fonte de uma interrupção
+  - Interrupções vetorizadas
+  - Registrador de cause
+
+* Niveis de prioridade 
+  - Exceções tem prioridade maior que interrupções
+  - Interrupções de dispositivos mais rápidos têm prioridade maior que a dos dispositivos mais lentos
+
+* Definição
+  - É um mecanismo de que oferece a um controlador de dispositivo a capacidade de transferir dados diretamente da memoria ou para ela sem envolver o processador
+
+* Funcionamento
+  - O controlador de DMA é dispositivo mestre/escravo que trabalha da seguinte forma
+    1. O processador configura o controlador de DMA indicando
+      - Dispositivo alvo da transferência (ex. disco)
+      - Endereço inicial da memoria
+      - Número de bytes a transferir
+    2. O DMA torna-se mestre e requisita o acesso ao barramento. Após receber o grant ele gera os sinais necessários, indicando o tipo de operação (rd/wr) e endereço da memória
+    3. Quando a transferencia termina o controlador de DMA interrompe o processador a informa se obteve exito na operação
+
+* Aspectos avançados
+  - A utilização de DMA em computadores com sistemas de memoria que incluem cache e/ou memoria virtual traz complicações adicionais referentes a garantia da coerência dos dados mantidos na memoria
+    e na cache, bem como no acesso e na transferência de paginas durante uma falta de página
+
+* Evitar Coerência de Cache
+  - Rotear atividade de E/S por meio de cache
+  - Invalidar a cache seletivametne (flush) por software
+  - Invalidar a cache seletivamente (flush) por hardware comum a sistemas multiprocessadores

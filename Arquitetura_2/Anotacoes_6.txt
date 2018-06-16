@@ -1,0 +1,310 @@
+Objetivo
+ - Apresentar conceitos introdutorios sobre processamento paralelo
+
+Bibliografia
+  - STALLINGS, William. Arquitetura e organização de computadores
+
+O modelo de Von Neumann
+  - Proposto por John von Neumann
+  - Baseado no conceito de programa armazenado
+  - Apresenta restrições ao alto desempenho
+    - Busca da instrução
+    - Decodificação da instrução
+    - Busca dos operadandos
+    - Execução da operaçã
+    - Escrita do resultado
+    
+  - O fluxo de dados entre o processador e a memoria limita o desempenho do processador (Gargalo de von Neumann)
+  - Outros problemas
+    - O processador executa uma unica instrução de cada vez
+    - A memoria permite um unico acesso
+
+Classificação de arquitetura de computadores
+  - Michael (1972) propôs uma metodologia de classificação dos computadores baseada em uma visão macroscopica da sua estrutura
+  - Classificação baseada no numero de fluxos de instruções e de dados simulatenos suportador pelo computador
+
+SISD (Single instruction Stream - single data stream)
+  - Processador unico
+  - Unica sequencia de instruções
+  - Dados armazenados na unica memoria
+  - Uniprocessadores
+
+SIMD (Single instruction Steam - Multiple data stream)
+  - Unica instrução de maquina
+  - Controla execução simultanea
+  - Numero de elementos de processamento
+  - Base flexivel
+  - Cada elemento de processamento possui memoria de dados associada
+  - Cada instrução executada em conjunto diferente de dados por processadores diferentes
+  - Processadores de vetores e matrizes
+
+MISD (Multiple instructiom stream - Single data stream) 
+  - Fluxo de instrução multiplo
+  - Fluxos de dados unico
+  - Transmitidos ao conjunto de processadores
+  - Cada processador executa uma sequencia de instruções diferente
+  - Ex: maquinas sistolicas, aplicação de polinomios
+
+MIMD (Multiple instruction stream - Multiple data stream)
+  - Fluxo de instrução multiplo
+  - Fluxo de dados multiplo
+  - Diferentes conjuntos de dados
+  - Ex. SMPs, clusterls e sistemas NUMA
+
+Visão Geral - MIMD
+- Processadores de uso geral
+- Cada um pode processar todas as intruções necessarias
+- Classificado ainda mais pelo metodo de comunicação do processador
+
+Fortemente acoplado - SMP
+  - Processadores compartilham memoria.
+  - Comunicam-se por essa memoria compartilhada
+  - Multiprocessador simetrico(SMP):
+    - Compartilha unica memoria
+    - Barramento compartilhado para acessar a memoria
+    - Tempo de acesso a memoria para determinada area de memoria e aproximadamente o mesmo para cada processador
+  - Podem ter acesso nao uniforme à memoria
+  - Tempos de acesso a diferentes regiões da memoria podem diferir
+
+Fracamente acoplado - Clusters
+  - Coleção de uniprocessadores independetes ou SMPs.
+  - Interconectados para formar um cluster
+  - Comunicação por caminho fixo ou conexões da rede
+
+Multiprocessadores simetricos(SMP)
+  - Um computador independente com as seguintes caracteristicas:
+    - Dois ou mais processadores semelhantes decapacidade comparavel
+    - Processadores compartilham a mesma memoria principal e E/S
+    - Processadores são conectados por um barramento ou outra conexão interna
+    - Tempo de acesso a memoria aproximadamente igual para cada processador
+    - Todoso os processadores compartilham acesso à E/S
+      - Ou pelos mesmos canais ou por canais diferentes dando caminhos aos mesmos dispositivos
+    - Todos os processadores podem realizar as mesmas funções (dai serem simetricos)
+    - Sistema controlado pelo sistema operacional integrado
+    - Fornecendo interação entre processadores
+    - Interação em nivel de job, tarefa, arquivo e elemento de dados
+
+Vantagens do SMP
+  - Desempenho:
+    - Se algu trabalho poder ser feito em paralelo, ele será
+  - Disponibilidade: 
+    - Como todos os processadores podem realizar as memsas funç~eos, a falha de um unico processador nao interrompe o sistema
+  - Crescimento incremental
+    - Usuario pode melhorar o desempenho acrescentando processadores adicionais
+  - Escalabilidade
+    - Fornecedores podem oferecer uma serie de produtos com base no numero de processadores
+
+Barramento compartilhado
+  - Forma mais simples
+  - Estrutura e interface semelhantes ao sistema de unico processador
+  - Seguintes recursos fornecidos:
+    - Endereçamento - distinguir modulos no barramento
+    - Arbitração - Qualquer modulo pode ser mestre temporariamente
+    - Tempo compartilhado - se um modulo tem o barramento outros precisam esperar...
+
+Vantagens barramento compartilhado
+  - Simplicidade
+  - Felxibilidade
+  - Confiabilidade
+
+Desvantagens barramento compartilhado
+  - Desemepnho limitado pelo tempo de ciclo de barramento
+  - Cada processador deve ter cache local:
+    - Reduz numero de acessos ao barramento
+  - Causa problemas de coerencia de cache:
+    - Resolvido no hardware
+
+Considerações sobre SO
+  - Processos concorrentes simultaneos
+    - Processadores executem mesmo codigo do SO simultaneamente
+  - Escalonamento
+    - Atribuir processos a varios processadores
+  - Sincronização
+    - compartilhamento de recursos, E/S
+  - Gerenciamento de memoria
+    - Multiplas portas, paginação
+  - Confiabilidade e tolerância a falhas
+    - Reconhecer a perda de um processador
+
+Coerência de cache
+  - Problema - múltiplas cópias dos mesmos dados em diferentes caches.
+  - Pode resultar em uma visão incoerente da memória
+  - Politica write-back pode causar incoerência
+  - Write-through também pode dar problemas, a não ser que outras cache monitorem o tráfego de memória
+  - Solução por software
+    - COmpilador e sistema operacional lidam com probblema
+    - Overhead transferido para compilação
+    - Complexidade do projeto transferida do hardware para software
+    - Porém software tende a tornar decisões conservadoras.
+      - Utilização de cache ineficaz
+    - Analisar código para determinar periodos seguros para o caching de variáveis compartilhadas
+
+Write Update
+  - Vários leitores e escritores
+  - Palavra atualizada é distribuida a todos os outros processadores
+  - Alguns sistemas usam uma mistura adaptável, que implementa as duas soluções
+
+Multithreading e chips multiprocessadores
+  - Pesquisadores com o objetivo dee aumentar a frequência e CPI
+  - Fluxo de instruções dividido em fluxos menores (threads)
+  - Executados em paralelo
+  - Grande variedade de projetos de multithreading
+
+  - Processo
+    - Uma instancia do programa executando no computador
+    - Posse do recurso
+      - Espaço de endereço virtual para manter imagem do processo
+
+  - Thread: unidade de trabalho do processo que pode ser despachada
+    - Inclui contexto do processador (que inclui o contador de programa e ponteiro de pilha) e area de dados para pilha
+    - Thread executada sequencialmente
+    - Interrupção: Processador pode passar para outra thread
+
+  - Troca de thread:
+    - Troca do processador entre threads do mesmo processo
+    - Normalmente, custa menos que a troca de processo
+
+  - Todos processadores comerciais e maioria dos experimentais utilizam multithreading explicito
+    - Executa instruções simultaneamente a partir de diferentes threads explicito
+    - Intercala instruções de diferentes threads em pipelines compartilhados ou execução paralela em pipelines paralelos
+  - Multithreading implicito é execução simultanea de varias threads extraidas do unico programa sequencial
+    - Threads implicitas definidas estaticamente pelo compilador ou dinamicamente pelo hardware
+
+Abordagens para multithreading explicito
+  - Intercalado
+    - Granulidade fina.
+    - Processador lida com dois ou mais cntextos de thread ao mesmo tempo
+    - Troca de thread em cada ciclo de clock
+    - Se a thread estiver bloqueada, ela -e pulada
+
+  - Bloqueado
+    - Granulidade grossa.
+    - Thread executada até evento causar atraso
+    - Por exemplo, falha da cache
+    - Eficiente no processador em ordem
+    - Evita parada do pipeline
+
+  - Multithreading Simultaneo(SMT)
+    - Instruções enviadas simultaneamente a partir de varias thread para unidades de execução do processaodr superescalar
+
+  - Chip multiprocessador
+
+  - Superescalar
+    - Sem multithreading
+
+  - Multithread superescalar intercalado
+    - A cada ciclo são emitidas tantas instruções quantas forem possiveis a partir de unica thread
+
+Processadores com emissão de instruções multiplas
+  - Very long instruction word (VLIW)
+    - P.e., IA-64
+    - Varias instruções em uma unica palavra
+    - Normalmente, construida pelo compilador
+    - Operações que podem ser executadas em paralelo na mesma palavra
+    Pode preenche com no-ops
+  - VLIW multithread intercalado
+
+Execução paralela e simultanea de varias threads
+  - Multithreading simultaneo
+    - Emite varias intruções ao mesmo tempo
+    - Uma thread pode preencher todos os slots horizontais
+    - Instruções de duas ou mais thread podem ser enviadas
+    - Com threads suficientes, pode emiter numero maximo de instruções em cada ciclo
+
+  - Chip multiprocessador
+
+Clusters
+  - Alternativa ao SMP
+  - Alto desempenho
+  - Alta disponibilidade
+  - Aplicações servidoras
+  - Um grupo de computadores inteiros interconectados
+  - Trabalhando juntos como um recurso unificado
+  - Ilusão de serem uma única máquina
+  - Cada computador é denominado nó
+
+  - Beneficios do cluster
+    - Escalabilidade absoluta
+    - Escalabilidade incremental
+    - Alta disponibilidade
+    - Preço/Desemepenho superior
+
+Clusters - Tipos
+  - Balanceamente de carga
+    - Escaalbilidade incremental
+    - Inclui novos computadores automaticamente no agendamento
+    - Mecanismos de middleware precisam reconhecer que os processos podem migrar entre as maquinas
+
+  - Alta Disponibilidade
+    - Aumentar a disponibilidade dos serviços
+    - Conceito de redundancia
+
+  - Alta Perfomance
+    - Melhorar o desempenho das tarefas computacionais
+    - Fraciona-se o processamento
+
+Cluster - Computacação paralela
+  - Unica aplicação executando em paralelo em uma serie de maquinas no cluster
+  - Compilador
+    - Determina em tempod e compilação quais partes podem ser executads em paralelo
+    - Separadas para diferentes computadores
+  - Aplicação
+    - Aplicação escrita desde o inicio para ser paralela
+    - Passagem de mensagens para mover dados entre nos
+    - Dificil programas
+    - Melhor resultado final
+  - Computacação parametrica
+    - Se um problema repetir a execyção do algorito em diferentes conjuntos de dados
+    - Por exemplo simulação usando diferentes cenarios
+
+Cluster - Middleware
+  - Imagem unificada ao usuario
+    - Unica imagem do sistema
+  - Ponto de entrada unico
+  - Hierarquia unica de arquivos
+  - Ponto de controle unico
+  - Rede virtual unica
+  - Espaço unico de memoria
+  - Sistema unico de gerenciamente de trabalhos
+
+Cluster - Servidores blade
+  - Implementação comum da abordagem de cluster
+  - Servidor hospeda multiplos modulos servidores (blades) em chassi unico
+    - Economiza espaço
+    - Melhora gerenciamente de sistemas
+    - Chassi oferece fonte de energia
+    - Cada blade tem processador ,memoria, disco.
+
+Cluster comparados a SMP
+  - Ambos tem suporte para multiprocessador para aplicações com grande demanda
+  - Ambos estão disponiveis comercialmente
+    - SMP h-a mais tempo
+  - SMP
+    - Mais facil de gerenciar e controlar
+    = Mais proximo dos sistemas de unico processador
+    - Agendamente é a principal diferença
+    - Menos espaço fisico
+    - Menor consumo de energia
+
+
+Acesso nao uniforme a memoria(NUMA)
+  - Alternativa a SMP e clustering
+  - Acesso nao uniforme a memoria(NUMA)
+    - Todos os processadores tem acesso a todas as partes da memoria
+    - Usando leituras e escritas
+    - Tempo de acess do processador depende da regia da memoria
+    - Diferentes processadores acessam diferentes regioes da memoria em diferentes velocidades
+  - NUMA com coerencia de cache
+    - Coerencia de cache mantida entre caches de varios processadores
+    - Significativemente diferente de SMP e clusters
+  - SMP tem limite pratico para numero de processadores
+    - Trafego do barramento limitado entre 16 e 64 processadores
+  - Nos clusters, cada no tem sua propria memoria
+    - Aplicações nao veem grande memoria global
+    - Coerencia mantida por software, nao por hardware
+  - NUMA retem estilo do SMP enquanto oferece multiprocessamente em grande escala
+  - Cada processador tem sua propria cache L1 e L2
+  - Cada no tem sua propria memoria principal
+  - Nós conectados por alguma facilidade de rede
+
+Entregar proxima aula - Explicar o que é OpenMosix e Beowulf, Histórico, Como funciona, e quas vantagens e desvantagens.

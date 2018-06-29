@@ -1,0 +1,78 @@
+NOCS
+
+Enlaces e canais
+  * Tipicamente, cada enlace é constituido por dois canais unidirecionais opostos e cada canal pode incluir
+    - Canal de dados paralelo
+    - Sinais de enquadramento da mensagem (ou pacote)
+    - Sinais de controle de fluxo
+
+Topologias
+  * Definicao
+    - Arranjo de roteadores e canais na forma de um grafo
+
+  * Tipos
+    - Direta
+      - Malha (Grelha) 2-D
+      - Toróide dobrado 2-D
+      - Anel cordal
+
+    - Indireta
+      - Arvore-gorda (multi-estagio)
+
+Modelo de comunicacao = Troca de mensagens
+  * A comunicacao entre os nucleos ocorre pela troca de mensagens que sao constituidas por
+    - Cabecalho (header)
+      - Marca o inicio da mensagem e contem a informacao que identifica o caminho a ser utilizado para encaminhar a mensagem pela rede
+
+Subdivisoes das mensagens
+  * Conforme a tecnica de chaveamente a ser utilizada as mensagens podem ser divididas em 
+    - Pacotes
+      - Mais curtos que as mensagens e possuem a mesma estrutura
+
+    - Flits (flow control units)
+      - Menor unidade sobre a qual é feita a regulação do tráfego
+
+    - Phit (physical unit)
+      - Largura fisica do canal
+
+    - Um flit pode ser tão longo quanto um pacote ou tão curto quanto um phit
+
+Redes em chip e o modelo OSI
+
+  * Nivel fisico
+    - realiza a transferencia de dados em nivel de bits atraves de um canal fisico de comunicacao
+
+Vantagens de NoCs
+
+  * Largura de banda escalavel
+  * Arquitetura reutilizavel
+  * Arbitragem distribuida
+  * Conexoes curtas e ponto a ponto
+  * Paralelismo na comunicacao
+  * Comunicacao assincrona
+  * Canais de comunicacao "pipelinizados"
+  * BIST dedicado é rapido e completo
+  * Pode ser estruturado em camadas, permitindo a sua customização
+
+Desvantagens das NoCs
+
+  * Latencia para atravessar um roteador
+  * Contençao na rede pode aumentar a latencia
+  * Custo em area
+  * Requer uso de adaptadores de protocolo (wrappers)
+  * Mecanismos de hardware para garantir coerencia de cache nao sao simples
+  * Mudança de cultura
+
+
+SoCIN - System on chip interconnection network
+
+  * Rede em chip (NoC - Network on chip)
+  * Desenvolvida em 2002
+  * Enderaçamento baseado em cordenadas XY
+
+  * Formato do pacote
+    - Cabecalho
+    - Carga util
+    - Terminador
+  * eop - End of package
+  * bop - Beggining of package

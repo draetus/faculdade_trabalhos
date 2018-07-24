@@ -1,0 +1,13 @@
+Empresa: V2COM
+
+Quais os principais ativos da empresa?
+
+Funcionários
+Solução
+Estrutura
+
+Considere um ativo de um determinada categoria e indique (descreva) vulnerabilidades e ameaças as quais estes ativos estão expostos.
+
+Ativo escolhido: Estrutura
+Vulnerabilidades: Informação mal armazenada
+Ameaça: Roubo de informações e danos aos servidores

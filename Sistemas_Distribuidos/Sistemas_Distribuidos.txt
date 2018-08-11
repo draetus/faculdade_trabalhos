@@ -1,0 +1,73 @@
+Sistemas Distribuidos -> Um conjunto de computadores independentes que se apresenta para o
+usuário como um sistema único e coerente.
+
+Sistemas centralizados -> Computadores com grande capacidade de processamento
+			  Terminais sem capacidade de processamento ("burros")
+
+Sistemas de redes -> Computadores diversos, todos com capacidade de processamento
+		     Redes diversas e de alta velocidade (Ethernet, ATM, redes sem fio)
+		     Internet
+
+Distribuição de sistemas -> Programa modularizado, execução sequencial ou concorrente
+
+Características de sistemas distribuidos:
+  - Compartilhamento de recursos
+  - Concorrência
+  - Inexistência de um relógio global
+  - Falhas independentes
+  - Comunicação e organização interna dos computadores ocorrem de forma oculta aos usuários
+  - Interação entre usuários e aplicações ocorrem de maneira consistena e uniforme independente do local da interação
+  - Deve ser relativamento fácil de aumentar a escala de sistemas distribuídos
+  - Sistema deve continuar disponivel mesmo se algumas partes estiverem avariadas
+
+Organização de um sistema distribuido:
+  - Aplicações, serviçoes
+  - Middleware
+  - Sistema Operacional
+  - Hardware de computador e rede
+
+Metas para construção de SDs
+  - Facilitar o acesso aos recursos remotos
+  - Transparência da distribuição
+  - Sistemas Distribuídos Abertos (openness)
+  - Escalabilidade
+
+Tipos de Transparência em SDs
+  - Acesso: Oculta diferenças na representação de dados e no modo de acesso a um recurso.
+	    Entidades remotas e locais podem ser acessadas usando operações idênticas
+  - Localização: Oculta o lugar em que o recurso está localizado
+  - Migração: Oculta que um recurso pode ser movido para outra localização
+  - Relocação: Oculta que um recurso pode ser movido para outra localização enquanto em uso
+  - Replicação: Oculta que um recurso pode ser replicado.
+		Múltiplas instâncias de um recurso pode aumentar a confiabilidade e desempenho
+  - Concorrência: Oculta que um recurso pode ser compartilhado por diversos usuários concorrentes
+  - Falha: Oculta a falha e recuperação de um recurso.
+	   Prevenir para que falhas não afetem outros componentes do sistema
+  - Escala: Permite ao sistema e as aplicações serem expandidos sem alterar a estrutura do sistema ou os algoritmos de aplicação
+  - Desempenho: Usuários e programadores não necessitam saber como desempenho é obtido
+
+Aplicação Distribuida -> Lida com questões próprias do domínio/lógica de negócio onde é utilizada
+
+Serviços de SDs
+  - Parte de um sistema de computação que encapsula e gerencia uma coleção de recursos relacionados
+  - Provê uma interface que permite a aplicações e usuários terem acesso às funcionalidade dos recursos
+  - Um serviço pode ser provido por um ou vários servidores
+    - Nomeação
+    - Persistência
+    - Transações
+    - Segurança
+
+Middleware
+  - finalidade:
+    - Mascarar a heterogeneidade da plataforma subjacente (hardware, SO, linguagem)
+    - Resolver demais problemas oriundos da distribuição de forma transparente
+    - Prover um modelo de programação conveniente para o programador de aplicações
+    - Prover serviços de infraestrutura padronizados para uso no desenvolvimento de aplicações
+
+Tipos de sistemas distribuidos:
+  - Sistema de computação distribuídos
+  - Sistema de informação distribuidos
+  - Sistemas distribuidos pervasivos
+
+
+

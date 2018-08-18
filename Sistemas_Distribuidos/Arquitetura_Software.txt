@@ -1,0 +1,158 @@
+Arquiteturas de software
+  - Define a organização logica de sistemas distribuidos em componentes de software
+  - O estilo arquitetonico é definido a partir de componentes:
+    - Do modo como esses componentes estao conectados uns aos outros
+    - Dos dados trocados entre eles
+    - Da maneira que sao configurados em conjuntos para formar um sistema
+
+Estilo arquitetonico
+  - Componente é uma unidade modular com interfaces bem definidas
+  - Conector é um mediador de comunicação ou cooperação entre componentes
+    - Define o formato da integração
+    - Facilita a realização da comunicação
+    - Pode ser formado pelas facilidades para chamadas de procedimentos (remotas)
+      , passagem de mensagem ou fluxos de dados
+
+  - Modelo de arquitetura quanto a interligação:
+  - Arquitetura em camadas
+  - Arquitetura Baseada em Objetos
+  - Arquitetura baseada em Eventos
+  - Arquitetura Baseada em Dados Compartilhados
+
+Arquitetura em Camadas
+  - A idéia básica é dividir os componentes da aplicação em várias camadas lógicas
+    - Um componente na camada N irá realizar um pedido para a camada N-1, mas normalmente
+      não o contrário.
+    - Cada camada é voltada para tratar de alguma finalidade especifica
+    - Exemplo de aplicação: Aplicação WEB utilizando AJAX
+
+Arquitetura Baseada em Objetos
+  - Cada objeto corresponde a um componente
+  - Os objetos são conectados por meio de chamadas de procedimento (métodos)
+    - Chamada pode ser local ou remota (transparente)
+  - Exemplo de Aplicação: Aplicação Java RMI(Remote Method Invocation)
+
+Arquitera Baseada em Eventos
+  - Componentes se comunicam por meio de propagação de eventos e podem ocasionalmente
+    transportar dados.
+  - São baseados em sistemas publicar/subscrever (publish/subscribe)
+    - Componentes publicam eventos e somente aqueles que subscreveram (ideia de assinantes)
+      para esses eventos os receberão
+  - Exemplo de Aplicação: Sistemas com multiplos sensores
+
+Arquitetura Centradas em Dados
+  - A vantagem dessa arquitetura é que todos os componentes são fracamente acoplados
+    - Ou seja: eles podem ser integrados e retirados do sistema facilmente
+    - Isso se deve pois não tem um referência explícita a outro sistema
+  - A ideia é que os componentes se comunicam por meio de um repositório comum
+    - Repositório pode ser passivo ou ativo
+  - Exemplos de Aplicação: Sistema de arquivos compartilhados
+
+Espaços Compartilhados de dados
+  - Combina a arquiterura baseada em eventos com a arquitetura centrada em dados
+
+
+Arquitetura de Sistemas
+  - Modelo de arquitetura quanto a comunicação
+    - Define a estrutura lógica de comunicação dos processos e sua disposição nos computadores
+      de uma rede
+      - Define a distribuição de responsabilidades e a atribuição de processos a computadores
+    - Cada processo possui responsabilidades bem definidas e interagem para realizar uma
+      atividade útil.
+  - Formas de organizações:
+    - Centralizada: Cliente-Servidor
+    - Descentralizada: Peer to Peer
+    - Centralizada = Descentralizada = Híbrido
+
+Arquitetura Centralizada
+  - Servidor:
+    - Um processo aguarda por pedidos de outros processos (em outros computadores)
+    - Quanto aceita um pedido, efetua um serviço e responde apropriadamente
+  - Cliente:
+    - Solicitador do peiddo. Requisita uma operação no servidor
+  - Os servidores podem, por sua vez, ser clientes de outros servidores
+  - Normalmente, clientes 'magros' facilitam a gerência do sistema
+    - A funcionalidade a ser atualizada está no servidor
+  - Clientes 'gordos' favorecem a escalibidade
+    - Ex.: A revolução do Gmail
+  - Aspectos positivos:
+    - Fornecem uma infra-estrutura *versátil* que suporta a inserção de novas tecnologias mais rapidamente
+    - Arquiteturas de software cliente-servidor têm sido usadas desde os anos 80 -> *Maturidade*
+    - Variações do Modelo Cliente Servidor:
+      - Múltiplo servidores provendo um mesmo serviço
+      - Proxies de serviço
+      - Código móvel e agentes móveis
+      - Clientes leves
+      - Dispositivos móveis e configuração espontânea
+
+Arquitetura Descentralizada (P2P (Peer to Peer))
+  - Processos são todos iguais:
+    - Todos processos envolvidas em uma tarefa desempenham funções semelhantes, interagindo
+      cooperativamente como pares (peers)
+    - Sem distinção de cliente e servidor
+  - Arquitetura escalável - não é centralizada
+  - Formada por um conjunto de nós, organizados em um overlay ou rede de sobreposição
+    - Overlay: rede na qual os nós são os processos e os enlaces representam os canais 
+      comunicação possíveis
+    - Em geral, comunicação não pode ser feita diretamente mas via mensagens nos canais
+    - Topologias da rede overlay: estruturadas ou não estruturadas
+  - Topologias estruturadas
+    - Princípio: procedimento determinístico (pseudo-aleatório)
+      - Para manter a topologia
+      - Para descobrir recursos
+    - A topologia reflete uma estrutura de dados considerando quem tem qual recurso
+      - Estrutura mais comum é uma Hash Table distribuída: DHT
+      - Outros exemplo é estruturas nós em uma árvore distribuida
+    - DHT
+      - Recursos e nós recebem identificadores aleatórios (128 bits ou 160 bits)
+      - O espaço de identificadores de recurso é dividido entre os nós de acordo com os identificadores dos nós
+      - Implementar um esquema eficiente e determinístico que mapeie exclusivamente a o id de um recurso para
+        o id do nó tendo como base uma distância métrica.
+  - Topologias não-estruturadas
+    - Baseados em algoritmos aleatórios
+      - Cada nó mantém uma lista de vizinhos (aleatórios)
+      - Itens de dados são colocados aleatoriamente em nós
+      - Quando precisa de um recurso, esse nó pergunta a seus vizinhos quem tem
+    - Como encontrar os dados?
+      - Inundar a rede com uma busca (flooding)
+    - Exemplos
+      - BitTorrent
+        - Cada nó recebe uma lista aleatória de vizinhos e se conecta a eles
+        - Nós trocam peças do arquivo com seus vizinhos
+      - Gnutella v1.0
+        - Nós conhecem um ou poucos nós a se juntar na rede
+        - Nós se anunciam a todos que queiram ouvir
+        - Cada nó mantém uma lista aleatória de conhecidos
+
+Supernós (super pares)
+  - A medida que a rede cresce, localizar itens de dados em sistemas P2P não estruturados 
+    pode ser problemático
+  - Se é necessário localizar recursos frequentemente na rede, a não estruturação prejudica a *escalabilidade*
+  - Uma solução é criar índices
+    - Um supernó é responsável por um conjunto de nós ou recursos
+    - Um nó requisita um recurso a um supernó
+    - A descoberta de recursos se restringe aos supernós
+
+Centralizado vs Descentralizado
+Centralizado
+  - Simplicidade de implementação
+  - Simplicidade de gerência
+  - Gargalo em potencial
+Descentralização
+  - Escalabilidade
+  - Robustez
+  - Complexidade
+
+Escolhendo arquitetura
+  - Alguns tradeoffs devem ser considerados para selecionar a arquitetura mais apropriada, incluindo:
+    - O crescimento potencial do número de usuários
+    - Custo e 
+    - Homogeneidade do ambiente computacional futuro e do momento
+  - Cliente-servidor é um modelo-base
+    - Objetos distribuidos são uma evolução
+  - Há várias interpretações de P2P: "semi-P2P", "P2P puro", ...
+
+Arquitetura de Comunicação Híbrida
+  - Diretório centralizado, função distribuída
+    - Napster, MSN, Skype, etc.
+    - Diretório é simples e razoavelmente escalável se centralizado

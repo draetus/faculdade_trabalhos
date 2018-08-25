@@ -1,0 +1,136 @@
+rocesso para o SO
+  Definição (SO): programa em execução
+  Sistemas cliente-servidor: multithreading
+    - Processo pode ser composto por diversar threads
+  Virtualização: aplicação (e todo o seu ambiente) execute concorrentemente com outras aplicações (alta independencia)
+  Movimentar processos entre máquinas distribuidas: migração de código
+
+Thread
+  Cada thread possui um pedaço independente de codigo e nao interefere no funcionamento de outras threads
+  Dados de um processo podem ser compartilhados facilmente por todas as threads
+  Concorrencia não é transparente para o desenvolvedor
+    - Contexto da thread: ready, running, waiting, blocked
+  *Proteger dados contra acesso inadequado por threads dentro de um unico processo fica inteiramente a cargo dos desenvolvedores da aplicação*
+
+Exemplo: Servidor de arquivos
+  Operações de I/O são chamadas de sistema bloqueantes
+  Comportamento padrão do servidor de arquivos
+    - Aguardar por pedido relacionado com uma operação com arquivos
+    - Processa o pedido e envia a resposta
+  Servidor possui uma tread para esperar pedidos de clientes
+    - Dispara uma thread para atende cada cliente
+
+Distribuição de tarefas
+  Aplicação multithread
+    - Thread principal aguarda por conexões dos clientes
+    - Nova thread é disparada para atender cada cliente
+  Aplicação distribuida
+    - Processo coordenador (master)
+      - Responsável por distribuir tarefas, coordenar e compilar as respostas dos trabalhadores
+    - Processos trabalhadores (workers)
+      - Responsáveis por processar tarefas
+
+Comunicação entre processos
+  - Camadas de middleware
+    - Applications, services
+    - RMI and RPC
+    - request reply protocol
+    - marshalling and external data representation
+    - UDP and TCP
+  Comunicação entre processos é a essência de SD, pois os processos são executados em maquinas diferentes
+
+Middleware
+  - Aplicação que provê um conjunto de protocolos de comunicação atuando como mediador entre processos clientes e servidor
+    - Protocolos de alto nivel independentes de aplicação
+    - Provê suporte para transações, sincronização, protocolos de autenticação
+  Tipos de comunicação
+    - Persistencia
+      - Persistente - mensagem fica armazenada no middleware o tempo que for necessario até ser entregue para o receptor - ex: email
+      - Transitória - mensagem fica armazenada no middleware apenas enquanto emissor e receptor estiverem ativos - ex: tcp/udp
+    - Sincronimo
+      - Sincrono - emissor fica bloqueado esperando resposta
+      - Assincrono - não fica bloqueado e recebe uma notificação quando a resposta estiver disponivel
+    - Fluxo
+      - Discreto - partes trocam mensagens, sendo cada mensagem tratada como uma unidade completa de informação - ex: navegação web
+      - Fluxo contínuo - são trocadas diversas mensagens consecutivas e estão relacionadas entre si - ex: rádio pela internet
+
+Comunicação entre Processos
+  - Como ocorre a comunicação entre processos?
+    - Troca de mensagens
+  - Comunicação sincrona e assincrona
+    - Uma fila é associada com cada mensagem. O processo que envia a mensagem nada mais faz do que inserir a mensagem numa fila remota. O processo que recebe retira a mensagem da fila local
+    - Na forma ssincrona de comunicação a operação de envio é não bloqueante. Desta forma, a transmissão de dados pode ocorrer em paralelo com o processos transmissor.
+    - As operações usando o modo bloqueante possuem implementação mais simples, mas o modo não bloqueando oferece melhores desempenhos na operação.
+  - Sockets permite a comunicação entre processos, executados em diferentes máquinas
+    - API em C criada em 1983 no 4.2 BSD UNIX, é padrão em todos SO
+  - Sockets IP são identificados: protocolo de transporte, endereço IP e
+    Porta
+      - TCP - Orientado a conexão
+      - UDP - Orientado a diagramas (sem conexão)  
+  - Passagem de mensagens (mais simples): API de Sockets UDP (datagramas)
+  - Fluxo (stream) bidirecional entre pares de processos
+    - A informação transmitida consiste de um fluxo continuo de dados
+
+API Sockets
+  - Application Program Interface
+
+Sockets na internet
+  - Comunicação ponto a ponto:
+    - Orientado a conexão: TCP (Transport Control Protocol)
+    - Sem conexão: UDP (User Datagram protocol)
+  - Comunicação multiponto:
+    - Sem conexão: UDP sobre Multicast IP.
+
+Sockets TCP vs UDP
+  - TCP - Orientado a conexão
+    - A conexao deve ser estabelecida antes da transmissão dos dados;
+    - A conexão deve ser encerrada após a transmissão dos dados
+    - Em termos de qualidade de serviço da comunicação: confiável e respeita ordem FIFO
+  - UDP - Sem conexão
+    - O endereço destino é especificado em cada datagrama
+    - Em termos de qualidade deserviço: não garante confiabilidade e nem ordenação
+    - Menos overhead na comunicação
+
+Servidores concorrente
+  - Muitas vezes é necessario para um servidor lidar com vários clientes de uma unica vez. Para conseguir isto é preciso, de alguma maneira, voltar a aceitar conexões
+
+Tranmissão de Dados pela Rede
+  - Requer um acordo prévio entre cliente e servidor para que ambos possam representar os dados corretamente em seus ambientes
+    - Mensagens são transmitidas como fluxos de bytes
+  - Maquinas distintas podem ter diferença
+    - Na ordenação de bytes
+    - Na quantidade de bytes para representar inteiros
+    - Na representação de valores reais
+    - Na codicação de caracteres (i.e. ASCII vs UNICODE)
+
+Representação e Organização de dados
+  - Todas as informações armazenadas em um programa possuem as seguintes características:
+    - São guardadas em algum tipo de estrutura
+
+HEterogeneidade da representação de dados
+  - Os processos cliente e servidor podem ser executados em diferentes arquiteturas de máquinas (i.e. Intel versus PowerPC)
+  - A extremidade (endianness) se refere à ordem usada para representar valores numéricos na memória ou quando transmitido pela rede
+    - big-endian - bytes em ordem descrescente do seu peso
+  - Arquitetura x86-64 usa little-endian
+  - Poucas arquiteturas (PowerPC antigo, Xilinx, MicroBlaze, etc) usam o big-endian
+  - Foi convencionado pela IETF para ser usado pelos protocolos de internet
+  Quantidade de bytes para representar um numero inteiro
+    - Em java o tipo primitivo long sempre ocupa 8 bytes
+    - Em C depende da arquitetura
+
+Codificação de caracteres
+  - 01 byte para representar um caracter em ASCII
+  - 04 byes para reprewsentar um caracter em UTF-8
+  - RFC 3629 define o UTF-8 como elemento padrão dos protocolos da internet
+
+Representação externa de dados e empacotamento (marshalling)
+  - As estruturas de dados (as informações armazenadas nos programas) devem ser simplificadas.
+    - Problemas: ordenação de inteiros, representação de ponto flutuantes e representação de caracteres
+    - Solução (permitir que dois computadores troquem valores de dados binários)
+      - Valores convertidos para um formato externo
+  - Três estrategias para repsentação externa de dado(empacotamento)
+    - Representação de dados comum do CORBA
+    - Serialização deobjetos da linguagem Java
+      - Coloca todas as informações de tipo
+    - XML define um formato textual para representar dados estruturados (documentos web e serviços web)
+      - Espaços de nomes: conjunto de nomes(tipos) definidos externamente

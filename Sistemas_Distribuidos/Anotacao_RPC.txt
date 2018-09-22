@@ -1,0 +1,76 @@
+Chamada de procedimento remoto
+  Objetivos
+    - Permitir que os clientes chamem procedimentos localizados em outras maquinas(servidores) - mecanismo sofisticado e de alto nivel
+    - Nenhuma operação de troca de mensagem ou de entrada/saida deve ser visivel ao programador (transparencia)
+    - Fazer com que uma chamada remota se pareça tanto quanto possivel com uma chamada local (esconder a tecnologia da rede subjacente)
+    - Mascaras as diferenças de representação de dados
+    - RPC é orientado a aplicação, e não ao protocolo de comunicação
+    - Permite ao programador projetar um programa convencional que solucione o problema, e então dividir o programa em procedimentos que podem ser executadas em vários computadores
+    - Uma mensagem enviada por um cliente a um servidor corresponde a uma "chamada" de um procedimento remoto, e uma resposta do servidor ao cliente corresponde a um "retorno" de uma chamada de procedimento
+  Serviço
+    - Pode ser visto como um módulo com uma interface que exporta um conjunto de procedimentos apropriados para operar sobre qualquer abstração de dados ou recursos
+    - Fornece facilidades para que os clientes importem seus procedimentos
+  Características das RPCs
+    - A definição de uma RPC especifica parâmetros de entrada (in) e de saida (out)
+      - Parâmetros de entrada: C->S - Argumentos da requisição
+      - Parâmetros de saida: S->C - respostas
+      - Parâmetros de entrada/saida (inout)
+
+Linguagem de definição de interface
+  - A assinatura de uma chamada é encapsulada em uma estrutura chamada IDL(Interface Definition Language), responsável pela especificação de características do procedimento fornecido pelo servidor ao cliente
+  - Chamar um procedimento que está localizado em um sistema remoto requer especificar *qual* sistemas contatar, *como* codificar os parametros, *como* recer a resposta e *como* decodificar a resposta para utilização em um sistema especifico
+  - Linguagem de definição de interface (IDL)
+    - Descrição de interface independente de qualquer linguagem de programação e arquitetura de máquina (proposito geral)
+    - Possibilitando assim a comunicação entre componentes escritos em diferentes linguagens
+    - RPC faz uso de IDL para descrever os procedimentos remotos expostos por um servidor
+    - Outros exemplo: AIDL(Android), OMG IDL (CORBA) e WSDL e WADL
+
+Questões de Projeto
+  - Linguagem de definição de interface(cont.)
+    - Compiladores de interfaces para diferentes linguagens
+    - Stubs: correspondem a cada procedimento definido na interface
+    - Gera operação de serialização e deserialização dos daods
+    - Gera os cabeçalhos dos procedimentos. "Skeleton" dos procedimentos
+  - Tratamento de Exceções
+    - Qualquer chamada pode falhar
+    - As RPCs devem estar habilitadas para reportar os erros
+    - Requer um mecanismo de tratamento de exceções
+    - Pode ser definido como parte da linguagem de interface
+
+Chamada de procedimento remoto - RPC
+  - Cliente invoca (local) funções do stub
+  - Stub serializa dados
+  - Dados são transmitidos via sockets
+  - Dados recebidos são entregues para o stub
+  - Dados são deserializados e a função do servidor é invocada
+  - Reposta segue caminho inverso
+
+Stub e Skeleton
+  - O stub do cliente atua como um proxy para as funções remotas do servidor
+    - Faz a serialização dos parametros
+    - Envia a mensagem pela rede
+    - Aguarda pela resposta do servidor
+    - Faz a deserialização e retorna a resposta para o cliente
+    - Diante de problemas, dispara exceções
+  - O skeleton do servidor fica esperando pedidos dos clientes e ao receber, invoca a função do servidor
+    - Faz a deserialização, etc.
+
+Binding Dinâmico
+  Como o cliente localiza o servidor?
+    - A especificação formal do servidor (tipos dos parametros passados, nomes dos serviços, versão do servidor) é utilizada pelo compilador de IDL(gerador de stubs) - Cliente obtém stub - estático
+    - Ao iniciar sua execução, o servidor exporta a sua interface enviando uma mensagem ao binder (registro do servidor) contendo seu nome, versão, um ID e um handle
+    - Cliente envia uma mensagem ao binder solicitando um serviço de uma versão, e recebe um handle e ID caso tal servidor exista no momento
+    - Flexível, mas gera mensagens extra e pode virar gargalo
+
+Implementação ONC RPC
+  - O Open Network Computing Remote Procedure Call (ou ainda, Sun ONC e Sun RPC) é um sistema de RPC, desenvolvido originalmente pela Sun MicroSystems como parte do projeto Network File System (NFS)
+  - Presente no SunOs, BSDs, Linux e OS X
+  - Microsoft faz uso do seu proprio RPC
+  - A arquitetura definida inclui:
+    - Uma linguagem para definição de interfaces (cabeçalhos de procedimentos, etc.)
+    - A ferramenta RPCGEN, que gera os stubs do servidor e clientes automaticamente
+    - Uma biblioteca RPC, que pode ser usada diretamente na construção de programas que não usem RPCGEN
+    - O protocolo de comunicação entre os stubs
+    - Pode utilizar TCP ou UDP
+    - Tradução entre formatos de dados usa XDR (eXternal Data Representation Standard)
+      - A conversão é especificada para um cojunto pré-definido de tipos de dados

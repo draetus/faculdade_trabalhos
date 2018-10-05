@@ -1,0 +1,99 @@
+Objetos Distribuídos
+  - Uma aplicação distribuida pode ser vista como um conjunto de objetos
+  - Objetos:
+    - Consistem de dados + codigo
+    - Podem ser clientes, servidores ou ambos
+    - Interface esconde detalhes de implementação
+
+Objetos distribuidos e invocação de metodos remotos
+  - Chamada Remota de Procedimento - RPC
+    - Permite que processos locais realizem chamadas de procedimentos que estão localizados em outras máquinas
+  - Invocação de metodos remotos - RMI
+    - Semelhante ao RPC, porem voltado para objetos distribuidos
+    - Usufrui do paradigma da programação orientada a objetos
+    - Estende o conceito de referencia de objetos para um ambiente global distribuido
+      - Objeto residente em um processo pode invocar metodos de um objeto residente de um outro processo
+
+RPC versus RMP
+  - Semelhanças entre RPC e RMI
+    - Fazem uso de linguagem de descrição dew interfaces (IDL)
+    - Sao construidos sobre protocolos pedido e resposta
+    - Oferecem o mesmo nivel de transparencia ao desenvolvedor
+  - Diferenças entre RCP e RMI
+    - Como o RMI o desenvolvedor poderá usufruir das facilidades da POO
+      - Objetos, classes, herança...
+    - Objetos possuem uma referencia unica em todo o sistema
+      - Oferece maior riqueza na semantica quando passados como parametros
+      - Objetos podem ser passados nos parametros por referencia (r nao somente por valor)
+
+RMI
+  - Modelo orientado a objeto
+    - Atributos de objetos são acessados por meio de seus metodos
+    - Interaces
+      - Prove a definição de um conjuntos de metodos, sem no entanto prover implementacao para os mesmos
+  - Arquiteturas de sistemas de objetos distribuidos
+    - Cliente e servidor
+      - Um objeto ao invocar um metodo de um objeto distribuido resulta em enviar uma mensagem pela rede e agurdar por uma resposta
+    - Replicação
+      - Um mesmo objeto pode ser replicado em todas as maquinas do SD, trazendo beneficios de desemepnho e propiciando uma tolerancia a faltas
+
+Modelo de objetos distribuidos
+  - Cada processo possui uma coleção de objetos, os quais estão aptos receber inovações locais ou remotas
+  - Referencia de objeto remoto
+    - Um objeto so podera invocar metodos de outros objetos que este possuir a referencia
+  - Interface remota
+    - Cada objeto remoto possui uma interface que especifica quais de seus metodos poderão ser invocados remotamente
+    - Objetos dentro de um mesmo processo poderao invocar os metodos remotos e tambems os locais
+  - Coletor automatico de lixo
+    - Se a linguagem permitir (p.e. Java), a coleta de lixo distribuido e possivel atraves da interacao entre os coletores locais
+    - Se a linguagem nao permitir (p.e C++), entao cabe ao desenvolvedor se preocupar em liberar a memoria de objetos remotos que nao sao mais usados
+  - Excecoes
+    - Qualquer invocacao remota podera falhar e assim devera disparar excecoes
+      - Servidor onde esta objeto distribuido ca indisponivel
+    - Servidor esta muito ocupado para responder
+    - Resposta pode ser perdida
+
+Middleware para objetos distribuidos
+  - Interoparabilidade
+  - Localizacao transparente dos objetos
+  - Invocacao de metodos (localmente e remotamente)
+  - Criacao de objeto local e remoto
+  - Migracao de objetos
+  - Facilidades para ligacao (binding)
+  - Outros servicos de suporte (nomes, tempo e seguranca)
+
+Implementacao RMI
+  - Modulo de comunicacao (no cliente e servidor)
+    - Responsavel pela comunicacao entre cliente e servidor
+  - Modulo de referencia de objetos remotos (no cliente e servidor)
+    - Responsavel por traduzir as referencias entre objetos remotos e locais
+  - Proxy (no cliente)
+    - Faz com que as invocacoes remotas sejam transparente para o cliente
+    - Ao receber uma inovacao local, este encaminha uma mensagem para o objeto remoto
+  - Servants (no servidor)
+    = Instancia de classe que prove o objeto remoto
+    - Responsavel por receber as invocacoes remotas
+  - Skeleton(no servidor)
+    - Associado a uma clsse de um objeto remoto - é onde estão as implementações do metodos da interface remota
+    - Atividades de empacotamento e desempacotamento acontecem aqui
+  - Dispatcher (no servidor)
+    - Um servidor possui um skeleton e um dispatcher para cada classe de objeto remoto que prover
+    - Responsavel por: receber um pedido do modulo de comunicacao e invocar o metodo no skeleton
+
+Implementacoes de modelos de objetos distribuidos
+  - CORBA
+    - Linguage de descricao de interface: CORBA IDL
+    - COmpilador IDL para diferentes linguagens de programacao: Python, C++, Java
+    - Implementacoes: JacORB, R2CORBA, TAO, VBOrb, omniORB
+  - Java RMI
+    - Linguagem de descricao de interface: Interfaces Java
+    - Objetos remotos e programas clientes devem ser escritos em Java
+
+Java RMI
+  - Servico de registro pode ser iniciado na linha de comando:
+    - rmiregistru &
+    - ou dentro do codigo java: (Registry registro = LocateRegistry.createRegistry(PORTA))
+
+
+
+  

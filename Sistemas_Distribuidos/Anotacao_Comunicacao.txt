@@ -1,0 +1,108 @@
+Middleware
+  - Aplicação que prove um conjuunto de protoclos de comunicacao atuando como mediador entre processos clientes e servidores
+    - Protoclos de alto nivel independentes de aplicacoes
+    - Prove suporte para transacoes, sincronização, protoclos de autenticação
+
+Tipos de comunicação
+  - Persistencia
+    - Persistente - mensagem fica armazenada no middleware o tempo que for necessario ate ser entregue para o receptor - ex: email
+    - Transitória - mensagem fica armazenada no middleware apenas enquanto emissor e receptor estiverem ativos - ex: tcp/udp
+  - Sincronismo
+    - Sincrono - emissor fica bloqeuado esperando resposta
+    - Assincrono - nao fica bloqeuado e recebe uma notificacao quando a resposta estiver disponivel
+  - Fluxo
+    - Discreto - partes trocam mensagens, sendo cada mensagem tratada como uma unidade completa de informacao - ex: navegacao web
+    - Fluxo continuo - são trocadas diversas mensagens consecutivas e estao relacionadas entre si - ex: radio pela internet
+
+Comunicacao entre processos
+  - Como ocorre a comunicacao entre processos
+    - Troca de mensagens
+  - O que é uma mensagem
+    - é um objeto da comunicacao preparado numa forma possivel de transmissao
+  - Comunicacao sincrona e assincrona
+    - Uma fila é associada com cada mensagem. O processo que envia a mensagem nada mais faz do que inserir a mensagem numa fila remota. O processo que recebe retira a mensagem da fila local
+    - Na forma sincrona de comunicacao, o transmissor e receptor sincronizam a passagem de cada mensagem
+    - Na forma assincrona de comunicacao a operacao de envia e nao bloqueante. Desta forma, a transmissao de dados pode ocorrer em paralelo com o processo transmissor
+    - As operacoes usando o modo bloqeuante possuem implemetacao mais simples, mas o modo nao bloqeuante oferece melhores desempenhos na operacao
+
+Motivacao para RPC
+  - Dificuldades na comunicacao entre processos via sockets
+    - Comunicacao entre processos clientes e servidores por meio de troca explicita de mensagens
+    - Ex: Aplicacao Java enviando objetos Mensagem
+
+Representação Externa dos Dados
+  - Necessidade de um padrao de codificacao para permitir a comunicacao entre sistema heterogeneos
+  - Exemplos de formatos
+    - XML
+    - JSON
+    - CORBA CDR (Common Data Representation)
+    - XDR (eXternal Data Representation), usado pelo RPC
+    - ASN.1
+
+Empacotamento (marshalling)
+  - Serializacao traduz estruturas de dados em um formato que possa ser armazenado em disco ou transportado pela rede dados sao convertidos para um vetor de bytes
+  - Marshalling semelhante a serializacao, porem consiste na transofmracao da repsentacao de um objeto em memoria em formato que possa ser armazenado em disco ou transportado pela rede
+  - Formato de representacao com tipo de variavel implicito
+    - Somentye
+
+Comunicação transitória (indireta) por mensagens
+  - Embora RPC e RMI contribuam para esconder a comunicação no sistema distribuídos (transparência), estes assumem que ambas as partes estarão ativas
+
+Comunicação persistente por mensagens
+  - Middleware orientado a mensagem (MOM) - sistema de fila de mensagens
+    - Prove suporte a comunicação assincrona e persistente
+    - Cliente e servidor nao precisam estar ativos no mesmo instante para permitir a troca de mensagens
+  - Comunicação entre aplicações é feita por meio de filas de mensagens
+    - Mensagens podem ser roteadas por diversos servidores intermediarios e eventualmente ser entregue ao destino
+  - Quando usar?
+    - Quando as partes estiverem interconectadas por meio de uma WAN, cuja probabilidade de desconexão temporaria nao for desprezivel
+
+Modelo de fila mensagens - comunicação persistente e assincrona - desacoplamento temporal
+  - Mensagens ficam armazenadas ate que o recepetor possa consumi-las
+    - Emissor so tem garantia que a mensagem sera eventualmente inserida na fila do receptor
+    - Quando a mensagem sera consumidade ou se sera consumida, isto depende do comportamento do receptor
+
+Interface basica para sistemas de filas de mensagens
+  - PUT
+    - Colocar uma mjensagem em uma fila
+  - GET
+    - Se a fila estiver vazia ficara bloqeuada ate chegar mensagem. Remove a primeira mensagem que estiver na fila
+  - POLL
+    - Verificar se existe mensagem em uma fila especificar e remover a primeira. Neste caso, nao fica bloqueado
+  - NOTIFY
+    - Denir uma funcao que sera invocada sempre que uma mensagem for inserida na fila
+
+
+Arquitetura basica de um sistema de filas de mensagens
+  - Cada fila possui um identificar unico em todo o sistema distribuido e as mensagens são destinadas para uma fila
+    - Filas sao distribuidas por diversas maquinas
+    - Identificar cada fila implica em fazer um mapeamento para enderecos de rede e portas
+  - Cada maquina oferece uma interface para o envio e recepcao de mensagens
+  - Maquinas clientes podem estar ligadas a uma ou mais maquinas servidoras responsaveis pelo encaminhamentos de mensagens (roteamento)
+
+Java Message Service - JMS
+  - API que permite a criacao, envio, recebimento e leitura de mensagens de forma confiavel, assincrona e com baixo acoplamento temporal
+  - Uma aplicação JMS é composta por
+    - Clientes - enviam e recebem mensagens
+    - MEnsagens - informacoes a serem trocadas
+    
+
+Modo Ponto a ponto
+  - Mensages sao mantidas na filas ate que alguem as consuma ou ate que expirem
+    - Cada mensagem possui um unico consumidor
+
+Modo publish/subscribe
+  - Produtores e consumidores podem publicar e assinar topicoos
+  - Quando uma mensagem é publicada em um determinado topico, o JMS distribui esta mensagem para todos os assinantes
+  - As mensagens ficam retidas nos topicos ate serem entregues a todos os assinantes
+
+Outras implementações de comunicações por mensagens
+  - Advance Message Queuing Protocol - AMQP
+    - Padrao aberto ara middleware orientado a mensagens - enfileiramento, roteamento ponto a ponto ou pubsub, confiabilidade e seguranca
+      - Apache ActiveMQ
+      - Apache Qpid
+      - RabbitMQ
+      - ZeroMQ
+  - Message Queue Telemetry Transport - MQTT
+    - Padrão ISO baseado em uma versao leve do publish-subscribe para ser usado sobre TCP/IP - ambientes que exigem codigo pequeno e taxa de transmissao baixa
+      - Mosquitto

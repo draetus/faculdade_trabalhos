@@ -1,0 +1,7 @@
+1 - ROBERTS
+2 - SOBEL
+3 - ROBINSON
+4 - BGS - Background Subtraction
+	( 10 FRAMES - Media ou Mediana)
+5 - ALPHA 
+	( BG = (BG * 0,95) + (FA*0,05)

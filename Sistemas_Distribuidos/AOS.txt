@@ -1,0 +1,147 @@
+Arquitetura Orientada a Serviços
+  - Service Orientede Architecture - SOA
+    - Is an architectural style that supports service-orientation - a way of thinking in terms of services, service-based development and the oucomes of services (OpenGroup, 2013)
+    - As funcionalidades implementadas pelas aplicacoes devem ser disponibilizadas na forma de servicos
+    - É uma abordagem de engenharia de sistemas cujo objetivo é criar modulos funcionais ageis chamados de servicoes, com baixo acoplamento e que permite a reutilização de codigo
+    - É uma abordagem arquitetural corporativa que permite a criacao de servicos de negocio interoperaveis que podem facilmente ser reutilizados e compartilhados entre aplicações e empresas (Gartner Group))
+  - Caracterizacao de sistemas distribuidos que organiza aplicacoes atravesa de conjunto de interacoes de servicos que sao acessados atraves de interfaces e protocolos padronizados
+  - Entidades envolvidas:
+    - Diretorio para registro de servicoes: repositorio para publicacao e localizacao de itnerfaces dos servicoes
+    - Provedor de servicoes responsavel por publicas interfaces dos servicoes que prove, bem como atender requisicoes dos clientes
+    - Cliente: aplicacoes ou outro servico que envia requisicoes a um Serviço
+  - Funcionalidades do sistema sao expostas via descricao de uma interface, permitindo a publicacao, localizacao e invocacao (formato padronizado)
+  - Interfaces auto descritivas e baseada em padroes aberto
+  - Fracamente acoplados
+  - Representa um funcao de negocio completo
+  - Mensagens trocadas seguem formato padrao (neutralidade da tecnologia para os serviços)
+  - É bseada nos principios da computacao distribuido e utiliza o paradigma request/reply para estabelecer a comunicacao entre os sistemas clientes e os sistemas que implementam os servicos
+  - Servicoes incluem baixo acoplamento de unidades e de funcionalidade. Cada servico implementa uma acao
+  - Faz uso de padroes abertos
+  - Amplo uso da linguagem XML para descricao dos tipos e struturas de dados em SOA
+  - A maior parte das implementacoes de SOA se utilizam de Web Services. Entretanto, uma implementacao de SOA pode utilizar de qualquer tecnologia padronizada
+  - Neutro a tecnologia
+    - Invocado atraves de tecnologias padroes (protocolos, mecanismos de publicacao e de busca) amplamente aceitas
+  - Fracamente acoplado
+    - Nao requer o conhecimento previo de qualquer estrutura interna presente no lado do cliente ou do servico
+  - Localizacao transparente
+    - Informacoes sobre a definicao e localizacao sao publicadas em um repositorio e estao acessiveis a uma variedade de clientes, independente das localizacoes dos mesmos
+
+Serviços Web(Web Services)
+  - Seguem uma Arquitetura Orientada a Serviços (AOS)
+  - É um tipo especifico de serviço identificado por uma URI e que faz uso de padroes abertos e amplamente difundidos (HTTP e XML)
+  - Tecnologia integradora e muito usada (promissora)
+  - Caracteristicas chaves: 
+    - Possuem um modelo fracamente acoplado e transparente que garante a interoperabilidade entre os serviços, sem que estes necessitem ter o conhecimento previo de quais tecnologias estao presentes em cada lado da comunicacao
+    - Sao autocontidos e autodescritivos
+    - Tornam mais facil a composicao ou a combinacao de diferentes provedores, visando formar servicos mais complexos e sofisticados
+  - Tipo especifico de servico
+    - Identificado atraves de um identificador uniforme de recursos (URI - Uniform Resource Identifier)
+    - Independentes de linguagem de programacao, de SO e das arquiteturas das maquinas
+  - Facilidade para transpor firewalls baseados em filstros de pacotes (Portas 80 e 443)
+  - Duas abordagens para Arquitetura dos serviços web
+    - Baseado no protocolo SOAP
+      - Possui diversas especificacoes para seguranca, orquestracao, etc;
+      - Ex: WS-Policy, WS-Security, WS-Trust
+    - Baseado no estilo REST
+      - Representational State Transfer
+      - Fundamentado nos conceitos da WWW, que são: métodos HTTP, URI e lingugagens de marcação (HTML, XML ou JSON)
+  - Abordagem com SOAP
+    - Descrever a interface do servico para essa aplicacao utilizando uma linguagem de padrao
+      - Web services description language (WSDL)
+    - Disponiblizar esse documento (de alguma forma)
+      - Universal Description, Discovery and Integration (UDDI)
+    - Troca de mensagens XML
+      - SOAP
+    - Não implica no uso de qualquer aplicativo adicional no cliente ou no servidor
+      - Cliente: LP que de suporte a XML e ao HTTP
+      - Servidor: servidor de aplicacao
+    - A arquitetura é compsto por:
+      - Serviço: apto a tratar documentos XML
+      - Endereço: protocolo e endereço de rede
+      - Documento XML: contem informacoes especificas
+      - Envelope: encapsulamento do documento XML
+  - WSDL: Descrição dos serviços
+    - Quais sao os servicos oferecidos?
+    - Quais as informacoes necessarias para invocar um servico?
+    - Como cliente e servidor sabem como processar as requisicoes?
+    - Em qual formato o serviceo deve enviar as informacoes para o cliente?
+    - WSDL
+      - Gramatica em XML para especificar interfaces de servicos web
+      - Operacoes disponiveis
+      - Tipos de dados
+      - Protocolos utilizados
+      - Localizacao do servico
+  - Documento WSDL
+    - Um documento WSDL e composto por tres elemento principais
+      - Definicao dos tipos de dados (types)
+        - especifica a estrutura e o conteudo das mensagens
+      - Operacoes abstratas (messages e operation)
+        - descreve as operaçoes que poderao ser executadas
+      - Associacao dos servicos (port)
+        - Especifica como mapear as operacoes nos protocolos de rede utilizados para transporte
+  - Elementos da WSDL
+    - Types: define os tipos de dados
+      - Por exemplo, o XML Schema Definitions (XSD)
+    - Message: tipo das mensagens que serao trocadas
+      - One-way, request-response, solicit-response, notification
+    - Interface (portType): define as operacoes que o servico suporta. Cada operacao deve especificar o padrao de troca de mensagens entre cliente e servidor
+  - Protocolo SOAP
+    - Padrao de fato para troca de mensagens (baseado em XML)
+    - Definido W3C
+    - Indenpendente da linguagem, diversos S.Os, sobre HTTP, SMTP, FTP, RMI/IIOP
+    - Sobre HTTP (mais comum)
+      - Intraestrutura já existentes dos servidores
+      - Facilidades em atravessar firewalls
+    - Mensagem SOAP = documento XML
+    - Envelope (elemento raiz)
+      - Declaracoes dos epsacos de nomes XML
+      - Informacoes de codificacao para representacao dos dados
+    - Header
+      - Informacoes de como a mensagem devera ser processada
+    - Body
+      - Mensagem em si
+      - Fault: informacoes de erros
+
+REST: Estilo de arquitetura para Servicos Web
+  - REST se baseia no comportamento de aplicacoes web
+  - Recursos estao dispostos em uma rede de paginas (uma maquina de estado virtual), de forma que o usuario progride na aplicacao atraves de links (transicoes de estado), que resulta na proxima pagina (estado seguinte da aplicacao)
+  - Fundamentos do REST
+    - Recursos
+      - Na web todos os recursos possuem uma URI
+      - http://localhost/campus/kobrasol/laboratorio/redes2
+    - Ações
+      - A web possui uma interface uniforme e restrita para interagir com os recursos
+      - Métodos de requisições: HTTP: GET, POST, PUT e DELETE
+    - Representacoes
+      - Como os dados sao retornados e representados para os clientes
+      - Ex: HTML, XML, JSON
+  - Recursos
+    - Qualquer informacao pode ser caracterizada com um recurso
+      - Ex: pagina, imagem, colecao de recursos, etc
+    - Recursos sao identicados por uma URI
+      - Identificador unico e que permite enderecar um recurso na web
+      - Uma URI identifica um unico recurso, porem um recurso pode possuir mais de uma URI (relacao muitos-para-um)
+    - Formato da URI: scheme://host:port/path?queryString#fragment
+      - scheme: HTTP, HTTPS, FTP
+      - host: nome ou IP
+      - port: implicito ao esquema (p.e. 80 para http) ou explicito
+      - path: segmentos de texto delimitados por /
+      - queryString: lista de parametros (nome=valor) delimitador por &
+      - fragment: ponto particular dentro de um documento
+  - Ações: Métodos HTTP(verbos)
+    - Como as representações dos recursos sao trocadas entre clientes e servidor
+      - GET: obtem informacoes de um recurso
+        - Obter lista com todos campi:
+          - GET http://localhost/campus
+        - Obtem capacidade do laboratorio redes
+          - GET http://localhost/campus/laboratorio/redes2/capacidade
+      - POST: Cria um recurso
+        - Content: fbloco, laboratorio, equipamentos[], capacidade, ...}
+        - POST http://localhost/campus
+      - PUT: Atualiza um recurso
+        - Atualiza informacoes do laboratorio redes2
+          - Content: fbloco, laboratorio, equipamentos[], capacidade, ...}
+          - PUT http://localhost/campus/laboratorio/redes2
+      - DELETE: remove um recurso
+        - Remove o laboratorio redes2
+          - DELETE http://localhost/campus/laboratorio/redes2

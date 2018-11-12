@@ -1,0 +1,1216 @@
+Traceback (most recent call last):
+  File "train.py", line 47, in <module>
+    import tensorflow as tf
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/__init__.py", line 22, in <module>
+    from tensorflow.python import pywrap_tensorflow  # pylint: disable=unused-import
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/__init__.py", line 81, in <module>
+    from tensorflow.python import keras
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/__init__.py", line 24, in <module>
+    from tensorflow.python.keras import activations
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/activations/__init__.py", line 22, in <module>
+    from tensorflow.python.keras._impl.keras.activations import elu
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/_impl/keras/__init__.py", line 21, in <module>
+    from tensorflow.python.keras._impl.keras import activations
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/_impl/keras/activations.py", line 23, in <module>
+    from tensorflow.python.keras._impl.keras import backend as K
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/_impl/keras/backend.py", line 36, in <module>
+    from tensorflow.python.layers import base as tf_base_layers
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/layers/base.py", line 25, in <module>
+    from tensorflow.python.keras.engine import base_layer
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/engine/__init__.py", line 23, in <module>
+    from tensorflow.python.keras.engine.base_layer import InputSpec
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/engine/base_layer.py", line 34, in <module>
+    from tensorflow.python.keras import backend
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/keras/backend/__init__.py", line 22, in <module>
+    from tensorflow.python.keras._impl.keras.backend import abs
+ImportError: cannot import name 'abs'
+
+
+
+
+_______________________________________________________________________________________________________________
+
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow.py", line 58, in <module>
+    from tensorflow.python.pywrap_tensorflow_internal import *
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow_internal.py", line 28, in <module>
+    _pywrap_tensorflow_internal = swig_import_helper()
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow_internal.py", line 24, in swig_import_helper
+    _mod = imp.load_module('_pywrap_tensorflow_internal', fp, pathname, description)
+  File "/usr/lib/python3.5/imp.py", line 242, in load_module
+    return load_dynamic(name, filename, file)
+  File "/usr/lib/python3.5/imp.py", line 342, in load_dynamic
+    return _load(spec)
+ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train.py", line 47, in <module>
+    import tensorflow as tf
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/__init__.py", line 24, in <module>
+    from tensorflow.python import *
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/__init__.py", line 49, in <module>
+    from tensorflow.python import pywrap_tensorflow
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow.py", line 72, in <module>
+    raise ImportError(msg)
+ImportError: Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow.py", line 58, in <module>
+    from tensorflow.python.pywrap_tensorflow_internal import *
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow_internal.py", line 28, in <module>
+    _pywrap_tensorflow_internal = swig_import_helper()
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/pywrap_tensorflow_internal.py", line 24, in swig_import_helper
+    _mod = imp.load_module('_pywrap_tensorflow_internal', fp, pathname, description)
+  File "/usr/lib/python3.5/imp.py", line 242, in load_module
+    return load_dynamic(name, filename, file)
+  File "/usr/lib/python3.5/imp.py", line 342, in load_dynamic
+    return _load(spec)
+ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory
+
+
+
+_________________________________________________________________________________________________________________
+
+
+
+
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py:125: main (from __main__) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use object_detection/model_main.py.
+W1029 11:16:17.689269 140606632449792 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py:125: main (from __main__) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use object_detection/model_main.py.
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/legacy/trainer.py:265: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.create_global_step
+W1029 11:16:17.731748 140606632449792 tf_logging.py:125] From /home/furiossam/models/research/object_detection/legacy/trainer.py:265: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.create_global_step
+WARNING:tensorflow:num_readers has been reduced to 1 to match input file shards.
+W1029 11:16:17.746627 140606632449792 tf_logging.py:125] num_readers has been reduced to 1 to match input file shards.
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W1029 11:16:18.001584 140606632449792 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W1029 11:16:18.002889 140606632449792 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:16:19.402104 140606632449792 tf_logging.py:115] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:16:19.414247 140606632449792 tf_logging.py:115] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I1029 11:16:19.414538 140606632449792 tf_logging.py:115] depth of additional conv before box predictor: 0
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/predictors/heads/box_head.py:93: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+W1029 11:16:20.611982 140606632449792 tf_logging.py:125] From /home/furiossam/models/research/object_detection/predictors/heads/box_head.py:93: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:16:20.617652 140606632449792 tf_logging.py:115] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:16:20.635384 140606632449792 tf_logging.py:115] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/core/losses.py:340: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W1029 11:16:20.912338 140606632449792 tf_logging.py:125] From /home/furiossam/models/research/object_detection/core/losses.py:340: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gradients_impl.py:108: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/meta_architectures/faster_rcnn_meta_arch.py:2108: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+W1029 11:16:25.318626 140606632449792 tf_logging.py:125] From /home/furiossam/models/research/object_detection/meta_architectures/faster_rcnn_meta_arch.py:2108: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+W1029 11:16:25.321429 140606632449792 variables_helper.py:144] Variable [Conv/biases/Momentum] is not available in checkpoint
+W1029 11:16:25.321518 140606632449792 variables_helper.py:144] Variable [Conv/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.321575 140606632449792 variables_helper.py:144] Variable [FirstStageBoxPredictor/BoxEncodingPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:16:25.321628 140606632449792 variables_helper.py:144] Variable [FirstStageBoxPredictor/BoxEncodingPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.321676 140606632449792 variables_helper.py:144] Variable [FirstStageBoxPredictor/ClassPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:16:25.321724 140606632449792 variables_helper.py:144] Variable [FirstStageBoxPredictor/ClassPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.321771 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.321823 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.321871 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/depthwise_weights/Momentum] is not available in checkpoint
+W1029 11:16:25.321915 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/pointwise_weights/Momentum] is not available in checkpoint
+W1029 11:16:25.321957 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.321999 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322046 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322088 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322129 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322177 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322220 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322262 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322309 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322351 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322392 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322439 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322481 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322523 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322569 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322611 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322653 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322699 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322741 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322784 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322831 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.322874 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.322916 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.322962 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323004 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323045 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323091 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323133 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323175 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323221 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323263 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323304 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323350 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323392 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323433 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323479 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323521 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323562 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323608 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323650 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323690 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323736 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323778 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323819 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.323866 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.323909 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.323951 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324006 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324050 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324094 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324143 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324187 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324231 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324280 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324324 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324368 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324417 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324461 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324512 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324561 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324606 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324650 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324698 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324743 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324787 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324836 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.324880 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.324923 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.324973 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325024 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325065 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325111 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325153 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325194 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325240 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325282 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325324 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325370 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325412 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325453 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325500 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325542 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325583 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325630 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325673 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325715 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325761 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325803 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325845 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.325891 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.325934 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.325975 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326022 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326064 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326106 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326155 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326197 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326239 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326285 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326327 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326369 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326415 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326457 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326498 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326545 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326587 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326629 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326676 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326718 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326759 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326806 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326848 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.326889 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.326936 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.326979 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327020 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327067 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327108 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327150 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327196 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327238 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327280 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327326 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327368 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327410 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327457 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327500 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327542 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327588 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327630 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327672 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327718 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327760 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327802 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327848 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.327890 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.327932 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.327978 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328021 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.328062 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.328109 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328151 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.328193 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.328240 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328282 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.328323 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.328370 140606632449792 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328413 140606632449792 variables_helper.py:141] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/biases] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[360]], model variable shape: [[16]]. This variable will not be initialized from the checkpoint.
+W1029 11:16:25.328454 140606632449792 variables_helper.py:144] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:16:25.328512 140606632449792 variables_helper.py:141] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/weights] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[1024, 360]], model variable shape: [[1024, 16]]. This variable will not be initialized from the checkpoint.
+W1029 11:16:25.328551 140606632449792 variables_helper.py:144] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328593 140606632449792 variables_helper.py:141] Variable [SecondStageBoxPredictor/ClassPredictor/biases] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[91]], model variable shape: [[5]]. This variable will not be initialized from the checkpoint.
+W1029 11:16:25.328629 140606632449792 variables_helper.py:144] Variable [SecondStageBoxPredictor/ClassPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:16:25.328672 140606632449792 variables_helper.py:141] Variable [SecondStageBoxPredictor/ClassPredictor/weights] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[1024, 91]], model variable shape: [[1024, 5]]. This variable will not be initialized from the checkpoint.
+W1029 11:16:25.328709 140606632449792 variables_helper.py:144] Variable [SecondStageBoxPredictor/ClassPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328751 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.328793 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.328849 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.328910 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.328970 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329034 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329094 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329154 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329218 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329261 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329302 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329349 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329391 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329432 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329478 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329520 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329562 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329608 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329650 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329692 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329738 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329781 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329822 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329868 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.329910 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.329951 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.329998 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330039 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330081 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330128 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330170 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330211 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330258 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330300 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330341 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330388 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330430 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330472 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330519 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330562 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330603 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330650 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330691 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330733 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330780 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330822 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330863 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.330909 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.330952 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.330993 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.331044 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.331087 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.331128 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.331174 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.331216 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:16:25.331258 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:16:25.331303 140606632449792 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:16:25.331342 140606632449792 variables_helper.py:144] Variable [global_step] is not available in checkpoint
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py:737: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+W1029 11:16:25.861899 140606632449792 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py:737: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2018-10-29 11:16:26.628748: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+INFO:tensorflow:Restoring parameters from training/model.ckpt-40181
+I1029 11:16:26.636232 140606632449792 tf_logging.py:115] Restoring parameters from training/model.ckpt-40181
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.InvalidArgumentError'>, Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+I1029 11:16:27.069267 140606632449792 tf_logging.py:115] Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.InvalidArgumentError'>, Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Traceback (most recent call last):
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1292, in _do_call
+    return fn(*args)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1277, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1367, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1538, in restore
+    {self.saver_def.filename_tensor_name: save_path})
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 887, in run
+    run_metadata_ptr)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1110, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1286, in _do_run
+    run_metadata)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1308, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 415, in train
+    saver=saver)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py", line 748, in train
+    master, start_standard_services=False, config=session_config) as sess:
+  File "/usr/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 1005, in managed_session
+    self.stop(close_summary_writer=close_summary_writer)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 833, in stop
+    ignore_live_threads=ignore_live_threads)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/coordinator.py", line 389, in join
+    six.reraise(*self._exc_info_to_raise)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/six.py", line 693, in reraise
+    raise value
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 994, in managed_session
+    start_standard_services=start_standard_services)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 731, in prepare_or_wait_for_session
+    init_feed_dict=self._init_feed_dict, init_fn=self._init_fn)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/session_manager.py", line 281, in prepare_session
+    config=config)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/session_manager.py", line 211, in _restore_checkpoint
+    saver.restore(sess, ckpt.model_checkpoint_path)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1574, in restore
+    err, "a mismatch between the current graph and the graph")
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+ERROR:tensorflow:==================================
+Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>):
+<tf.Tensor 'init_ops/report_uninitialized_variables/boolean_mask/GatherV2:0' shape=(?,) dtype=string>
+If you want to mark it as used call its "mark_used()" method.
+It was originally created here:
+  File "train.py", line 184, in <module>
+    tf.app.run()  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 415, in train
+    saver=saver)  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py", line 791, in train
+    should_retry = True  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/tf_should_use.py", line 189, in wrapped
+    return _add_should_use_warning(fn(*args, **kwargs))
+==================================
+E1029 11:16:27.550698 140606632449792 tf_logging.py:105] ==================================
+Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>):
+<tf.Tensor 'init_ops/report_uninitialized_variables/boolean_mask/GatherV2:0' shape=(?,) dtype=string>
+If you want to mark it as used call its "mark_used()" method.
+It was originally created here:
+  File "train.py", line 184, in <module>
+    tf.app.run()  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 415, in train
+    saver=saver)  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py", line 791, in train
+    should_retry = True  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/tf_should_use.py", line 189, in wrapped
+    return _add_should_use_warning(fn(*args, **kwargs))
+==================================
+
+
+
+
+__________________________________________________________________________________________________________________
+
+
+
+
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py:125: main (from __main__) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use object_detection/model_main.py.
+W1029 11:15:02.842503 140562902947584 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py:125: main (from __main__) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use object_detection/model_main.py.
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/legacy/trainer.py:265: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.create_global_step
+W1029 11:15:02.884516 140562902947584 tf_logging.py:125] From /home/furiossam/models/research/object_detection/legacy/trainer.py:265: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.create_global_step
+WARNING:tensorflow:num_readers has been reduced to 1 to match input file shards.
+W1029 11:15:02.899507 140562902947584 tf_logging.py:125] num_readers has been reduced to 1 to match input file shards.
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W1029 11:15:03.154320 140562902947584 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W1029 11:15:03.155668 140562902947584 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/input.py:727: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:15:04.560312 140562902947584 tf_logging.py:115] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:15:04.572459 140562902947584 tf_logging.py:115] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I1029 11:15:04.572696 140562902947584 tf_logging.py:115] depth of additional conv before box predictor: 0
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/predictors/heads/box_head.py:93: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+W1029 11:15:05.786024 140562902947584 tf_logging.py:125] From /home/furiossam/models/research/object_detection/predictors/heads/box_head.py:93: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:15:05.791846 140562902947584 tf_logging.py:115] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I1029 11:15:05.809601 140562902947584 tf_logging.py:115] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/core/losses.py:340: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W1029 11:15:06.088068 140562902947584 tf_logging.py:125] From /home/furiossam/models/research/object_detection/core/losses.py:340: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gradients_impl.py:108: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+WARNING:tensorflow:From /home/furiossam/models/research/object_detection/meta_architectures/faster_rcnn_meta_arch.py:2108: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+W1029 11:15:10.504169 140562902947584 tf_logging.py:125] From /home/furiossam/models/research/object_detection/meta_architectures/faster_rcnn_meta_arch.py:2108: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+W1029 11:15:10.506927 140562902947584 variables_helper.py:144] Variable [Conv/biases/Momentum] is not available in checkpoint
+W1029 11:15:10.507038 140562902947584 variables_helper.py:144] Variable [Conv/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.507133 140562902947584 variables_helper.py:144] Variable [FirstStageBoxPredictor/BoxEncodingPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:15:10.507210 140562902947584 variables_helper.py:144] Variable [FirstStageBoxPredictor/BoxEncodingPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.507297 140562902947584 variables_helper.py:144] Variable [FirstStageBoxPredictor/ClassPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:15:10.507388 140562902947584 variables_helper.py:144] Variable [FirstStageBoxPredictor/ClassPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.507442 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.507512 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.507599 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/depthwise_weights/Momentum] is not available in checkpoint
+W1029 11:15:10.507655 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_1a_7x7/pointwise_weights/Momentum] is not available in checkpoint
+W1029 11:15:10.507717 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.507779 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.507847 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.507901 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.507947 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.507999 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Conv2d_2c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508046 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508092 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.508144 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508190 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508236 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.508287 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508333 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508378 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.508430 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508486 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508534 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.508585 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508631 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508677 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.508728 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508774 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508820 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.508870 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.508923 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.508965 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509013 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3b/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509056 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509099 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509147 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509191 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509233 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509281 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509325 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509368 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509416 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509459 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509502 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509551 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509594 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509637 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509686 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509729 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509771 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509821 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509865 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.509907 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.509955 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_3c/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.509999 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510042 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510090 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510135 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510178 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510226 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_0/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510269 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510312 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510360 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510403 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510446 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510493 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510536 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510579 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510627 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4a/Branch_1/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510670 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510713 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510761 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510804 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510846 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.510894 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.510937 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.510979 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511028 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511070 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511113 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511161 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511204 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511247 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511294 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511337 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511379 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511427 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511471 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511513 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511562 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4b/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511605 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511647 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511695 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511739 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511781 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511829 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.511873 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.511915 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.511963 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512006 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512048 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512098 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512142 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512184 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512232 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512275 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512318 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512366 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512408 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512451 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512513 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4c/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512557 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512598 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512645 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512687 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512728 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512774 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512816 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512857 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.512904 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.512945 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.512986 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513032 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513074 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513114 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513160 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513202 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513243 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513289 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513331 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513373 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513419 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4d/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513462 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513504 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513551 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513593 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513634 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513681 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513723 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513764 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513811 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513852 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.513893 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.513940 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.513982 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.514024 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.514070 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514111 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.514153 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.514199 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514241 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.514283 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.514330 140562902947584 variables_helper.py:144] Variable [FirstStageFeatureExtractor/InceptionV2/Mixed_4e/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514374 140562902947584 variables_helper.py:141] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/biases] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[360]], model variable shape: [[16]]. This variable will not be initialized from the checkpoint.
+W1029 11:15:10.514414 140562902947584 variables_helper.py:144] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:15:10.514459 140562902947584 variables_helper.py:141] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/weights] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[1024, 360]], model variable shape: [[1024, 16]]. This variable will not be initialized from the checkpoint.
+W1029 11:15:10.514498 140562902947584 variables_helper.py:144] Variable [SecondStageBoxPredictor/BoxEncodingPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514541 140562902947584 variables_helper.py:141] Variable [SecondStageBoxPredictor/ClassPredictor/biases] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[91]], model variable shape: [[5]]. This variable will not be initialized from the checkpoint.
+W1029 11:15:10.514579 140562902947584 variables_helper.py:144] Variable [SecondStageBoxPredictor/ClassPredictor/biases/Momentum] is not available in checkpoint
+W1029 11:15:10.514622 140562902947584 variables_helper.py:141] Variable [SecondStageBoxPredictor/ClassPredictor/weights] is available in checkpoint, but has an incompatible shape with model variable. Checkpoint shape: [[1024, 91]], model variable shape: [[1024, 5]]. This variable will not be initialized from the checkpoint.
+W1029 11:15:10.514660 140562902947584 variables_helper.py:144] Variable [SecondStageBoxPredictor/ClassPredictor/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514702 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.514744 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.514791 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514834 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.514875 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.514923 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_0/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.514965 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515006 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515053 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515095 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515137 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515184 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515226 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_1a_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515268 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_1a_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515314 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5a/Branch_1/Conv2d_1a_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515357 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515399 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515447 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515490 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515531 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515602 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515648 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515694 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515745 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515791 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515837 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.515889 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.515935 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.515980 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516032 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516078 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516124 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516175 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516221 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516266 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516318 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5b/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516365 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_0/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516411 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_0/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516462 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_0/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516516 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516563 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516614 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516668 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516710 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516759 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_1/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516803 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0a_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516846 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0a_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.516894 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0a_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.516937 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0b_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.516981 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0b_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.517035 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0b_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.517079 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0c_3x3/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.517122 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0c_3x3/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.517170 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_2/Conv2d_0c_3x3/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.517213 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_3/Conv2d_0b_1x1/BatchNorm/beta/Momentum] is not available in checkpoint
+W1029 11:15:10.517256 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_3/Conv2d_0b_1x1/BatchNorm/gamma/Momentum] is not available in checkpoint
+W1029 11:15:10.517303 140562902947584 variables_helper.py:144] Variable [SecondStageFeatureExtractor/InceptionV2/Mixed_5c/Branch_3/Conv2d_0b_1x1/weights/Momentum] is not available in checkpoint
+W1029 11:15:10.517344 140562902947584 variables_helper.py:144] Variable [global_step] is not available in checkpoint
+WARNING:tensorflow:From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py:737: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+W1029 11:15:11.043095 140562902947584 tf_logging.py:125] From /home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py:737: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2018-10-29 11:15:11.798690: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+INFO:tensorflow:Restoring parameters from training/model.ckpt-40181
+I1029 11:15:11.806050 140562902947584 tf_logging.py:115] Restoring parameters from training/model.ckpt-40181
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.InvalidArgumentError'>, Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+I1029 11:15:12.240826 140562902947584 tf_logging.py:115] Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.InvalidArgumentError'>, Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Traceback (most recent call last):
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1292, in _do_call
+    return fn(*args)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1277, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1367, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1538, in restore
+    {self.saver_def.filename_tensor_name: save_path})
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 887, in run
+    run_metadata_ptr)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1110, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1286, in _do_run
+    run_metadata)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1308, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 415, in train
+    saver=saver)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py", line 748, in train
+    master, start_standard_services=False, config=session_config) as sess:
+  File "/usr/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 1005, in managed_session
+    self.stop(close_summary_writer=close_summary_writer)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 833, in stop
+    ignore_live_threads=ignore_live_threads)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/coordinator.py", line 389, in join
+    six.reraise(*self._exc_info_to_raise)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/six.py", line 693, in reraise
+    raise value
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 994, in managed_session
+    start_standard_services=start_standard_services)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 731, in prepare_or_wait_for_session
+    init_feed_dict=self._init_feed_dict, init_fn=self._init_fn)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/session_manager.py", line 281, in prepare_session
+    config=config)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/session_manager.py", line 211, in _restore_checkpoint
+    saver.restore(sess, ckpt.model_checkpoint_path)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1574, in restore
+    err, "a mismatch between the current graph and the graph")
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+Caused by op 'save/Assign_414', defined at:
+  File "train.py", line 184, in <module>
+    tf.app.run()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)
+  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)
+  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 376, in train
+    keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1094, in __init__
+    self.build()
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1106, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1143, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 787, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 428, in _AddRestoreOps
+    assign_ops.append(saveable.restore(saveable_tensors, shapes))
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 119, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 221, in assign
+    validate_shape=validate_shape)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 61, in assign
+    use_locking=use_locking, name=name)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3272, in create_op
+    op_def=op_def)
+  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1768, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): Restoring from checkpoint failed. This is most likely due to a mismatch between the current graph and the graph from the checkpoint. Please ensure that you have not altered the graph expected based on the checkpoint. Original error:
+
+Assign requires shapes of both tensors to match. lhs shape= [16] rhs shape= [36]
+	 [[{{node save/Assign_414}} = Assign[T=DT_FLOAT, _class=["loc:@SecondStageBoxPredictor/BoxEncodingPredictor/biases"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](SecondStageBoxPredictor/BoxEncodingPredictor/biases, save/RestoreV2:414)]]
+
+ERROR:tensorflow:==================================
+Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>):
+<tf.Tensor 'init_ops/report_uninitialized_variables/boolean_mask/GatherV2:0' shape=(?,) dtype=string>
+If you want to mark it as used call its "mark_used()" method.
+It was originally created here:
+  File "train.py", line 184, in <module>
+    tf.app.run()  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 415, in train
+    saver=saver)  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py", line 791, in train
+    should_retry = True  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/tf_should_use.py", line 189, in wrapped
+    return _add_should_use_warning(fn(*args, **kwargs))
+==================================
+E1029 11:15:12.729255 140562902947584 tf_logging.py:105] ==================================
+Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>):
+<tf.Tensor 'init_ops/report_uninitialized_variables/boolean_mask/GatherV2:0' shape=(?,) dtype=string>
+If you want to mark it as used call its "mark_used()" method.
+It was originally created here:
+  File "train.py", line 184, in <module>
+    tf.app.run()  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 306, in new_func
+    return func(*args, **kwargs)  File "train.py", line 180, in main
+    graph_hook_fn=graph_rewriter_fn)  File "/home/furiossam/models/research/object_detection/legacy/trainer.py", line 415, in train
+    saver=saver)  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/contrib/slim/python/slim/learning.py", line 791, in train
+    should_retry = True  File "/home/furiossam/.local/lib/python3.5/site-packages/tensorflow/python/util/tf_should_use.py", line 189, in wrapped
+    return _add_should_use_warning(fn(*args, **kwargs))
+==================================

@@ -1,0 +1,48 @@
+Segurança na web
+  - A web é muito visivel
+  - Servidores Webs são facilmente configuraveis e gerenciaveis porem, o software é complexo e esconde muitas falhas de segurança
+    - Uma vez que um servidor Web for violado, um invasor pode obter acesso a dados e sistemas da corporação
+
+Formação insuficiente
+  - 91% dos desenvolvedores pensam que escrever codigo seguro para suas empresas é importante
+  - Apenas 36% acham que tem a formação necessária para fazer isso
+  - Menos ainda (31%) acham que tem apoio suficiente dentro da empresa para isso
+  - Problemas de sistema estão se dissipando, questões de aplicação não
+
+Vulnerabilidades em aplicações web
+  - OWASP - top10
+  - O que é OWASP
+    - Open web application security project
+      - Comunidade aberta
+    - Promover o desenvolvimento seguro
+    - Auxiliar a tomada de decisao quanto ao risco
+    - Oferecer recursos gratuitos
+    - Promovoer a contribuição e compartilhamento de informação
+    - http://www.owasp.org
+    - http://www.owasp.org/index.php/Brazilian
+    - O que oferece?
+      - Publicações artigos e padroes
+        - OWASP top 10
+        - OWASP Guide - Guia de desenvolvimento
+        - Testing guide - meotodologias e procedimentos para testes de invasao
+        - Guia de revisao de codigo - inspecao de codigo fonte
+      - Software de teste e treinamento
+        - WebGoat
+        - WebScarab
+      - Capitulos locais, listas de discussao e conferencias
+
+Recomendações
+  - Elabore um processo de desenvolvimento de aplicações Web segura com apoio da administração da organização
+  - Divulge o processo entre os funcionarios
+  - Especifique o tipo de dado que a aplicacao web ira aceitar na hora de definir as variaveis
+  - Defina o conjunto de caracteres aceito pela aplicacao web
+  - Defina o tamanho minimo e maximo de strings
+  - Na hora de projetar a aplicacao, considere todas as entradas e saidas da aplicacao como sendo mal intencionadas
+  - Restrinja os parametros que serao aceitos pela aplicacao
+  - Valide os dados por tipo de tamanho, formato e intervalo que a aplicacao ira aceitar
+  - Garanta que todas as paginas da aplicacao verifiquem a identidade do usuario (sessao), para evitar que um atacante simplesmente pule o controle de acesso
+  - Defina permissao de arquivos (servidor web), bem como permissao para acesso a banco de dados e a suas ferramentas administrativas
+  - Desative os serviços instalados nos servidores que nao sao utilizados
+  - Elabore politica de senhas "dificeis"
+  - Controle as mudanças de senha atraves de um mecanismo unico
+  - Armazene as senhas de forma criptografadas e transmiti-las de forma criptografada

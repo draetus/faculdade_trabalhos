@@ -1,0 +1,453 @@
+options {
+  LOOKAHEAD = 1;
+  CHOICE_AMBIGUITY_CHECK = 2;
+  OTHER_AMBIGUITY_CHECK = 1;
+  STATIC = false;
+  DEBUG_PARSER = false;
+  DEBUG_LOOKAHEAD = false;
+  DEBUG_TOKEN_MANAGER = false;
+  ERROR_REPORTING = true;
+  JAVA_UNICODE_ESCAPE = false;
+  UNICODE_INPUT = false;
+  IGNORE_CASE = true;
+  USER_TOKEN_MANAGER = false;
+  USER_CHAR_STREAM = false;
+  BUILD_PARSER = true;
+  BUILD_TOKEN_MANAGER = true;
+  SANITY_CHECK = true;
+  FORCE_LA_CHECK = false;
+}
+
+PARSER_BEGIN(Analisador_Lexico)
+
+/** Simple brace matcher. */
+public class Analisador_Lexico{
+
+  /** Main entry point. */
+  public static void main(String args[]) throws ParseException {
+    Analisador_Lexico parser = new Analisador_Lexico(System.in);
+  }
+}
+
+PARSER_END(Analisador_Lexico)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+SKIP : 
+{
+    "/*" : multilinecomment
+}
+
+SKIP : 
+{
+    "//" : singlelinecomment
+}
+
+<multilinecomment> SKIP:
+{
+    "*/" : DEFAULT
+    |<~[]>
+}
+
+<singlelinecomment> SKIP:
+{
+    "\n" : DEFAULT
+    |"\r" : DEFAULT
+    |<~[]>
+}
+
+/** Definicaoo das palavras reservadas */
+TOKEN:
+{
+	<TIPOREAL: "real">
+|	<TIPONATURAL: "natural">
+|	<TIPOCHAR: "char">
+|	<TIPOBOOLEAN: "boolean">
+|	<PROGRAM: "program">
+|	<DEFINE: "define">
+|	<NOT: "not">
+|	<VARIABLE: "variable">
+|	<IS: "is">
+|	<EXECUTE: "execute">
+|	<SET: "set">
+|	<TO: "to">
+|	<GET: "get">
+|	<PUT: "put">
+|	<VERIFY: "verify">
+|	<LOOP: "loop">
+|	<WHILE: "while">
+|	<DO: "do">
+|	<TRUE: "true">
+|	<FALSE: "false">
+}
+
+/** Operadores */
+TOKEN:
+{
+	<PLUS: "+">
+|	<MINUS: "-">
+|	<MULTIPLY: "*">
+|	<DIVIDE: "/">
+|	<POWER: "**">
+|	<DIVINT:"%">
+|	<MOD: "%%">
+|   <ATTRIBUTION: "=">
+|	<EQUAL: "==">
+|	<NOTEQUAL: "!=">
+|	<MINOR: "<">
+|	<MAJOR: ">">
+|	<LESSEQUAL: "<=">
+|	<GREATEREQUAL: ">=">
+|	<OR: "|">
+|	<AMPERSAND: "&">
+|	<NOTOP: "!">
+}
+
+/** Simbolos especiais */
+TOKEN :
+{
+  <LBRACE: "{">
+| <RBRACE: "}">
+| <LBRACKET: "(">
+| <RBRACKET: ")">
+| <COMMA: ",">
+| <THEFIM: ".">
+}
+
+TOKEN: 
+{
+	<PROGRAMA: <COMENTARIO> "program" <LBRACE> <DECLARACAO_DE_CONSTANTES_E_VARIAVEIS> <CORPO_DO_PROGRAMA> <RBRACE> <IDENTIFICADOR_DO_PROGRAMA> >
+|	<COMENTARIO: (":-" <CONSTANTE_LITERAL> ) 
+| 	"" >
+
+|	<IDENTIFICADOR_DO_PROGRAMA: <IDENTIFICADOR> 
+|	"">
+
+|	<DECLARACAO_DE_CONSTANTES_E_VARIAVEIS: "define" <LBRACE> <CONSTANTES_E_VARIAVEIS> <RBRACE> 
+|	"" >
+
+|	<CONSTANTES_E_VARIAVEIS: <DECLARACAO_DE_CONSTANTES> <VARIAVEIS2> 
+|	<DECLARACAO_DE_VARIAVEIS> <CONSTANTES2> >
+
+|	<DECLARACAO_DE_CONSTANTES: "not variable" <CONSTANTES> >
+
+|	<CONSTANTES: <TIPO> "is" <LISTA_DE_IDENTIFICADORES> <VALOR> "." <CONSTANTES1> >
+
+|	<CONSTANTES1: <CONSTANTES>
+|	"" >
+
+|	<CONSTANTES2: <DECLARACAO_DE_CONSTANTES> 
+|	"" >
+
+|	<DECLARACAO_DE_VARIAVEIS: "variable" <VARIAVEIS> >
+
+|	<VARIAVEIS: <TIPO> "is" <LISTA_DE_IDENTIFICADORES> <VALOR> "." <VARIAVEIS1> >
+
+|	<VARIAVEIS1: <VARIAVEIS> 
+|	""  >
+
+|	<VARIAVEIS2: <DECLARACAO_DE_VARIAVEIS>  
+|	""  >
+
+|	<TIPO: "natural"
+|	"real"
+|	"char"
+|	"boolean" >
+
+|	<LISTA_DE_IDENTIFICADORES_DE_CONSTANTES: <IDENTIFICADOR> <LISTA_DE_IDENTIFICADORES_DE_CONSTANTES1> >
+
+|	<LISTA_DE_IDENTIFICADORES_DE_CONSTANTES1: "," <LISTA_DE_IDENTIFICADORES_DE_CONSTANTES>
+|	"" >
+
+|	<LISTA_DE_IDENTIFICADORES_DE_VARIAVEIS: <IDENTIFICADOR> <INDICE> <LISTA_DE_IDENTIFICADORES_DE_VARIAVEIS1> >
+
+|	<LISTA_DE_IDENTIFICADORES_DE_VARIAVEIS1: "," <LISTA_DE_IDENTIFICADORES_DE_VARIAVEIS>
+|	"" >
+
+|	<INDICE: <LBRACE> <CONSTANTE_INTEIRA> <RBRACE>
+|	"" >
+
+|	<VALOR: <CONSTANTE_INTEIRA>
+|	<CONSTANTE_REAL>
+|	<CONSTANTE_LITERAL> >
+
+|	<CORPO_DO_PROGRAMA: "excute" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE> >
+
+|	<LISTA_DE_COMANDOS: <COMANDO> "." <LISTA_DE_COMANDOS1> >
+
+|	<LISTA_DE_COMANDOS1: <LISTA_DE_COMANDOS>
+|	"" >
+
+|	<COMANDO: <ATRIBUICAO>
+|	<ENTRADA>
+|	<SAIDA>
+|	<SELECAO>
+|	<REPETICAO> >
+
+|	<ATRIBUICAO: "set" <EXPRESSAO> "to" <LISTA_DE_IDENTIFICADORES_DE_VARIAVEIS> >
+
+|	<ENTRADA: "get" <LBRACE> <LISTA_DE_IDENTIFICADORES_DE_VARIAVEIS> <RBRACE> >
+
+|	<SAIDA: "put" <LBRACE> <LISTA_DE_IDENTIFICADORES_EOU_CONSTANTES> <RBRACE> >
+
+|	<LISTA_DE_IDENTIFICADORES_EOU_CONSTANTES: <ITEM> <LISTA_DE_IDENTIFICADORES_EOU_CONSTANTES1> >
+
+|	<LISTA_DE_IDENTIFICADORES_EOU_CONSTANTES1: "," <LISTA_DE_IDENTIFICADORES_EOU_CONSTANTES>
+|	"" >
+
+|	<ITEM: <IDENTIFICADOR> <INDICE>
+|	<CONSTANTE_INTEIRA>
+|	<CONSTANTE_REAL>
+|	<CONSTANTE_LITERAL> >
+
+|	<SELECAO: "verify" <EXPRESSAO> "is" <CLAUSULAS> >
+
+|	<CLAUSULAS: "true" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE> <FALSA>
+|	"false" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE> <VERDADEIRA>  >
+
+|	<VERDADEIRA: "is true" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE>
+|	"" >
+
+|	<FALSA: "is false" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE>
+|	"" >
+
+|	<REPETICAO: "loop" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE> "while" <EXPRESSAO> "is true"
+|	"while" <EXPRESSAO> "is true do" <LBRACE> <LISTA_DE_COMANDOS> <RBRACE> >
+
+|	<EXPRESSAO: <EXPRESSAO_ARITMETICA_OU_LOGICA> <EXPRESSAO1> >
+
+|	<EXPRESSAO1: "==" <EXPRESSAO_ARITMETICA_OU_LOGICA>
+|	"!=" <EXPRESSAO_ARITMETICA_OU_LOGICA>
+|	"<" <EXPRESSAO_ARITMETICA_OU_LOGICA>
+|	">" <EXPRESSAO_ARITMETICA_OU_LOGICA>
+|	"<=" <EXPRESSAO_ARITMETICA_OU_LOGICA>
+|	">=" <EXPRESSAO_ARITMETICA_OU_LOGICA>
+|	"" >
+
+|	<EXPRESSAO_ARITMETICA_OU_LOGICA: <TERMO2> <MENOR_PRIORIDADE> >
+
+|	<MENOR_PRIORIDADE: "+" <TERMO2> <MENOR_PRIORIDADE>
+|	"-" <TERMO2> <MENOR_PRIORIDADE>
+|	"|" <TERMO2> <MENOR_PRIORIDADE>
+|	"" >
+
+|	<TERMO2: <TERMO1> <MEDIA_PRIORIDADE> >
+
+|	<MEDIA_PRIORIDADE: "*" <TERMO1> <MEDIA_PRIORIDADE>
+|	"/" <TERMO1> <MEDIA_PRIORIDADE>
+|	"%" <TERMO1> <MEDIA_PRIORIDADE>
+|	"%%" <TERMO1> <MEDIA_PRIORIDADE>
+|	"&" <TERMO1> <MEDIA_PRIORIDADE>
+|	"" >
+
+|	<TERMO1: <ELEMENTO> <MAIOR_PRIORIDADE> >
+
+|	<MAIOR_PRIORIDADE: "**" <ELEMENTO>	<MAIOR_PRIORIDADE>
+|	"" >
+
+|	<ELEMENTO: <IDENTIFICADOR> <INDICE>
+|	<CONSTANTE_INTEIRA>
+|	<CONSTANTE_REAL>
+|	<CONSTANTE_LITERAL>
+|	"true"
+|	"false"
+|	<LBRACKET> <EXPRESSAO> <RBRACKET>
+|	"!" <LBRACKET> <EXPRESSAO> <RBRACKET> >
+
+|	<CONSTANTE_LITERAL: ("'" ["a"-"z", "A"-"Z"] "'") | ("\"" ["a"-"z", "A"-"Z"] "\"") >
+
+|	<IDENTIFICADOR: (<LETRA>|<UNDERLINE>)(<LETRA>|<NUMERO>|<UNDERLINE>)* >
+
+|	<LISTA_DE_IDENTIFICADORES: <IDENTIFICADOR> <INDICE> <LISTA_DE_IDENTIFICADORES1> >
+|	<LISTA_DE_IDENTIFICADORES1: ("," <LISTA_DE_IDENTIFICADORES>)+ >
+
+|	<CONSTANTE_INTEIRA: (["0"-"9"])+ >
+|	<CONSTANTE_REAL: <CONSTANTE_INTEIRA> "," (["0"-"9"])? (["0"-"9"])? (["0"-"9"])? >
+
+}
+
+TOKEN: 
+{
+	<CHAR: ("'" (~["'"])* "'") | ("\"" (~["\""])* "\"")>
+|	<INVALID_ID: (<NUMERO>)+((<LETRA>(<NUMERO>)?(<NUMERO>)?) |
+	 (<UNDERLINE>(<NUMERO>)?(<NUMERO>)?))+ | //Comeca com numero
+	((<LETRA>|<UNDERLINE>)(<NUMERO>)?(<NUMERO>)?)+(<NUMERO>)+ | 	//Termina com digito
+	(<LETRA>|<UNDERLINE>)+ (<NUMERO><NUMERO>) ((<LETRA>)+|	<UNDERLINE>|<NUMERO>)* | //Numero repetido 
+	(<LETRA>|<UNDERLINE>|<NUMERO>)* (<UNDERLINE><UNDERLINE>) (<LETRA>|<UNDERLINE>|<NUMERO>)*> //Underline repetida
+	
+|	<ID: (<LETRA>|<UNDERLINE>)(<LETRA>|<NUMERO>|<UNDERLINE>)*>
+|	<NATURAL: ( <NUMERO> ) ( <NUMERO> )? ( <NUMERO> )? >
+|	<REAL:  ( <NUMERO> ) ( <NUMERO> )? ( <NUMERO> )? ( <NUMERO> )? ( <NUMERO> )? "." ( <NUMERO> ) ( <NUMERO> )? >
+}
+
+TOKEN :
+{
+    < INVALID_LEXICAL: (~["a"-"z", "A"-"Z",
+    "0"-"9",
+    "(",
+    ")",
+    "[",
+    "]",
+    "{",
+    "}",
+    ";",
+    ".",
+    "=",
+    ">",
+    "<",
+    "!",
+    "+",
+    "-",
+    "*",
+    "/",
+    "%",
+    " ",
+    "\t",
+    "\n",
+    "\r",
+    "\f"
+    ])+
+	| (<NUMERO>)+ 
+	| (<NUMERO>)+ "." (<NUMERO>)+>
+}
+
+/** Tokens auxiliares */
+TOKEN: 
+{
+	<LETRA: ["a"-"z","A"-"Z"]>
+|	<NUMERO: ["0"-"9"] >
+|	<UNDERLINE: "_">
+}
+
+/** Root production. */
+void Input() :
+{}
+{
+ 	<PROGRAM> <LBRACE> Declaracao() Corpo() <RBRACE>
+}  
+
+void Corpo():
+{}
+{
+	<EXECUTE> <LBRACE> Comandos() <RBRACE>
+}
+
+void Comandos():
+{}
+{
+	( Atribuicao() | Entrada() | Saida() | Selecao() | Repeticao() )+
+}
+
+
+void Atribuicao():
+{}
+{
+	<SET> Expressao() <TO> ListaDeIdentificadores() <THEFIM>
+}
+
+
+void Entrada():
+{}
+{
+	<GET> <LBRACE> (ListaDeIdentificadores() ) <RBRACE> <THEFIM>
+}
+
+void Saida():
+{}
+{
+	<PUT> <LBRACE>  ListaDeIdentificadoresEConstantes() <RBRACE> <THEFIM>
+}
+
+
+void Selecao():
+{}
+{
+	<VERIFY> ExpressaoBool() <IS> <TRUE> <LBRACE> Comandos() <RBRACE>
+		<IS> <FALSE> <LBRACE> Comandos() <RBRACE> <THEFIM>
+}
+
+
+void Repeticao():
+{}
+{
+	(<LOOP> <LBRACE> Comandos() <RBRACE> <WHILE> ExpressaoBool() <IS> <TRUE> <THEFIM>) | (<WHILE> ExpressaoBool() <IS> <TRUE> <DO> <LBRACE> Comandos() <RBRACE> <THEFIM> )
+}
+
+
+
+
+void Expressao():
+{}
+{
+	(<ID> | <NATURAL> | <REAL> | <CHAR> |  Boolean()) 
+	(<PLUS>|<MINUS>|<MULTIPLY>|<DIVIDE>|<POWER>|
+<DIVINT>|<MOD>|<EQUAL>|<NOTEQUAL>|<MINOR>|
+<MAJOR>|<LESSEQUAL>|<GREATEREQUAL>|<OR>|
+<AMPERSAND>|<NOTOP>)
+	(<ID> | <NATURAL> | <REAL> | <CHAR> |  Boolean())
+}
+
+void ExpressaoBool():
+{}
+{
+	(<ID> | <NATURAL> | <REAL> | <CHAR> |  Boolean()) 
+	(<EQUAL>|<NOTEQUAL>|<MINOR>|
+<MAJOR>|<LESSEQUAL>|<GREATEREQUAL>|<OR>|
+<AMPERSAND>|<NOTOP>)
+	(<ID> | <NATURAL> | <REAL> | <CHAR> |  Boolean())
+
+}
+
+void ListaDeIdentificadores():
+{}
+{
+	<ID> ("," <ID>)*
+}
+
+void ListaDeIdentificadoresEConstantes():
+{}
+{
+	(<ID> | <NATURAL> | <REAL> | <CHAR> |  Boolean()) 
+("," (<ID> | <NATURAL> | <REAL> | <CHAR> | Boolean()))*
+}
+
+
+void Declaracao():
+{}
+{
+	(<DEFINE> <LBRACE> (<NOT> <VARIABLE> Declaracao_constante())? 	(<VARIABLE> Declaracao_variavel())? <RBRACE>)?
+}
+
+void Declaracao_variavel(): 
+{}
+{
+	((<TIPONATURAL> | <TIPOREAL> | <TIPOCHAR> | <TIPOBOOLEAN>) 	
+	<IS> <ID>
+	("=" (<NATURAL> | <REAL> | <CHAR> |  Boolean()))?
+	(("," <ID>) 
+	("=" (<NATURAL> | <REAL> | <CHAR> |  Boolean()))?)*
+	<THEFIM>)*	
+}
+
+void Declaracao_constante(): 
+{}
+{
+	((<TIPONATURAL> | <TIPOREAL> | <TIPOCHAR> | <TIPOBOOLEAN>) 	
+	<IS> <ID>
+	("=" (<NATURAL> | <REAL> | <CHAR> | Boolean()))
+	(("," <ID>) 
+	("=" (<NATURAL> | <REAL> | <CHAR> | Boolean())))*
+	<THEFIM>)*	
+}
+
+void Boolean():
+{}
+{
+	(<TRUE> | <FALSE>)
+}

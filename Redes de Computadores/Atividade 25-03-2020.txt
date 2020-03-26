@@ -1,0 +1,20 @@
+1. Qual a diferença entre informação e sinal?
+R: Informação é o dado que queremos passar, sinal é a forma que é transmitido.
+
+2. Considerando os dispositivos transmissores (telefone, modem, codec, tranmissor digital), qual o tipo de informação de entrada e saida esperado?
+R: Telefone: entrada analogica, saida analogica
+   Modem: entrada digital, saida analogica
+   Codec: entrada digital, saida analogica
+   Transmissor digital: entrada digital, saida digital
+
+3. Qual a diferença entre sinal digital e analogico?
+R: sinal analogico é transmitido em ondas, sinal digital é transmitido em bits
+
+4. Qual a finalidade dos repetidores na transmissão digital?
+R: Para aumentar a potência do sinal digital, e diminuir a atenuação
+
+5. Indique três vantagens da transmissão digital sobre a transmissão analógica.
+R: Segurança maior, taxa de dados maior, menor interferência, maior regeneração de dados.
+
+6. Defina largura de banda considerando (a) um sinal analógico e (b) um sinal digital. Quais as unidades usadas nestes casos?
+R: Analógico, varia dentro de uma faixa de frequencia, medido em Hz, Digital, passa em uma frequencia fixa, medida em bps.

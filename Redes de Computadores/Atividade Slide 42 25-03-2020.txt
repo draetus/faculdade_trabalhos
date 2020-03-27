@@ -1,0 +1,13 @@
+1.
+10010101 + 01010101 + 11110000 = 111011010
+
+Checksum = 000100101
+
+2. Deve chegar com as palavras inteiras, mas possivelmente embaralhadas
+
+3. 
+11110101 + 01010101 + 11110000 = 1000111010
+
+Checksum = 0111000101
+
+R: É possível, pois o Checksum tem valor diferente ao emissor da mensagem.

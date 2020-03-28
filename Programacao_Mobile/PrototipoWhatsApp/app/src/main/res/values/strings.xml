@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Prototipo WhatsApp</string>
+    <string name="app_title">WhatsApp</string>
+    <string name="image">Image</string>
+    <string name="calls">Calls</string>
+    <string name="chats">Chats</string>
+    <string name="contacts">Contacts</string>
+    <string name="random_name">Jorge</string>
+    <string name="random_message">Fala meu nobre</string>
+    <string name="random_hour">11:48 AM</string>
+    <string name="random_message_number">2</string>
+    <string name="random_name1">Fernanda</string>
+    <string name="random_message1">Me devolve!</string>
+    <string name="random_hour1">2:48 PM</string>
+    <string name="random_message_number1">4</string>
+    <string name="random_name2">Octavio</string>
+    <string name="random_message2">To de olho hein</string>
+    <string name="random_hour2">5:00 AM</string>
+    <string name="random_name3">Corona</string>
+    <string name="random_message3">Estou chegando</string>
+    <string name="random_hour3">7:34PM AM</string>
+    <string name="random_online">Online 16min</string>
+    <string name="random_big_message"> Eai cara, como vai?</string>
+    <string name="random_big_message1"> To suave </string>
+</resources>
+

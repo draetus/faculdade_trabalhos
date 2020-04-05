@@ -1,0 +1,2 @@
+rootProject.name='IMC-Calculus'
+include ':app'

@@ -1,0 +1,9 @@
+2. Explique como funciona digitalização de voz e a sua transmissão em um circuito digital
+R:  É utilizado a técnica PCM usando um codec
+
+3. Explique a tecnologia PCM(Pulse Code Modulation) a partir de seus conceitos chaves, a amostragem, a quantificação e a codificação dos sinais digitais.
+R: A amostragem é a transformação de um sinal continuo em um sinal discreto, após o sinal ser amostrado e quantificado, ele é processado por código de pulso.
+
+4. Pesquise e descreva sucintamente as características de uma implementação de DSL, HDSL (High Rate Digital Subscriber Line)
+R: DSL: Alcançar uma maior distancia na comunicação sem uso de repetidores, possui igual largura de banda em ambas as direções e maior taxa de transferencia
+   HDSL: foi a primeira tecnologia DSL a ser desenvolvida

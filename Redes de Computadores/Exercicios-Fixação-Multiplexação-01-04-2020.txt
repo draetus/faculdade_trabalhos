@@ -1,0 +1,11 @@
+1. Assuma que um canal de voz ocupa uma largura de banda de 4Khz. Precisamos combinar 3 canais de voz em um link com largura de banda de 12 KHz, de 20 a 32KHz. Mostre a configuração usando o dominio de frequencias sem o uso de bandas de guarda
+R: 20-24Khz, 24-28KHz, 23-32KHz
+
+2. Cinco canais, cada um com uma largura de banda de 100 KHz, devem ser multiplexados. Qual é a largura de banda mínima do link se existe a necessidade de uma banda de guarda de 10 KHz entre os canais para impedir a interferência?
+R: 540KHz
+
+3. Explique o que é multiplexação e as diferenças entre FDM e TDM
+R: Multiplexação na frequencia os dados são mandados ao mesmo tempo no canal de transmissão variando a amplitude e frequência da onda, já no TDM usa-se time-slice ou seja os dados não vao ao mesmo tempo.
+
+4. Descreva as diferenças entre o TDM síncrono e estatístico.
+R: TDM Síncrono - disponibiliza todo o sinal por um pequeno espaço de tempo para transmitir os dados. O TDM estatístico controla que dispositivo que irá enviar dados, evitando alocar tempo para dispositivos ociosos.

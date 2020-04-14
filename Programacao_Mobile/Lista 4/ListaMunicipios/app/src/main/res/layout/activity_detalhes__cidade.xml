@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Detalhes_Cidade">
+
+    <TextView
+        android:id="@+id/nameTitle"
+        android:layout_width="54dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:text="Nome:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="Não disponivel"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nameTitle"
+        app:layout_constraintStart_toEndOf="@+id/nameTitle" />
+
+    <TextView
+        android:id="@+id/popTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="50dp"
+        android:text="População:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTitle" />
+
+    <TextView
+        android:id="@+id/popContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="Não disponivel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/popTitle"
+        app:layout_constraintTop_toTopOf="@+id/popTitle" />
+
+    <TextView
+        android:id="@+id/areaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Área"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popTitle" />
+
+    <TextView
+        android:id="@+id/areaContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="Não disponivel"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/areaTitle"
+        app:layout_constraintStart_toEndOf="@+id/areaTitle" />
+
+    <TextView
+        android:id="@+id/denstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Densidade populacional"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/areaTitle" />
+
+    <TextView
+        android:id="@+id/densContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="Não disponivel"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/denstitle"
+        app:layout_constraintStart_toEndOf="@+id/denstitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

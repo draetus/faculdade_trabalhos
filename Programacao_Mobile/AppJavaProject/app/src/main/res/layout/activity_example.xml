@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExampleActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="411dp"
+        android:layout_height="126dp"
+        android:background="#009688"
+        app:layout_anchor="@+id/toolbar"
+        app:layout_anchorGravity="bottom|center">
+
+        <TextView
+            android:id="@+id/textViewChats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Chats"
+            android:textColor="@android:color/background_light"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/searchViewChats"
+            android:layout_width="376dp"
+            android:layout_height="59dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            app:layout_anchor="@+id/constraintLayout2"
+            app:layout_anchorGravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        </SearchView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewHuckChat"
+            android:layout_width="192dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:text="Hey, tomorrow I can´t. Lets try again next Friday."
+            app:layout_constraintStart_toEndOf="@+id/imageViewHulk"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHulk" />
+
+        <TextView
+            android:id="@+id/textViewHulk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="124dp"
+            android:text="Hulk"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHulk"
+            app:layout_constraintTop_toBottomOf="@+id/textViewThor" />
+
+        <TextView
+            android:id="@+id/textViewThor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="336dp"
+            android:text="Thor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewThor"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewIronMan"
+            android:layout_width="170dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="184dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ironman" />
+
+        <ImageView
+            android:id="@+id/imageViewThor"
+            android:layout_width="170dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewIronMan"
+            app:srcCompat="@drawable/thor" />
+
+        <TextView
+            android:id="@+id/textViewIronMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="184dp"
+            android:text="Iron Man"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewIronMan"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewIronManChat"
+            android:layout_width="191dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:text="Where are you going? We are having problems. "
+            app:layout_constraintStart_toEndOf="@+id/imageViewIronMan"
+            app:layout_constraintTop_toBottomOf="@+id/textViewIronMan" />
+
+        <TextView
+            android:id="@+id/textViewThorChat"
+            android:layout_width="186dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:text="I need a time to think about this."
+            app:layout_constraintStart_toEndOf="@+id/imageViewThor"
+            app:layout_constraintTop_toBottomOf="@+id/textViewThor" />
+
+        <TextView
+            android:id="@+id/textViewTimeIronMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="188dp"
+            android:text="21:15"
+            app:layout_constraintStart_toEndOf="@+id/textViewIronMan"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TextViewTimeThor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="108dp"
+            android:layout_marginLeft="108dp"
+            android:layout_marginTop="44dp"
+            android:text="18:47"
+            app:layout_constraintStart_toEndOf="@+id/textViewThor"
+            app:layout_constraintTop_toBottomOf="@+id/textViewIronManChat" />
+
+        <TextView
+            android:id="@+id/textViewTimeHulk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="112dp"
+            android:layout_marginLeft="112dp"
+            android:layout_marginTop="48dp"
+            android:text="16:23"
+            app:layout_constraintStart_toEndOf="@+id/textViewHulk"
+            app:layout_constraintTop_toBottomOf="@+id/textViewThorChat" />
+
+        <include
+            android:id="@+id/textviewIronMan"
+            layout="@layout/content_example"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="19dp" />
+
+        <ImageView
+            android:id="@+id/imageViewHulk"
+            android:layout_width="170dp"
+            android:layout_height="136dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewThor"
+            app:srcCompat="@drawable/hulk" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout1"
+            android:layout_width="416dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="116dp"
+            android:background="#009688"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="@android:color/white"
+            app:tabRippleColor="#CECECE"
+            app:tabSelectedTextColor="?attr/colorBackgroundFloating"
+            app:tabTextColor="@android:color/white">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALLS" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHATS" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONTACTS" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:visibility="invisible"
+        tools:visibility="invisible">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="invisible"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

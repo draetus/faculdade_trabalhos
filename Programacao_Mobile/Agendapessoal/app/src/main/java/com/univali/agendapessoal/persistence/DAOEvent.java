@@ -14,7 +14,7 @@ public class DAOEvent {
     public static ArrayList<Event> findAllEvents(Activity activity) {
         ArrayList<Event> events = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = DAOSQLite.getDBInstance(activity);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM event", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM event ", null);
         while(cursor.moveToNext()) {
             Event event = new Event(
                     cursor.getInt(0),

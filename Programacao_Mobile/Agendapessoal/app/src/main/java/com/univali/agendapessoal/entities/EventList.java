@@ -4,10 +4,11 @@ import android.app.Activity;
 
 import com.univali.agendapessoal.persistence.DAOEvent;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class EventList {
+public class EventList implements Serializable {
 
     ArrayList<Event> events;
 
@@ -18,6 +19,19 @@ public class EventList {
 
     private void attList(Activity activity) {
         this.events = DAOEvent.findAllEvents(activity);
+
+        int n = events.size();
+        Event temp = null;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (events.get(j - 1).getDate().compareTo(events.get(j).getDate()) > 0) {
+                    //swap elements
+                    temp = events.get(j - 1);
+                    events.set(j - 1, events.get(j));
+                    events.set(j, temp);
+                }
+            }
+        }
     }
 
     public void cargaInicial(Activity activity) {

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">APP Cinema</string>
+    <string name="menu_item_1">Schedule</string>
+    <string name="menu_item_2">Recommend</string>
+    <string name="menu_item_3">History</string>
+    <string name="title_activity_example">ExampleActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back">Voltar</string>
+    <string name="Go">Avancar</string>
+    <string name="title_activity_bhaskara">Bhaskara</string>
+    <string name="x">x</string>
+    <string name="x2">x2</string>
+    <string name="plus">+</string>
+    <string name="Calcular">Calcular</string>
+    <string name="xLinha">x´=</string>
+    <string name="xLinha2">x´´=</string>
+    <string name="Relatorio">Relatorio</string>
+    <string name="title_activity_main_report_bhaskara">MainReportBhaskara</string>
+    <string name="report">Relatorio</string>
+    <string name="Entenda">Saiba Mais</string>
+    <string name="CHAT" />
+    <string name="Ajuda">Ajuda</string>
+    <string name="cartaz">Filmes em cartaz</string>
+    <string name="tipoingresso">Tipo do ingresso</string>
+    <string name="title_activity_main_movie_details">Movie details</string>
+    <string name="Movietitle">Movie</string>
+    <string name="time">Time</string>
+    <string name="cast">Cast</string>
+    <string name="cinema">Escolha o cinema</string>
+    <string name="title_activity_ponto_eletronico">PontoEletronico</string>
+    <string name="Nome">Nome</string>
+    <string name="matricula">Matricula</string>
+    <string name="registrar">Registrar</string>
+    <string name="efetuarpedido">Efetuar pedido</string>
+    <string name="cliente">Cliente</string>
+    <string name="dogao">Dogão - Menu online</string>
+    <string name="title_activity_cardapio_activlity"> Cardapio </string>
+    <string name="cardapio">Cardápio</string>
+    <string name="total">Total:</string>
+    <string name="title_activity_agenda_eventos">Agenda de Eventos</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="titleAgendaEventos">Agenda de Eventos</string>
+    <string name="novo">Novo</string>
+    <string name="export">Exportar</string>
+    <string name="title_activity_new_evento">Novo Evento</string>
+    <string name="inserir">Inserir</string>
+    <string name="descricao">Descrição</string>
+    <string name="date">Data</string>
+    <string name="horario">Horário</string>
+    <string name="cleanAll">Limpar todos</string>
+    <string name="meus_compromissos">Meus próximos eventos</string>
+    <string name="title_activity_external_data_exemple">POSTs - JSON entries</string>
+    <string name="ExternalData">Reading data from external source</string>
+    <string name="externalDataDescription">Exemple loading data from public URL</string>
+</resources>

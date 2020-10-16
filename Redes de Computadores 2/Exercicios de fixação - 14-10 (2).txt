@@ -1,0 +1,20 @@
+1. Quais as vantagens do cabeçalho de tamanho fixo do IPv6?
+R: Rapidamente você sabe aonde começa o payload do IPv6
+
+2. Se um datagrama IPv6 recebido por um roteador for muito grande para ser repassado pelo enlance de saída, o que acontece? Comparando ao IPv4, qual a vantagem em se lidar desta forma com a fragmentação e remontagem de datagramas?
+R: Descarta e manda mensagem de erro, o protocolo IPv6 é mais eficiente por não ter a fragmentação e remontagem de datagramas
+
+3. Por que a soma de verificação do cabeçalho foi retirado do IPv6?
+R: Para diminuir o custo do processamento do cabeçalho
+
+4. Explique como funciona a abordagem de pilha dupla para a transição do IPv4 para o IPv6.
+R: Utiliza os 2 para migrar aos poucos
+
+5. Afirma-se que quando o IPv6 implementa túneis através de roteadores IPv4, IPv6 trata os túneis IPv4 como protocolos de camada de enlace. Você concorda com esta afirmação? Explique sua resposta.
+R: 
+
+6. Por que é tão dificil mudar de protocolo de rede (IPv4 para IPv6)?
+R: 
+
+7. Três Mapas Conceituais dos vídeos apresentados.
+R:

@@ -1,0 +1,13 @@
+Exercicios de fixacao
+
+1. Roteadores tem endereços IP? Em caso afirmativo quantos endereços eles têm?
+R: Depende da quantidade de interfaces de redes que ele possui.
+
+2. Suponha que haja três roteadores entre os hospedeiros da fonte e do destino. Ignorando a fragmentação, um datagrama IP enviado do hospedeiro da fonte até o do destino transitará por quantas interfaces? Quantas tabelas de repasse serão indexadas?
+R: 8 interfaces de rede, 3 tabelas de repasses
+
+3. Suponha que o host A envie ao host B um segmento TCP encapsulado em um datagrama IP. Quando o host B recebe o datagrama, como a camada de rede sabe que deve passar o segmento (carga útil) para TCP e não para UDP ou qualquer outra coisa?
+R: 
+
+4. Suponha que você compre um roteador sem fio e o conecte a seu modem a cabo. Suponha que seu ISP designe dinamicamente um endereço IP ao seu roteador. Suponha ainda que você tenha 5PCs em casa que usa 802.11 para conectá-los ao roteador. Como são designados endereços IP aos cinco PCs ? O roteador sem fio usa NAT?
+R: Sim, precisa usar NAT
